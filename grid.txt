@@ -1,0 +1,39 @@
+1) Two Diminsonal grid system
+2) grid layout replace float layout
+3) fast & clean
+4) no need of css framework
+ 
+ parent div me display:grid 
+  1)grid item
+  2)grid cell 
+  3)gutter -> grid ke cell ke beach gap 
+  4) grid-line 
+  5) grid-row
+  6)grid-column
+  grid properties=>
+  1 grid-template-rows
+  2 grid-template-columns
+  3 grid-template-areas
+  4 grid-template
+  5 grid-row-gap
+  6 grid-column-gap
+  7 grid-gap
+  8 justify-items
+  9 align-items
+  10 justify-content
+  11 align-content
+  12 grid-auto-rows
+  13 grid-auto-columns
+  14 grid-row-start
+  15 grid-row-end
+  16 grid-row
+  17 grid-column-start
+  18 grid-column-end
+  19 grid-column
+  20 grid-area 
+  21 justify-self
+  22 align-self
+  23 order 
+
+
+
