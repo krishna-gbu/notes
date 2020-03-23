@@ -4,7 +4,7 @@
 4) no need of css framework
  5) item properties containter me lagege grid cell ke liye 
  6) self properties grid cell me lagti hai grid cell ke liye
-  7) track => wo hota hai jaha sare grid cell rahta hai  
+  7) track => grid cell ke collection ko kahte hai 
  parent div me display:grid 
   1)grid item
   2)grid cell 
