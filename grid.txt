@@ -43,7 +43,10 @@
   26 max-content => sb kuch ek hi line me show hota hai (content ki line break nhi hote hai)
   27 min-content  => es me line me jo word sabse bada hai us ki according line break ho jati hai
   28 minmax() => es me minmax(150px , min-content) ka use min content 150 rhega aur min-content ke according change hoga
-     dense=>tb use karo jb content apni location se move ho gaya ho ye justify-content/align-content me hota hai hai syntax:grid-auto-flows: row dense 
+  29) dense=>tb use karo jb content apni location se move ho gaya ho ye justify-content/align-content me hota hai hai syntax:grid-auto-flows: row dense 
+  30) auto-fill & auto-fit=> auto-fit content ko jetna jaruri hota hai utna space leta hai ,pr auto-fill extera space leta hai (ye responsive ke liye kam aate hai) 
+  31) fit-content => ye content ki according fit krta hai fit-content(200px) max 200px tk jayega
+  32) order=>for position => grid cell ko order dene ki liye hai
   exp: 
     display: grid;
     grid-template-columns: repeat(2,150px) 1fr;
