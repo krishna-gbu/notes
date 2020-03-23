@@ -2,7 +2,8 @@
 2) grid layout replace float layout
 3) fast & clean
 4) no need of css framework
- 
+ 5) item properties containter me lagege
+ 6) self properties grid cell me lagti hai
  parent div me display:grid 
   1)grid item
   2)grid cell 
@@ -15,15 +16,20 @@
   2 grid-template-columns
   3 grid-template-areas
   4 grid-template
-  5 grid-row-gap
-  6 grid-column-gap
+  5 grid-row-gap =gap row px column px
+  6 grid-column-gap= ,,
   7 grid-gap
-  8 justify-items
-  9 align-items
+  8 justify-items=>ye horizontel ke liye hota hai (start, end,center,stretch=default)
+    justify-self => ye bhi horizontel ke liye hota hai (start, end,center,stretch=default)
+  9 align-items => ye vertical alignment ke liye hota hai(start ,end , center,stretch=default) 
+    align-self => ye bhi vertical alignment ke liye hota hai (start ,end , center,stretch = default)
+    place-items =>ye shorcut hai align-items aur justify-items   (vertical horizontel)
+    place-self  =>ye shorcut hai align-self aur justify-self (vertical horizontel)
   10 justify-content
   11 align-content
-  12 grid-auto-rows
-  13 grid-auto-columns
+  12 grid-auto-rows => jo row automatic server se add honge us ke liye  
+  13 grid-auto-columns => agar jo server se add ho raha h us ko column me add krna ho to use karnge
+     grid-auto-flows => es me row default me hota hai to change kare column me agar krna na ho to 
   14 grid-row-start
   15 grid-row-end
   16 grid-row
@@ -31,9 +37,17 @@
   18 grid-column-end
   19 grid-column
   20 grid-area 
-  21 justify-self
-  22 align-self
-  23 order 
+  23 order
+  26 max-content => sb kuch ek hi line me show hota hai (content ki line break nhi hote hai)
+  27 min-content  => es me line me jo word sabse bada hai us ki according line break ho jati hai
+  28 minmax() => es me minmax(150px , min-content) ka use min content 150 rhega aur min-content ke according change hoga
+
+  exp: 
+    display: grid;
+    grid-template-columns: repeat(2,150px) 1fr;
+    grid-template-rows:150px 150px 150px;
+    gap: 20px; 
+
 
 
 
