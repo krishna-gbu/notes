@@ -1,0 +1,24 @@
+1) easy align elements in diffrent direction and orders
+2) flexbox is to gives container the ability to expand and shrink elements to 
+   best use all the avialable space 
+3) css flexbox layout replace float layout
+4) new way to build one-dimension layouts
+5)  parent div me display:flex 
+6)  parent div hai flex container
+7)  flex items  internal div(child)
+8)  main axis=>row 
+9)  cross axis => column
+10) flexbox properties=>
+    1) flex-direction
+    2) flex-wrap
+    3) flex-flow
+    4) flex-grow
+    5) flex-shrink
+    6) flex-basis
+    7) flex
+    8) justify-content
+    9) align-content
+   10) align-items
+   11) align-self
+   12) order
+
