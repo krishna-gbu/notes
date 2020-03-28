@@ -9,16 +9,16 @@
 8)  main axis=>row 
 9)  cross axis => column
 10) flexbox properties=>
-    1) flex-direction
-    2) flex-wrap
-    3) flex-flow
-    4) flex-grow
-    5) flex-shrink
-    6) flex-basis
-    7) flex
-    8) justify-content
-    9) align-content
-   10) align-items
-   11) align-self
-   12) order
-
+    1) flex-direction =>(row=default,row-reverse,column,column-reverse) ye containter se related properties hai
+    2) flex-wrap => (nowrap=default,wrap,wrap-reverse) es me hamare items height aur width ki hisab se adjest ho jata pr ek row aur ek bar column
+    3) flex-flow  => (flex-direction  flex-wrap)
+    4) flex-grow  => (ye agar container me jaga khale hai to sb same ho jaye aur ye container ki liye nhi hote)
+    5) flex-shrink =>browser ki width ghanti aur badti hai to kam aata hai |  ye item me lgta hai (flex-shrink:1/0) 1= shrink hai ,0 = nhi hai ,1/0 ke alawa bhi value deskte hai
+    6) flex-basis => flex item ki width ko handle krta hai (duble triple etc according to items)
+    7) flex=>flex:flex-grow flex-shrink flex-basis
+    8) justify-content =>(flex-start,flex-end,center,space-around,space-between,space-evenly) ye horizontel ke liye hota hai agar hume es properties ko vertical use krna hai to flex-direction row ->column krga hoga 
+    9) align-content =>(flex-start,flex-end,center,stretch,space-around,space-between,space-evenly) vertical hota hai pr double row ke liye hota hai
+   10) align-items =>(flex-start,flex-end,center,stretch,baseline=>ye text ko ek line krta hai) ye vertical alignment ki liye hai ye single row ke liye hota hai
+   11) align-self =>(flex-start,auto,flex-end,center,stretch,baseline) ye ek item pr hota hai 
+   12) order =>item ko exchange krna(lowest to higest value pr jayega)
+ nested flex=> flex contianer ki under ek aur flex contianer to nested flex contianer
