@@ -22,3 +22,6 @@
    11) align-self =>(flex-start,auto,flex-end,center,stretch,baseline) ye ek item pr hota hai 
    12) order =>item ko exchange krna(lowest to higest value pr jayega)
  nested flex=> flex contianer ki under ek aur flex contianer to nested flex contianer
+
+
+box-sizing=>(border-box,content-box) es se width fix rahte hai padding/border  se effect nhi hote hai border-box se fix rahte hai
