@@ -1,1 +1,11 @@
 bootstrap=>
+  layout=>1) container -width fixed rahta hai
+          2) container-fluid - full width by display
+
+1)container ke ander container bana sakte hai
+2) container-fluid ke ander container kr sakte hai
+
+Grid=>
+1) ek row me 12 column hota hai but hum jetni chahe merge kr sakte hai
+  col-sm-1 -> means hum ek row ke 12 column me se ek column use kr rahe hai
+      col-sm-3 -> teen column ko ek krdiya hai
