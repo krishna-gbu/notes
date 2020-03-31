@@ -4,8 +4,13 @@ bootstrap=>
 
 1)container ke ander container bana sakte hai
 2) container-fluid ke ander container kr sakte hai
-
+text-center(class)=> text  ko center me krta hai
 Grid=>
 1) ek row me 12 column hota hai but hum jetni chahe merge kr sakte hai
-  col-sm-1 -> means hum ek row ke 12 column me se ek column use kr rahe hai
+    col-sm-1 -> means hum ek row ke 12 column me se ek column use kr rahe hai
       col-sm-3 -> teen column ko ek krdiya hai
+2)  grid ke pass 5 brackpoint hota hai(extra small=auto ,small=540px to above,medium=720 to above ,large=992 to above ,extra large=1200px to above)      
+     extra-small=.col- ,small=.col-sm,medium=.col-md,large=.col-lg,extra-large=.col-xl
+     .col-xl-3->.col-xl-1 ke teen ko merge kiya hai
+     .col-xl ->tb kam krta hai jb 1200 ya se jyda hota hai
+3)   
