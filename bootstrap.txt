@@ -4,13 +4,61 @@ bootstrap=>
 
 1)container ke ander container bana sakte hai
 2) container-fluid ke ander container kr sakte hai
+ ) class='mr-1to5' => margin from right
+    class='align-self-center/end/start(default'
 text-center(class)=> text  ko center me krta hai
 Grid=>
 1) ek row me 12 column hota hai but hum jetni chahe merge kr sakte hai
     col-sm-1 -> means hum ek row ke 12 column me se ek column use kr rahe hai
       col-sm-3 -> teen column ko ek krdiya hai
 2)  grid ke pass 5 brackpoint hota hai(extra small=auto ,small=540px to above,medium=720 to above ,large=992 to above ,extra large=1200px to above)      
-     extra-small=.col- ,small=.col-sm,medium=.col-md,large=.col-lg,extra-large=.col-xl
+     extra-small=.col (default) ,small=.col-sm,medium=.col-md,large=.col-lg,extra-large=.col-xl
      .col-xl-3->.col-xl-1 ke teen ko merge kiya hai
      .col-xl ->tb kam krta hai jb 1200 ya se jyda hota hai
-3)   
+     
+3) image ->image responsive (class='img-thumbnail') 
+
+4) auto width=>ek row me 12 column hota  hai to jo hum fix krdete hai us ke alawa auto width ho jata hai  
+5) column break-> w-100 se column break krte hain to column next row me ho jata hai
+6) order -> column ka order change kr sakte hai (means exchange) agar third ko first pr laana hai to third me 'order-first' likhna hoga
+    order-md-2 means medium me order second ho jayega
+7)  offset column -> agar apni div ko move karna hai to offset lagao ,jitna move karna hai offset krdo
+       offset-md-6 (ye medium me 6 column ko off kar deta hai aur div 6 column move ho jata hai)
+       offset-6 (ye default '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''')
+8) nesting row or column->row me 12 column aur phir column me row phir 12 column hoga(har row me 12 column bana sakte hai)
+9) media query(class='media' ,class='media-body',)->image,heading and description etc 
+    agar media query list me chahiye to 
+    ex:-  
+          <ul class='list-unstyled'>
+            <li class='media'>
+             <img src='image.fuck' alt='' class='mr-3 align-self-center'/>
+              <div class='media-body'>
+                    <h1>heading</h1>
+                    <p> description</p>
+              </div>
+             </li> 
+           </ul>             
+
+    Note:class='list-unstyled' style hatani ke liye
+
+    nested media :=> <div class='media'>
+                        <img src='' />
+                        <div class='media-body'>
+                            heading 
+                            description
+                           <div class='media'>
+                            <img src=''/>
+                             <div class='media-body'>
+                                  heading
+                                  description
+                             </div>
+                           </div>
+                        </div>
+                      </div>       
+
+ 10) typography=>   paragraph like <p class='h1'>
+  es me hum para ko heading ki tarah use kart hai 
+ </p> 
+
+11) class='text-muted' ye fade krta hai (halka colour)    
+12)            
