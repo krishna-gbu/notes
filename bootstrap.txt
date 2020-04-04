@@ -16,7 +16,6 @@ Grid=>
      .col-xl-3->.col-xl-1 ke teen ko merge kiya hai
      .col-xl ->tb kam krta hai jb 1200 ya se jyda hota hai
      
-3) image ->image responsive (class='img-thumbnail') 
 
 4) auto width=>ek row me 12 column hota  hai to jo hum fix krdete hai us ke alawa auto width ho jata hai  
 5) column break-> w-100 se column break krte hain to column next row me ho jata hai
@@ -61,4 +60,67 @@ Grid=>
  </p> 
 
 11) class='text-muted' ye fade krta hai (halka colour)    
-12)            
+12) display=> (class='display-1,display-2 ,display-3,display-4') heading ki style ki liye hai    
+13) lead=>kisi bhi text ki style me kam aata  hai (ye class hai)
+14) mark=> agar kisi text ko highlight krna chahte hai to (ye class hai)
+15) (<s></s>) =>no longer acurate (jyda time ke liye sahi nhi hai)
+16) (<del></del>)=> delete text by line
+17) (<ins></ins>)=>for  underlie   addition document
+17) (<u></u>)=>for  underlie  
+17) (<em></em>)=>for  italic  
+17) (<abbr title='fuck'> over</abbr>)=>jb mouse 'over' hoga to fuck dekega
+17) (<abbr title='fuck' class='initialism'> over</abbr>)=>ye bhi same hai pr bootstrap me hai
+18) class='mb-0' -> margin from bottom
+19) class='blockquote-footer'=> naming a source ,shyari ki liye aur author ya phir footer me author ki liye
+  exp:-<p> jdklfjdsf  d fksdjf jf sdfjsd  </p>
+        <footer class='blockquote-footer'> fuck</footer> 
+20) list-unstyled=> ye bootstrap ke class hai jo list ko unstyle krta hai        
+21) list-inline=> ye (<ul class='list-inline'></list-inline>) ul me laghta hai aur 'list-inline-item ye' li me laghta hai
+22) <dl>=>description list 
+      <dt> =>
+       <dd>
+            
+       </dd>
+      </dt>
+    </dl>
+
+23) image =>  class='img-fluid'  for responsive 
+    image responsive (class='img-thumbnail') responsive ke sath border bhi aa jata hai 
+    align image =>help with (float-left and float-right )or text alignment class(class='text-center/left/right')
+24) table=> table,thead,tr,th and tbody,thead,tr,td  
+          Note:- 1)table class (class='table') and class='table-dark' and class='table-striped' alter color ki liye and 
+                 border class (class='table-bordered') and table hover (class='table-hover') small table (class='table-sm')
+                 table ko responsive krne ki liye hum ek div ki ander table use krenge 
+                 <div class='table-responsive'> <table>etc</table></div>
+                2)thead class (class='thead-light/dark')
+                 3)tr class(class='table-primary') for color or many ye td em hota hai
+                 4)caption ye table ke under use krte hai <caption>table ke bare me batane ki liye</caption>
+
+          thead ki under th hota hai and td ,tbody me hota hai pr agar header chahte hai to use kr sakte hai th
+          exp:-  <table>
+       <thead>
+         <tr>
+           <th >#</th>
+           <th >First</th>
+           <th >Last</th>
+           <th >Handle</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td> 1</td>
+           <td> fucking</td>
+           <td> fu</td>
+           <td>fuc </td>
+         </tr>
+       </tbody>
+     </table>
+
+
+figure=> class='figure' ,class='figure-img' and class='figure-caption'  ye tb use karo jb image ki sath toda text ho
+  ex-   <figure>
+        <img src={debian} alt='fuk' className='img-fluid figure-img' />
+        <figcaption className='figure-caption'> A caption for the above image</figcaption>
+       </figure>
+   
+      
