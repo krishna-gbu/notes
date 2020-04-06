@@ -1,1 +1,11 @@
-f
+Python=>6/04/20
+        variable - int ,float,boolean,str,bytes
+        ordered  1)list[2,3,5]
+                 2)tuple(1,24,3) immutable like str
+         key container- 
+                        1)dict {"key":"value"}
+                        2)set {"key1","key2"} 9351788883 
+                        
+                        
+                 
+        
