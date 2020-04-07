@@ -122,5 +122,139 @@ figure=> class='figure' ,class='figure-img' and class='figure-caption'  ye tb us
         <img src={debian} alt='fuk' className='img-fluid figure-img' />
         <figcaption className='figure-caption'> A caption for the above image</figcaption>
        </figure>
-   
-      
+
+color=> class='text-primary ,secondary,success,info ,warning,dark,muted,white' ye link me bhi use hota hai
+        class='bg-primary,secondary,success,info,warning,dark,muted,white' and class='border border-primary/etc'
+
+border=>addative=> class='border/border-top/border-left/border-right/border-buttom'
+       substractive=> class='border border-0/border-top-0/border-buttom-0/border-left-0/border-right-0' zero jis side hai us side border jt jata hai
+       border-'top/bottom/border-left/border-right/border-circle'
+       border-color=> class='border border-primary/info/etc'
+       border-radius=>class='rounded/rounded-top/rounded-bottom/rounded-circle/rounded-left/rounded-right
+
+Text=> class='text-justify' es me hum har line ko ek lenght me kr dete hai
+       class='text-left'
+       class='text-right'
+       class='text-center'
+       class='text-sm-left' ye device ke liye hota hai
+      exp-: class='text-device-left'
+      class='text-nowrap' 
+      class='text-wrap' default hota hai
+      class='text-truncate' es me hum ek line me dekhate hai (jldkjl i...)
+      class='text-lowercase' 
+      class='text-uppercase' 
+      class='text-capitalize' 
+      class='font-weight-bold'
+      class='font-weight-nomal'
+      class='font-weight-light'
+      class='font-italic'
+
+Spacing (margin and padding)=>margin -> m   and padding-> p 
+                              margin-top -> t  
+                              margin-bottom -> b 
+                              margin-left -> l 
+                              margin-right -> r 
+                              margin-left and margin-right -> x 
+                              margin-bottom and margin-top -> y 
+                              ex-class='mt-0to5' and class='my-0to5'
+                              this similar to padding 
+                              exp class='pt-0to5' and class='py-0to5'
+              horizontal centering => class='mx-auto' ye fixed width pr kam krta hai                 
+
+Vertical alignment=>only in inline-block,inline-table,table cell and inline
+                    class='align-baseline/top/middle/bottom/text-top/text-bottom'
+
+Visibility=>    class='visible/invisible'
+
+Sizing=>width -> w-25 width 25%
+                 w-50 width 50%   
+                 w-75 width 75%   
+                 w-100 width 100%  
+                 max-width(mw) =100%
+        similar height -> h
+                 h-25 
+                 h-50 
+                 h-75 
+                 h-100 
+                 max-height(mh) =100%
+
+Position=>1) common values:
+          class='position-static/position-relative/position-absolute/position-fixed/position-sticky'
+          2) fixed-top:-class='fixed-top' es me nav fix rahta hai scroll ke bad bhi top pr rahta hai 
+             fixed-bottom:-class='fixed-bottom'  es me nav fix rahta hai scroll ke bad bhi bottom pr rahta hai 
+
+
+Shadow => class='Shadow-none/Shadow/Shadow-sm/Shadow-lg       
+
+display properties=> html ki sb tag me display(block/inline) rahta hai chahiye div(block) ho ya span(inline) ho 
+                     1) block-level element=> ye hamesa new line se start hota hai aur puri width leta hai 
+                      aur es me hum width and height set kr sakte hai
+                     exp:-<div>,<h> etc
+                     2) inline element=> ye new line se start nhi hota aur jitne jata chahiye utni hi leta hai aur es me
+                     hum width and height set nhi kr sakte hai
+                     exp:-<span>,<a>etc
+                     3) Notation=>
+                      values->none,inline,inline-block,table,table-cell,table-row,flex,inline-flex
+                       syntax:- .d-(value) for xs
+                       exp:- class='d-value' for xs
+                      syntax:- .d-(brackpoint)-(value) for sm ,md,lg and xl
+                     4) inline-block=>ye combination hai inline aur block ka aur hum width and height set kr sakte hai apni according
+                      5) none -> display none
+                      Note:-block level element ko inline me kr sakte hai (d-inline) vice versa
+
+display print => kya print hona hai aur kya nhi hum es me decide krte hai 
+            class='d-print-none' hum jb page ko print krenge to ye print nhi hoga
+            class='d-print-inline'
+            class='d-print-inline-block'
+            class='d-print-table'
+            class='d-print-block'
+            etc 
+Embed => responsive video slider etc
+       class='embed-responsive/embed-responsive-16by9' ye parent div me hoga
+       class='embed-responsive-item' ye child ke iframe me likhna hai 
+       exp:-<div class='embed-responsive embed-responsive16by9>
+              <iframe class='embed-responsive-item' src=''></iframe>
+             </div>
+Float=> left and right ki liye
+        class='float-left/float-right/float-none'
+        class='float-sm-left/float-sm-right etc'
+clearfix=> float ki estimal se website ka flow kharab ho jata hai
+           to hum float ki parent div me clearfix class use karte hai         
+ 
+Alert=>  class='alert alert-primary/alert-info etc' role='alert'
+alert-link=>class='alert-link' 
+     exp: <div class='alert alert-info' role='alert'> 
+           <em> dfdsf </em> <a href='' class='alert-line'></a>
+          </div>
+    Note alert me header ,paragraph etc use kr sakte hai
+
+dismiss=>class='alert-dismissible' alert ko dismiss krne ki liye
+         class='fade',class ='show'
+
+Breadcrumb=>  home/library/date 
+            es type ki liye use hota hai
+            class='Breadcrumb'
+             class='Breadcrumb-item active' jis page me hai us me active lagana hai  
+
+
+Buttons=> 1)class='btn btn-primary/btn-link/info etc' use class in ancher and input etc
+          2)class='btn btn-outline-primary/info/etc'
+           3) size=> class='btn btn-lg/sm'
+           4) class='btn active' 
+           5)disable in button tag but ancher me class disable use krna hoga
+
+button group=> class='btn-group/btn-group-vertical' role='button' ye parent div me hoga
+
+Checkbox Button=><div> class='btn-group-toggle' data-toggle='buttons' </div>
+
+Radio button=> same class Checkbox
+
+button toolbar=>class='btn-toolbar'
+
+Card =>ye ek content container hai
+    1) class='card' ->class='card-img-top' ->class='card-body'->class='card-title' ->class='card-text'->class='btn btn-primary'
+    2) class='card-header in div' ,class='list-group',class='list-group-item',class='list-group-flush' ager me ul or ol dena ho tb    
+    3) class='blockquote' -> <blockquote class='blockquote'>
+                              <footer class='blockquote-footer'> dfdff</footer>
+                             </blockquote>
+    4) class='card-footer text-muted'
