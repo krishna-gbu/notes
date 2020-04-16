@@ -252,9 +252,89 @@ Radio button=> same class Checkbox
 button toolbar=>class='btn-toolbar'
 
 Card =>ye ek content container hai
-    1) class='card' ->class='card-img-top' ->class='card-body'->class='card-title' ->class='card-text'->class='btn btn-primary'
+    1) class='card' ->class='card-img-top/card-img-bottom' ->class='card-body'->class='card-title' ->class='card-text'->class='btn btn-primary'
     2) class='card-header in div' ,class='list-group',class='list-group-item',class='list-group-flush' ager me ul or ol dena ho tb    
     3) class='blockquote' -> <blockquote class='blockquote'>
                               <footer class='blockquote-footer'> dfdff</footer>
                              </blockquote>
     4) class='card-footer text-muted'
+    5)card image overlays=> es me hum card ko row or colum wise karte hai with grid or 
+        custom css or sass 
+        class='card-img' ->class='card-img-overlay' image ko background ki liye pure card me
+     6)card-style=>class='card text-color bg-color'
+     7)card-groud=>same height and width
+        class='card-groud' and all  same 
+     8)card-decks=>card group ki spacing hote hai baki sb same hai es ko card-group ki jagah likhna hai
+       class='card-deck'
+     9) class='card-columns' ye group ki jagah lekho 
+Dropdown=>troggible 
+  class='Dropdown'->class='btn btn-color dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ->class='dropdown-menu'->class='dropdown-item'
+  class='dropdown-divider' dropdown item ki beach diver ki liye hota hai
+  class='split'
+  Note= in react   <Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Dropdown Button
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
+split button=> <Button variant="info">Split Button</Button>
+
+  <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+dropdown-direction=>
+
+collapse=> class='data-toggle-collapse' ye react me kam nhi krta hai
+           in react take doc collapse 
+
+Accordion=>click ke bad scroll down ho jata hai aur phir se hide ho jata hai
+       class='Accordion' baki card wali class use kr lo
+badges=>ye heading ,buttom and ancher se banta hai  class='badges'  jo Notation aata hai us me use krte hai
+    class='badge-pill '  round ki liye
+    class ko span use karo
+     exp- <button className='btn btn-info'>
+          inbox <span className='badge badge-primary'>6 </span>
+         </button>
+baseNav=>1) navigation ki liye class='nav' class='disabled' link ki liye class='nav-link'    
+          for center class='justify-content-center/end' 
+          for vertical=class='flex-column'
+         2)tab=>class='nav nav-tabs'->class='nav-item' ->class='nav-link active'
+            pure horizontal cover ki liye class='nav nav-pills nav-fill' -> all same
+            class='nav-justifed' nav ko justify krta hai
+tabs with dropdown=> class='dropdown'->class='dropdown-toggle'->class='dropdown-menu'->class='dropdown-item'           
+tab with their content=>tab pr click kr ke content dekhte hai 
+                         click='nav nav-tabs' ->id='nav-tabname-tab'
+vertical tabs with their content=>
+navbar=>class='navbar' class='navbar-expand{-sm|-md|-lg|-xl} ye fluid hota hai
+        use flex to  modify 
+        class='d-print' add to class='navbar' role='navbar'
+        class='navbar-brand' for full-height and lightweight navigation best with anchor
+        class='navbar-toggle' use for collapse plugin and other 
+        class='form-inline' for any controls and actions
+        class='navbar-text' for adding vertical centered string of text
+        class='collapse.navbar-collapse'for grouping and hiding navbar contents by parent pointbreak
+        class='active'
+        es me ul aur ancher dono ka use kr sakte hai
+        class='fixed-top'
+        dropdown menu -> class='dropdown'->class='dropdown-toggle'->data-toggle='dropdown'
+        -><div class='dropdown-menu'><a href='#' class='dropdown-item></a></div>
+       search bar=> class='form-inline'->class='form-control'->type='search'->
+       
+ImageSlider=>(carousel) class='active' ke waja se slider visible hota hai and give ek id
+            class='carousel' next and pre slide page staring 
+            class='d-block' block banane ki liye
+            class='carousel.caption' es se hum slider ki uper kuch lekh sakte hai 
+            class='carousel.item' ki under caption ko lekhte hai
+            react bootstrap ki liye hai
+
+
+Jumbotron=>content ko achachi se present krne ki liye hota hai
+          class='Jumbotron' es ko container ki under bahar dono lekh sakte hai
+          class='Jumbotron-fluid' full width ki liye
+
+Pagination=> first 1 ... 10 last like page
+progress=>
+
+              
