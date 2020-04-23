@@ -1,0 +1,24 @@
+docker=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker ce (community edditon) not support in rhel 8 (but some trick)
+curl -sSl https://get.docker.com |sh (to downlaod docker with docker shell script )
+downlaod.docker.com ->get 19 version
+
+make repo++++++++++++++>>>>>>>>>>>>>>>>
+cd /etc/yum.repos.d 
+ls
+gedit docker.repo(make dir)
+[docker]
+copy docker location(basurl:https://downlaod.docker.com/linux/centos/7/x86_64/stable/)
+gpgcheck=0
+install docker =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..........
+yum install docker-ce --nobest
+
+check history
+
+install ubuntu in docker =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker pull ubuntu(latest version)
+docker pull ubuntu:14.04(specific version)
+check os install in docker =>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker images
+and check process
+docker ps
