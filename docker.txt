@@ -1,7 +1,8 @@
+yum whatprovides nslookup(kon sa software provide krega nslookup)
 docker=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-docker ce (community edditon) not support in rhel 8 (but some trick)
+docker ce (community edition) not support in rhel 8 (but some trick)
 curl -sSl https://get.docker.com |sh (to downlaod docker with docker shell script )
-downlaod.docker.com ->get 19 version
+downlaod.docker.com ->get docker19 version
 
 make repo++++++++++++++>>>>>>>>>>>>>>>>
 cd /etc/yum.repos.d 
@@ -22,3 +23,186 @@ check os install in docker =>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 docker images
 and check process
 docker ps
+
+open docke os =>>>>>>>>>>>>>>>>>>>>>>>
+docker run -t -i ubuntu:14.04 (ye har bar new os open krta hai jis se ki hum purana data nhi dekhta hai)
+
+
+shutdown docker os =>>>>>>>>>>>>>>>>>>>>>>>>>
+exit
+docker stop -t(time) container_id(check from docker ps)
+
+check docker service
+systemctl status  docker
+system enable/disable docker
+docker info
+
+
+install ------>os(boot) (provision) 1) base metal
+                            2)cloude computing
+                            3)virtualization
+                            4) docker
+
+          NOte:-os means container in docker
+
+
+++++++++++++++=== by sir========================++++++++++++++++++++++++++++++++++++++++++++++
+
+Docker command line syntax:
+Old: docker <command> options
+New: docker <management command> <command> options
+
+Default image registry for docker is hub.docker.com
+
+List docker images:
+old # docker images
+new # docker image ls
+
+Start Container from docker image centos :
+old # docker run -it centos
+new # docker container run -it centos
+
+Check list of running containers:
+old # docker ps
+new # docker container ps  or # docker container ls
+
+
++++++++++++++++++++++++++++==
+with name docker
+docker run -ti --name krish centos:7
+
+rpm query==============
+rpm -q name
+
+
+hwo to open old os =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+docker run -ti os (har bar new os lanuch krta hai) =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+run  old os =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker start os_id (show in terminal root@id) ya docker ps se check kr lo
+docker attach os_id
+docker ps -a(check all os)
+docker rm os_id
+
+remove image=>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker rmi centos:latest (remove image)
+docker rmi centos:latest -f 
+
+docker version (docker version check)
+if docker not lanuch =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getenforce (if output enforcing)
+setenforce 0  
+
+
+
+container =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker container run -it --name os2 centos:7
+docker container stop os2
+docker container --help
+docker container ls -a 
+ctrl+p+q (deattach to os)
+
+clone / copy of docker image(create own image)
+docker commit myso1 myos2
+
+
+apache web server=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker run -it --name web centos:7
+docker inspect web(os)(all information of os)
+docker info 
+
+
+session2=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker info(all information)
+web server in centos in docker=>>>>>>>>>>>>>>>>>>>>>>>>
+docker image ls
+docker container run -ti --name web(os) contos:7
+lscpu(cpu information)
+docker container inspect --format "{{.NetworkSetting.IPAddress}}" web (IPAddress is inside of NetworkSetting )
+yum install net-tools (install in centos for ifconfig)
+rpm -q httpd(check httpd install or not)
+yum install httpd
+cd /var/www/html/ (which web page host put in it)
+systemctl start httpd(docker is not support but some trick)
+    Note:-systemctl stop httpd
+          /usr/sbin/httpd(systemctl command es file ko hi excute krte hai to hum ne manual kr  deya)
+          netstat -tnlp(check port etc)
+          killall httpd(for stop)
+/usr/sbin/httpd (centos me systemctl command kam nhi kr rahi hai to )
+vi /root/.bashrc(hr bar jb os restart hota hai to service shutdown ho jate hai to hum es me /usr/sbin/httpd add krta hai)
+cd /var/run/httpd(run me sari running process hota hai with pid)
+Note:-systemctl start httpd (es se ye start hota hai /usr/sbin/httpd aur es se process and httpd.pid file create hote hai)
+      systemctl stop  httpd(es se killall httpd and remove hote hai httpd.pid)
+      pr /urs/sbin/httpd se sirf process start hota hai httpd.pid nhi
+Note:- jb system restart hota hai to httpd ki cache hote hai to hum ko remove krna hota hai
+       to hum use krte hai /root/.bashrc file me 
+       rm -rf  /var/run/httpd/*
+       /usr/sbin/httpd
+       ye permanent solution hai
+Note:-agar hum jis os me webserver setup kiye hai uska clone kr de to hume ek website ki liye kae ip mil jaye ge 
+
+hwo to share docker os or import and export (1 method):-===>>>>>>>>>>>>>>>>>>>>>>>
+docker save webserver:v1 -o web.tar (first create *.tar file )(export)
+scp web.tar root@192.43.34.34/root (share file with scp)
+docker load -i web.tar (import file)
+(2-method(public)) =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1)upload image on docker hub
+2)first create account 
+Note:-docker pull -ti ubuntu:14.04(agar local repo me nhi hai to hub.docker se tumhare local repo me dalega than run)
+docker login(terminal)
+docker push username/webserver:v1(upload the image on hub.docker)
+docker tag webserver:v1  krish/webserver:v1(rename the image)
+(3-method(private))=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+session3=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+docker logs -f os(container_name)(check status of running image from baseos)
+docker attach os (if docker is background and attach with)
+ansible(tool for automation)
+docker exec os(container) date  ( os me ja kr date command run hoge phir wapis)
+docker exec -it  os date (es me bhi excute hoga pr os open hoker khula rahiga aur exit krni pr os close nhi hoga background me running hoga)
+
+Networking=>>>>>>>>>>>>>>>>>>>
+ifconfig 
+route -n
+docker container run -it -d --name fuck centos:v1(-d se background me ho jata hai)
+docker network ls(check network type(bridge,host,none))
+docker network inspect bridge
+cat /etc/reslov.conf(this is dns(server))
+dhcp -> ipam(type of database ip address management)
+bridge(software)-work as layer2 and layer3 both(osi model)
+switch/bridge(for software) -layer2
+router - layer3
+in docker bridge(switch+router)
+
+setup network:=>>>>>>>>>>>>>>>>>>>>>
+docker network ls
+docker network create --help
+docker network create --driver bridge net1(any_name)
+docker network inspect net1
+docker run -dit --name c8 --network net1  centos:7(hum ne centos ko apni net1 se connect kiya hai)
+ping container(os(centos))
+Note:- agar do network bridge hai switch se to, wo apas me bhi connect ho jate hai
+docker container run -ti --link c1 --name c10 mycentos:v1(hum ne c1 aur c10 ko apas me connect kr diya hai jo ki bridge network me hai dono)
+docker run -it --network none --name c1 mycentos:v1(es me net connect nhi hai )
+docker network disconnect net1 mycentos:v1(mycentos ko disconnect kr diya hum ne)
+docker network  connect net1 mycentos:v1(mycentos ko connect kr diya hum ne)
+docker run -it --name web1 --network-alias site --network webnet phpweb:v1(image)
+docker run -it --name web2 --network-alias site --network webnet phpweb:v1
+Note:-(--network-alias ,hum jitni os lanuch krenge utni ip hoge aur name bhi 
+       to hum apni site ko kaise host krenge ,to --network-alias se hum sabhi ko ek kr dete hai 
+      ,to hum sirf site search krna hoga)
+yum install bind-utils (for nslookup)  
+nslookup web1(check ip and name)
+nslookup web2(check ip and name)
+
+
+
+
+
+
+
+
+
+
+
+
