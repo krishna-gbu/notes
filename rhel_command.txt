@@ -1,0 +1,38 @@
+date
+cal
+mkdir folder_name
+cd (change dir) folder_name
+ls(list)(file name)
+touch (create empty file)
+ls -l(long list (details))
+cmd -option=syntax
+cat > a.txt(enter than write your data ,than ctrl+d)(overwrite the data)
+cat >> a.txt(append the data)
+rm (remove)
+alias
+unalias
+pwd(present working dir)
+/->absolute folder
+cd .. (back one dir)
+touch f.txt file_name file_name
+rmdir folder_name(if empty)
+rm -r folder_name(if not empty)
+alias(modify the command)
+rm -rf folder_name
+touch .txt(file is not visible without name)
+cp -rv /a /a1 (v-visible,r - recursive , both are folder)
+file/-this is folder
+cd - (back dir)
+which cal
+window-exe,msi
+rhel-rpm
+rpm -q -f /usr/bin/cal
+systemctl stop firewalld
+systemctl disabled firewalld
+
+
+
+
+
+
+
