@@ -197,7 +197,111 @@ nslookup web2(check ip and name)
 
 
 
+session4=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+why docker is fast 
+hyperversion=>virtualization
+rpm -q kernel
+uname -r
+baser_os -->container(docker_engine)-->docker_os
+lscpu
+ps -aux (check process)
+docker network ls
+ip =>>>>>>>>>>>
+   1)private
+   2)public 
+
+private  ----x------public
+public -------x ------private
+public----------------public
+private--------------private
+hwo it possible the above condition
+
+router convert private ip to public ip and public to private ip this call
+nat(network address transmission) 
+snat (source network address transmission)
+dnat (destination network address transmission)-->pat(port address transmission)
+nat connection => only router and snat enable feature
+bridge connection=>>switch and router and snat enable feature
+how to connect private to public with pat(port address transmission)=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker container run -it -p(pat) 1234:80(router_port:container_port)  --name 0s2 --network net2(bridge) webserver
+Note:-(disable firewalld)
+Note:-host network es me base ip container ko milega network card bhi (same as base os)
+docker container run -it --network host webserver:v1
+Note:- disable firewalld
+
+session5=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+docker images
+docker inspect webserver
+router -n (check gateway)
+sysctl -a | grep ip_forward(all network feature )
+iptables -vLn(check rule)
+docker inspect webserver:v1 |grep IP
+iptables  -P   FORWARD ACCEPT (CHANGE  iptables policy)
+netstat -tnlp
+storage=vloume=======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1)persistence(like pendrive storage)
+2)empheral (temporary)
+alias dps='docker ps'(alias any_name='any command') not permanent if use permanent bashrc
+docker volume
+docker volume create --help
+docker volume create myst1 (pendrive)
+docker volume ls
+hwo to connect pendrive to os(container)======>>>>>>>>>>>>>>>>>>>
+docker run -ti --name web -v myst1 ubuntu:14.04
+dockr run -it --name web -v myst1:/var/www/html webserver:v1
+docker rm -f web
+dockr run -it --name web1 -v myst1:/var/www/html webserver:v1
+cd /var/www/html/
+ls
+docker volume inspect myst1
+cd /var/lib/docker/volumes
+cd myst1
+cd _data/
+yum repolist
+create:====>>>>>>>>>repo>>>>>>>>>>>>>
+[name]
+baseurl=file:///location/folder
+gpgcheck=0
+dockr run -it --name web1 -v  /rhel8:/dvd centos:7(rhel folder attach with docker os)
+
+session6=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+docker pull  -it  wordpress (for site)
+docker pull -ti mysql:5.7 (for db)
+                         its call multi-tier
+exp:-
+    x=5(in rhel8(base_system))
+    docker run -e x=$x -ti centos
+    echo $x    //output = 5
+
+docker run -e x=$x -it centos:7
+echo $x 
+docker run -e myname=krish -it centos:7
+
+
+which mysql (in base system)   
+yum install mysql(in base system)
+
+mysql)(base system) -h 172.17.0.2(mysql in docker) -u root -predhat(p-password redhat)
+docker history mysql:5.7(container)
+
+docker run -it -e MYSQL_ROOT_PASSWORD,=pass ,MYSQL_ALLOW_EMPTY
+Docker RUN -T e MYSQ MAN
+
+docker run -dit -e MYSQL_ROOT_PASSWORD=redhat -e MYSQL_USER=vimal 
+ -e MYSQL_PASSWORD=redhat -e MYSQL_DATABASE=mydb 
+ -v mysql_storage:/var/lib/mysql --name dbos   mysql:5.7 
+
+docker rm -f  $(docker ps -q)(remove query)
+
+docker history os(container)
+
+docker run -dit -e WORDPRESS_DB_HOST=dbos  -e WORDPRESS_DB_USER=vimal 
+-e WORDPRESS_DB_PASSWORD=redhat -e WORDPRESS_DB_NAME=mydb -v wp_storage:/var/www/html 
+--name wpos1 -p 8080:80 --link dbos   wordpress:5.1.1-php7.3-apache 
+
+Note:- !536 (history no line run )
 
 
 
