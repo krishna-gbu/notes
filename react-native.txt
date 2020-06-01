@@ -1,0 +1,54 @@
+text-show text to user .any text placed outside of a text will result in a error
+view-general purpose element used for grouping other element or styling
+image-show an image
+button-show a button the user can press . gives us some feedback whenever the user presses it
+
+inline style = {{fontSize:30}}
+
+rule of jsx=>>>>>>.......
+we can assemble diffrent jsx element like normal html
+we configure diffrent jsx element using props 
+we can refer to js variable inside of a jsx block by using curly braces
+we can assign jsx element to a variable then show that variable inside of jsx block
+
+const ComponentScreen=()=>{
+    
+    const name = 'krishna'  
+    const name = use jsx (<text>this is jsx</text>) 
+
+    
+    return (
+        <View> 
+            <Text style={style.textStyle}>getting start with react native </Text>
+            <Text style={style.subHeader}> my name is {name}(yaha hum object pass nhi kr sakte hai) </Text>
+         </View>
+    )
+}
+ 
+
+List===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+flatlist -> turns an array into list of element
+flatlist ->is better in RN 
+<FlatList data ='' renderItem ='' keyExtractor='' />
+
+   <FlatList  data={friends} renderItem={(element)=>{
+       element === {item:{name:'friend #1'},index:0} (hum object ko jsx me pass nhi kr sakte hai)
+       use this way ==>
+             renderItem={({item}) =>{
+                item==={name:'friend #1'}
+             }}
+   }}/>
+
+style = marginVertical
+
+flatlist=>>>>>>>>
+<FlatList horizontal={true}  showsHorizontalScrollIndicator={false} data={friends} keyExtractor={friend=>friend.name} renderItem={({item})=>{
+             return <Text style={style.textStyle}> {item.name} </Text>
+         }}/>
+
+
+Button=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     button=> very simple component for showing a button and detecting a press 
+     touchableOpacity=>highly customizable component that can detect a press on just about any kind of element
+     
+
