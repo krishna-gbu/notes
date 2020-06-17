@@ -52,3 +52,155 @@ Button=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      touchableOpacity=>highly customizable component that can detect a press on just about any kind of element
      
 
+1) createStackNavigator -> props -> props.navigation.navigate('where go')
+
+
+props->system to pass data from a parent to a child
+State->system to track a piece of data that will change over time.if that data changes ,our app will rerender 
+
+
+
+Reducer => this is fancy name 
+1)function that gets called with two objects
+2)argument#1 - object that has all of our state in it 
+3)argument#2 -  object that describes that the update we want to make 
+4)we look at argument #2 and use it to decide how  to change argument#1 
+5)two technicalities -(1) we have never change argument#1 directly.
+                      (2) we must always return a value to used as argument#1]
+
+
+//////////./././././.Reducer././././////////////////////////////////////////
+
+const reducer = (state,action)=>{
+     //ye decide karo rought me likh ke
+    //state==={count:number}
+    //action==={type:'pulse' || 'minus',payload:1}
+         
+         switch (action.type) {
+             case 'pulse':
+                return {...state,count:state.count + 1}
+                  
+             case 'minus':
+                 return {...state ,count:state.count - 1}
+             default:
+               return  state;
+         } 
+}
+ 
+
+const CounterScreen = ()=>{
+
+//  const [ Counter , setCounter] = useState(0);
+const [state , dispatch] = useReducer(reducer,{count:0})
+ 
+
+
+dispatch({type:'pulse'})
+dispatch({type:'minus'})
+
+
+input---------=-=-=-===-=-=-=--
+<textinput></textinput>
+android me jaisa lekhta hai waisa input hota hai 
+aur iphone me first letter captiale hota hai 
+
+{value:currenttext,
+onChangetexta:()=>}
+
+
+layout system=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+box object model =>the height/width of an element + the space around it ->use this to a affect the positioning of a single element 
+Flex box => how some number of sibling elements get laid out inside a parent ->use this to position mulitple element with a comman parent 
+position=>how a single element gets laid out inside of a parent ->use this to override box object model + flex box 
+
+box object model=>'content and padding' sections show background color,border and margin do not 
+                margin=>set the margin on all sides 
+                marginvertical=>set the margin on top and bottom 
+                marginhorizontal=>set the margin on left and right
+                padding =>set the padding on all sides 
+                paddingvertical=>set the padding on left and right 
+                paddinghorizontal=>set the padding on left and right 
+                border width =>set border width on all sides 
+
+flex-box:=> <view>
+            <text>child 1</text>
+            <text>child 2</text>
+            <text>child 3</text>
+            </view>
+           
+           note: this properties in parent 
+            alignitems:'stretch' (default)
+            alignitems:'flex-start'
+            alignitems:'enter'
+            alignitems:'flex-start'
+            alignitems:'flex-end'
+
+flex-direction:=> flexDirection:'column' (default) (on parent)
+                  flexDirection:'row'
+justify:=>  justifyContent:'flex-start'(default) (horizontal)
+            justifycontent:'center'
+            justifycontent:'flex-end'
+            justifyContent:'space-between'
+            justifyContent:'space-around'
+
+flex value:=>
+             1)parent:alignitems,justifyContent,flexDirection and 
+             2)child: flex,alignself
+            child:=>flex:1(jitna space hota hai sb es ko mil jata hai)(10 unit hota hai)
+            child:=>alignself:'center/flex-end/flex-start/'
+
+position:=>
+          1)position:'absolute'=> ignored by sibling(like content).still obeys some flex box rules by parent
+               Note: es ki jagah use:(...StyleSheet.absoluteFillObject)
+               position:'absolute' (fill element hole box)
+                top:px
+                bottom:px
+                left:px
+                right:px 
+          2)position:'relative'=>(default in parent)
+            top:px
+            bottom:px
+            left:px
+            right:px
+
+apply box object model rules:=>-->is position 'absolute'
+                                  if Yes => 
+                                         apply some flex box rules ,ignore all sibling
+                                         apply top,bottom ,left ,right
+
+                                   if No =>
+                                           apply all rules box rules ,considering 
+                                           sibling
+                                           ||
+                                           \/
+                                        placement element inside parent 
+                                           ||
+                                           \/
+                                        apply top,left ,right,bottom
+
+
+project build ==>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+expo-cli =>>>>>>>>>> adds in ton of default config to use feature comman in apps , like icons 
+                     ,video,better camera use ,etc 
+
+react-native-cli=>>>> default cli to genrate a project .requires a lot of extra work to add in 
+                      in comman feature
+
+npx expo-cli init food (npx expo-cli init name_project)
+                      
+
+                                                  
+
+                                                         
+
+
+
+
+               
+
+
+
+
+
+
