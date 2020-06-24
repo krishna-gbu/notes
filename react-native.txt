@@ -193,8 +193,9 @@ npx expo-cli init food (npx expo-cli init name_project)
 
 Note:==> Drawer navigator and bottomTabNavigator and stackNavigator
   setup-:
-           Installation
-1. Install React Navigation
+         Installation
+
+1. Install React Navigation 
 
 npm install react-navigation
 
@@ -223,7 +224,51 @@ Update Imports
 Our imports in the upcoming lecture will now look like this:
 
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';                                          
+import { createStackNavigator } from 'react-navigation-stack';  
+
+
+Note:=>https://github.com/expo/vector-icons (vector images)
+
+///././.././././.././/././././././///////////////////////////////////
+
+fetch ---> 
+          1)build in function for making network requests
+          2)error handling is a bit weird 
+          3)requires us to write a lot of wrapper code to make it work 'sensibly' 
+
+Axios---->(npm install axios) if any error (npm cache clean --force)
+          1)separate library for making requests
+          2)easy to use, sensible defaults
+          3)increases our app size (very ,very slightly)
+
+
+import axios from 'axios'
+
+
+export default axios.create({
+    baseURL:'https://api.yelp.com/v3/businesses',
+    headers:{
+
+        Authorization:'Bearer(same) (space) M0VBCa9JfKMevT92NkP3RdcIsX6FzDtX9_3TG3EGxXASn9Nq44RMUjK-T7IdJNWFUofSfVJHsucs-o-Tkz4TeOdjwGQyhDnw4sRyMISCkV45_scyNWs6LB5QXCXwXnYx(api key)'
+    }
+})
+
+
+
+  >?>?>>?>>?>??>?>?>?>?>???>?>?>?>flow in searchScreen Component ./../././././././././>?>?>?>?>>?
+                  1)searchScreen function called
+                  2)nothing visible on screen
+                  3)user enters a search term, submits it ,requests to yelp made 
+                  4)get search result ,call setter 
+                  5)update state causes component to render 
+                  6)now we have something to show to the user!
+
+ ?<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<useState>????????????????????????????????????
+ useState(()=>{}) =====> run the arrow function every time the component is render 
+ useState(()=>{},[]) ====> run the arrow function only when the component is first render
+ useState(()=>{},[value]) ===> run the arrow function only when is first rendered , and when the 'value ' changes 
+
+                  
 
                                                          
 
