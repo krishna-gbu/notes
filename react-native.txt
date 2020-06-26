@@ -268,14 +268,44 @@ export default axios.create({
  useState(()=>{},[]) ====> run the arrow function only when the component is first render
  useState(()=>{},[value]) ===> run the arrow function only when is first rendered , and when the 'value ' changes 
 
-                  
 
+>??>??>??????????????????????????useEffect./../..//../.......................//////////////////                  
+                  useEffect(function)
+                  useEffect(function,array)
+yes : by default , it runs both after the render and after every update
                                                          
+
+
+Note:=====> <View style={{flex:1}}> 
+            <SearchBar term={term}  onTermChange = {setTerm} onTermSubmit={searchApi} />
+            <Text style={style.text}>Search Screen</Text>
+            { term  ?  <Text>Search {term}</Text> : null }    
+            <Text> we have found {results.length} result</Text>
+            <ScrollView >
+            <ResultsList  results={filterResultsByPrice('$')} title="Cost Effective"/>
+            <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"/>
+            <ResultsList results={filterResultsByPrice('$')} title="Big Spender"/>
+            <ResultsList results={filterResultsByPrice('$$')} title="Big Spender"/> 
+            </ScrollView>
+            </View>
+       (es case me ScrollView view kam nhi kr raha tha phir hum ne flex:1 lagay hai )
 
 
 
 
                
+./.././//./././././.././...//withnavigation.//./..//././///././/././././././
+         import   {withNavigation}  from 'react-navigation'         
+         const ResultsList =({ title ,results,navigation })=>{    
+                    return ( <TouchableOpacity onPress={()=>navigation.navigate('ResultsShow')}>
+                            <ResultsDetails  result={item}/> 
+                            </TouchableOpacity>)
+                )
+            }
+          export default withNavigation(ResultsList);
+         Note:- kisi bhi screen ko direct navigate kiya ja sakte hai (app ki help se)
+
+
 
 
 
