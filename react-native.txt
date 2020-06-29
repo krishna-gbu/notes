@@ -306,6 +306,14 @@ Note:=====> <View style={{flex:1}}>
          Note:- kisi bhi screen ko direct navigate kiya ja sakte hai (app ki help se)
 
 
+>?>?>?>?>???????????????????????????props vs Context ./././/./.././././.././
+props-->(1)communicates information from a parent directly down to a child 
+        (2)easy to setup 
+        (3)to communicates data down mulitple layers ,we have to  write a lot of code 
+
+Context-->(1)moves information from a parent  to some nested child 
+          (2)complicated to setup , lots of special terms 
+          (3)easy to communicates data from a parent to a super nested child
 
 
 
