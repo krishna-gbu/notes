@@ -1,0 +1,595 @@
+1.install node and yarn in machine
+2.install live-server in machine 
+     sudo npm install -g live-server 
+       $ live-server public (folder which is our all site files)
+jsx -javascript xml 
+var template = 'krish'; 
+var template = <p>this is jsx form app.js</p> (hum ko pahle es jsx me convert krna hoga)
+   
+      js=> var template=<p id> this is fdkfjsdklf </p>
+
+      js to react 
+   
+    babel=>   var template = React.createElement("p", {
+                                                    id: true
+                                                  }, " this is fdkfjsdklf ");
+
+var approot=document.getElementById('app');
+
+reactdom.render(jsx,dom element)=>   ReactDom.render(template,approot)  
+
+
+install babel => sudo npm install -g babel-cli
+sudo npm init 
+babel=>
+     set env-sudo npm add babel-preset-react babel-preset-env
+       babel src/app.js --out-file=public/scripts/app.js  --presets=env,react
+ 
+
+ jsx =>
+     var template =<h2> fjlsdkf </h2> <h1> dfjsdklf </h1>
+        (wrong bcoz  adjcent jsx element must be wrapped in an enclosing tag)  
+          solv-  var template = <div><h2> fjlsdkf </h2> <h1> dfjsdklf </h1> </div>      
+
+{}=>   <h1>fd f{js variable in html}</h1>
+
+location=>is keyword to url of current window  
+
+create app object title/subtitle=>
+   var app = {
+     title:'some title',
+     subtitle:'this is my subtitle'
+   }
+
+//if statement =>
+   function getLocation(location){
+     //return 'unknown';
+       if (location){
+         return location; //agar hum chahte hai ki agar location ho tabhi show nhi to nhi ho to 
+          return <p>location: {location}</p>
+
+       }else{
+         return 'unknown';
+       }
+   }
+   
+ terary operator=>
+   true ? krish : pooja
+      krish
+     <h1>{user.name ? user.name :'anonymous'}</h1>
+logical operator=>
+
+  true && 'krish' => krish
+  (true &&  'krish')&& 'pooja' 
+  false && 'pooja'=>false
+
+
+  es6=>
+      var namevar='krish';
+      var namevar ='pooja';(es me define bhi kai bar hota hai aur value bhi change hote hai)
+      console.log('namevar',namevar);
+
+      let namelet='krish'
+      namelet ='pooja';(es me ek hi bar define hota hai pr value change kr sakte hai)
+      console.log('namelet',namelet);
+      
+      const nameconst ='krish' (es me na hi value change hoga na hi define hoga)
+      console.log('nameconst',nameconst)
+
+      function getpetname(){
+        var/const/let petname='hal';
+        return petname;
+        
+      }
+      
+      getpetname();
+      console.log(petname)(es cse me koi kam nhi karega);
+
+      for access-
+        if const 
+            const petname=getpetname();
+            console.log(petname);
+
+      block scoping->
+       var fullname='krish nishad';
+
+       if (fullname){
+         var firstname=fullname.splite(' ')[0];
+         console.log(firstname);
+       }      
+       
+       console.log(firstname); (var is working in block or outside)
+
+       if (fullname){
+         var firstname=fullname.splite(' ')[0];
+         console.log(firstname);
+       }      
+       
+       console.log(firstname); (var is working in block not outside)
+
+es6 arrow ->
+    const square =function(x) {  (es function ka nam le sakte hai function a (){})
+      return x * x;
+
+    }
+   
+   console.log(square(4));
+    
+    const arrowsquare = (x) => { (es me function ka nam define nhi hota hai bcoz anonymous function hota hai)
+       return x*x ;
+    }
+    
+    const arrow =(x)=>x*x; (one line arrow function hai)
+
+    //argument object  -no bound with arrow function
+
+    const  add = function (a,b){
+      console.log(arguments)
+      return a+b;
+    }
+    console.log(add(44,34))
+
+//this keyward -no longer bound
+
+
+const user={
+    name:'krish',
+    cities:['punjab','new delhi','kanpur','kota'],
+    printplace:function (){
+        console.log(this.name);
+        console.log(this.cities);
+        const that=this;
+
+        this.cities.forEach(function(city){
+            console.log(that.name + 'has live in '+ city);(es me this kam nhi kr raha hai bcoz nested function )
+
+        })
+    }
+}
+user.printplace();
+
+const userarow={
+    name:'krish',
+    cities:['punjab','new delhi','kanpur','kota'],
+    printplace: function(){
+     this.cities.forEach((city)=>{
+            console.log(name + 'has live in '+ city);
+
+        })
+    }
+}
+user.printplace();
+
+
+ const userarow={
+    name:'krish',
+    cities:['punjab','new delhi','kanpur','kota'],
+    printplace: function(){
+      
+        const city=this.cities.map((citie)=>{
+            return citie;
+        }) 
+        return city;
+
+      
+      
+        
+    }
+}
+console.log(userarow.printplace());
+
+
+
+let count=0
+const counting =()=>{
+  count ++;
+  renderFunction(); (hum ko bar bar likhna padta es liye function me bana diya hai bcoz templatetwo ki value yaha tk assign nhi hote hai)
+}
+const minus =()=>{
+ console.log ('minus --');
+ renderFunction();
+}
+
+
+const renderFunction= () => {
+
+          const templatetwo=(
+            <div>
+            
+            <h1> counting:{count} </h1>
+            <button onClick={counting}>click me </button>
+            <button onClick={minus}>click me </button>
+            <button onClick={reset}>click me </button>
+
+          </div>
+          );
+          ReactDOM.render(templatetwo,getid);
+
+}
+
+{}{|{}{}{}{}{}{}}P{}{}{}|problme => like this switch network
+(index):1 Access to script at 'https://unpkg.com/react-dom@16/umd/react-dom.development.js' 
+from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+ture to fale=>
+  let visability=false;
+  visability=!visability;
+
+
+  class =>
+       class Person{
+  constructor (hi){
+    this.girl(ye wo hai jo me ma hoga )=hi;(ye wo hota hai ho new Person me argument diya hai)
+  }
+
+}
+
+const me =new Person('fuck');
+console.log(me)
+
+const other= new Person('girl');
+console.log(other);
+
+
+super-
+ class Person{
+  constructor (name,age){
+    this.name=name;
+    this.age=age;
+  }
+  getgreeting(){
+      return `hi I am ${this.name} and age: ${this.age} year`;
+  }
+}
+class Student extends Person{
+    constructor(name,age,major){
+        super(name,age);
+        this.major=major;
+    }
+    hasMajor(){
+
+    }
+
+    fuck(){
+      let des=super.getgreeting();(hum super laga ke method bhi define kr sakte hai)
+    }
+}
+const me =new Student('fuck',12,'computer science');
+console.log(me);
+
+const other = new Student('girl',23);
+console.log(other);
+
+
+
+
+technic===>
+
+!'fuck'
+false
+!!'fuck'
+true
+
+
+component-->
+
+ 1==       class Header(always capital letter) extends React.Component{
+
+          render(){(render method are must in React.component)
+            
+          }
+        }
+
+        class Header extends React.Component{
+
+          render(){
+              return <div>
+              <h1>indecision</h1>
+              <p>this from Header class Component</p></div>;
+          }
+        }
+
+        class Action extends React.Component{
+          
+          render(){
+            
+            return (<div>
+                <button>what should I do</button>
+              </div>)
+              
+          }
+
+        }
+
+        const jsx=(
+          <div>
+                  <h1>Title</h1>
+                <div> <Header/></div>
+                  <Action/>(hum es ko esye bhi lekh sakte hai <Action></Action>)
+                  
+            </div>
+        )
+
+        ReactDOM.render(jsx,document.getElementById('some'));
+
+2==   class Fuck extends React.Component{
+         render(){
+        
+          return (<div>
+            fuck componet is here 
+        
+           </div>)
+
+        }
+      }     
+
+     
+       class Action extends React.Component{
+          
+          render(){
+            
+            return (<div>
+                <button>what should I do</button>
+                <Fuck/>
+              </div>)
+              
+          }
+
+        }
+
+      ReactDOM.render(<Action/>,document.getElementById('some'))
+
+
+bind=>> 
+   class ke constructor me methods ko bind karna padta hai 
+  class Counter extends React.Component{
+   
+   constructor(props){
+      super(props)
+
+      this.handleaadone=this.handleaadone.bind(this)(yaha es liye karna ha ta ki handleaadone me constructor ke feature use kr paye);
+
+     this.state={
+         count:15
+     }
+
+   }
+      
+  handleaadone (){
+
+       this.state.count=this.state.count +1;
+      console.log(this.state.count);
+      
+  }
+
+}
+
+setState=>---
+handleremoveall(){
+   this.setState(()=>{
+     return {v:[]}
+   })
+
+  }
+
+takeinput=>
+      const option =e.target.elements.ption(input me tag ka nam).value.trim();
+      <input type='text' name='ption'></input>
+
+
+ function ==>
+    const User=()=>{
+     
+     return(
+       <div>
+       <p>  Name</p>
+       </div>
+     )
+
+    }
+    ReactDOM.render(<User/>,document.getElementById('some'))        
+
+    props throught overrite=>
+       const Header=(props)=>{   
+ return (<div> 
+        <h1> title:{props.title}</h1>
+        <h1> title:{props.subtitle}</h1>      
+       </div>)
+}  
+//Header.defaultProps={
+  title:'defaultprops'
+}
+
+ react life cycle=>
+   componentDidMount(){
+     console.log('fetching the data')
+   }
+
+   componentDidUpdate(){
+     console.log('saving data')
+   }
+
+   componentDeleteOptions(){
+      console.log('component will Unmount');
+   }
+
+
+   json=>
+     json.stringfy({age:26});
+     return in key and value
+     json.parse(json)
+     return in object(age:26)
+     
+
+
+ git=>     1) git --version
+            2)git init (create empty repository)
+            3) git status(check repository)
+            4)if any ignore than use .gitigonor
+            5)git add (take argument) .(all)
+            6)git commint -m "write to remember"
+
+         hum apna code ko ssh ke jariye push karenge
+
+  Connecting to GitHub with SSH=>
+                   window (for )->
+                     1)Open Git Bash.       
+                      ssh-keygen -t rsa -b 4096 -C "your_email@example.com" (createing a ssh key)
+                      Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+                      Enter passphrase (empty for no passphrase): [Type a passphrase]
+                      Enter same passphrase again: [Type passphrase again]
+                     2) eval $(ssh-agent -s) (check agent pid)
+                     3) ssh-add ~/.ssh/id_rsa
+            Adding a new SSH key to your GitHub account
+               1) clip < ~/.ssh/id_rsa.pub (open ur github id and setting new ssh id 
+                   add title and paste clip) https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
+               2)ssh -T git@github.com
+               3)$ git remote add origin git@github.com:Krishnao1/react-course-2-expensify-app.git
+               4)git remote -v
+
+deployment with heroku 
+heroku login
+heroku create react-course-2-expensify
+git remote 
+
+numeraljs=> npm install numeral (presention of number)
+
+firebase =>key-value(format) (firebase not support array so convert array to object)
+           ref()-location of database where store data 
+            set()-set data in refrence(ref()));(set function data ko overrite kr deta hai
+            )
+      create database :=> 
+       database.ref().set({
+      first_name:'krish',
+      last_name:'nishad',
+      age:21,
+      isSingle:true,
+      location:{
+          city:'azamgarh',
+          country:'india'
+      }
+ }).then(()=>{
+     console.log('data will saves')
+ }).catch((error)=>{
+     console.log('error',error)
+ })
+
+remove database:=>
+                   database.ref('fuck').remove().then(()=>{
+     console.log('data was remove')
+ }).catch((error)=>{
+     console.log('some error',error)
+ })
+
+
+update database :=>
+                   database.ref().update({
+    age:24,
+    // location:{
+    //     city:'noida'
+    // }(ye child me kal nhi krta hai)
+    'location/city':'noida'
+
+
+}).then(()=>{
+   console.log('data will saves')
+}).catch((error)=>{
+   console.log('error',error)
+})
+
+
+fetch:=>  
+     database.ref().once('value').then((snapshot(es ki under key and value hote ))=>{
+    console.log('fetching the data',snapshot.val()(es se hum value ko lete hai))
+   }).catch((error)=>{
+    console.log('error',error)
+ })
+
+on('eventtype',callback:function)(es se hum update delete,etc sb kr sakte hai)
+
+promises=> 
+  const promise = new Promise((resolve,reject)=>{
+   setTimeout(()=>{
+       
+      // resolve('this is my resole data');(hum ek se jyda resolve nhi lga sakte hai
+        //aur na hi reject)
+         resolve({name:'krish',age:21,
+    title:'this is my resole data'}); 
+         
+     
+       },3000) 
+})
+
+Off=> subscrtion is off not show in website
+
+console.log('befor')
+
+promise.then((data)=>{
+    console.log(data)
+});
+
+console.log('after')
+
+
+firebase interdate array=>
+               const notes=[{
+    id:'12',
+    title:'fucking girl',
+    body:'beloved girl'
+ },{
+    id:'124343ias',
+    title:'fucking boy',
+    body:'beloved boys'
+ }]
+
+
+ database.ref('notes').set(notes);
+
+
+firebase interdate object =>
+               
+ const firebaseNotes={
+     noetes:{
+        
+        1:{
+            title:'fucking girl',
+            body:'beloved girl',  
+             
+        },
+       2:{
+        id:'124343ias',
+        title:'fucking boy',
+        body:'beloved boys'
+       }  
+    },
+    porn:{
+        fuck:'djfkdlfdkjf'
+    }
+     
+
+ }
+ 
+ database.ref('porn').set(firebaseNotes)
+
+
+
+
+  const  test=(fuck={})=>{
+    
+    const {  
+              id='',
+              name=''   //this is variable 
+          } = fuck  (assign all value according to key)
+    
+
+    const expense ={ id,name} (declare in above variable)
+    
+  database.ref('expensesss').push(expense).then((ref)=>{ 
+  return console.log(expense) 
+})
+}
+ 
+test({name:'krish',id:'fuck'});
+
+
+browser history=>
