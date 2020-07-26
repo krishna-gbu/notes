@@ -315,8 +315,61 @@ Context-->(1)moves information from a parent  to some nested child
           (2)complicated to setup , lots of special terms 
           (3)easy to communicates data from a parent to a super nested child
 
+explation=====.=.=..=>>>>>>>>>>>>>>>>>>>>>>+>++++++>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+import React from 'react'
+
+const BlogContext =React.createContext();
+export const BlogProvider  = ({ children })=>{
+    return <BlogContext.Provider value={12}(yaha jo value dalte hai wo other component me render hote hai)> 
+                { children } (yaha wali value app.js me render hote hai)
+            </BlogContext.Provider>
+}
+export default BlogContext;
+   ././/.//./././//./. use context ======>
+   const { data , addBlogPost,delBlogPost(variable name like BlogContext)} = useContext(BlogContext);
+
+.?>?>?>?>?>?????????????????????????>Header me kuch krna ho to>?>?>?>>?>>?>?>?>?>>?>???>?>?>>
+IndexScreen.navigationOptions = ({navigation})=>{
+  return {
+    headerRight: () => <TouchableOpacity onPress={()=>navigation.navigate('Create')}> 
+      <F name="plus" size={30} color="black"/> 
+      </TouchableOpacity>
+  }
+}
 
 
 
 
+13 Data Api Sync ======.==.=.=//=/=//=/=//=/==/=//=//===/=====//////
+ npmjs.com/package/json-server
+ ngrok server 
+ db.json (create file)
+ package.json (add below line in this file)
+ "scripts": {
+    "db":"json-server -w db.json",
+    "tunnel":"ngrok http 3000"
+  }
 
+method              route                                   result 
+get           http://2490018e1ce4.ngrok.io              retrieve all stored blog posts 
+get           /blogposts/{id}                           get blog post with particular id 
+post          /blogposts                                create a new blog post 
+put           /blogposts/{id}                           update blog post with given id 
+delete        /blogpost/{id}                            delete blog post with given id 
+
+///////////////current flow ///////////////////////////////////////////
+ ||  IndexScreen get display by react navigation
+ ||  IndexScreen  looks at context object to get the current list of blog posts 
+ ||  IndexScreen render list of blogposts
+ \/  done 
+
+ ////////////////new follow ///////////////////////////////////////////
+ |   IndexScreen gets display by react navigation
+ |  IndexScreen needs to all a function that will make a request to the json server 
+ |   for the current list of posts 
+ |   IndexScreen recives list of current blog posts (probably empty!)
+ |       time passes....
+ |   request complete list of blog posts gets stored through our useReducer hook 
+ \/   state change render whole app IndexScreen get new list of posts    
+
+ 
