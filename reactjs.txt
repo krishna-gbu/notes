@@ -428,6 +428,10 @@ takeinput=>
             4)if any ignore than use .gitigonor
             5)git add (take argument) .(all)
             6)git commint -m "write to remember"
+            modify
+            7)git commit -m "second commit"
+            8)git add .
+            9)git push -u origin master
 
          hum apna code ko ssh ke jariye push karenge
 
