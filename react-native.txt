@@ -373,3 +373,18 @@ delete        /blogpost/{id}                            delete blog post with gi
  \/   state change render whole app IndexScreen get new list of posts    
 
  
+
+ track-server >?>?>?>????????????????????>?>?>?>?>?>?>?>?>?>?>>?>>??>?>?>?>
+
+ npm init -y 
+ npm cache clean --force
+ setup mongodb->>>>>>>>>>>
+ https://cloud.mongodb.com/ sign in  >>build cluster >>create cluster >> connect >>add ip address 
+ >>username and password(not a sign in password)
+ nodemon =>start automatic server if any change in files
+ const token = authorization.replace('Bearer ', ''); es line me hamesa Bearer ki bad space hota hai nhi to error hoga
+ Note:=> userSchema.pre('save',function(next){
+  const user = this; ///this is use for user 
+  if(!user.isModified('password')){
+    return next()
+  })    
