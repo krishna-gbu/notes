@@ -174,3 +174,28 @@ remove=>>>>>>>>>>>>>>>>>>?????>?>>?????????????????????????????????????????
     }).catch((e)=>{
       console.log(e.massage, 'error')
     })
+
+
+ // /////////////////// fetching data from firebase=>>>>>>>>>>>>>>>?>?>>>>>>>>>>
+    // firebase.database().ref('location/city').once('value') //fetching with location
+    //   .then((e)=>{
+    //     console.log(e.val())
+    //   }).catch((e)=>{
+    //      console.log(e.massage,'error')
+    //   })
+     
+     const onValuechange = firebase.database().ref().on('value',(shapshot)=>{  //koi value update hota to callback automatic render ho jayega
+         console.log(shapshot.val())
+      },(e)=>{
+          console.log(e,'error')
+      })
+    
+      setTimeout(() => {
+         firebase.database().ref('age').set(42)
+      }, 3500);
+      setTimeout(() => {
+         firebase.database().ref().off('value',onValuechange)   //es se firebase ka subscription khatam ho jayega jis se data add nhi hota
+      }, 5000);
+      setTimeout(() => {
+         firebase.database().ref('age').set(40)    //ye add nhi hoga
+      }, 5500);
