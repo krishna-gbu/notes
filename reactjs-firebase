@@ -1,0 +1,164 @@
+import * as firebase from 'firebase'
+
+firebase.initializeApp(config)
+
+firebase.database().ref('user').set({
+  name:'krishna',
+  age:21
+})
+
+or 
+firebase.database().ref('user').child('01').set({
+  name:'krishna',
+  age:21
+})
+
+
+with form ==-=-=-=---------------------------------------------===========
+ const submit =(e)=>{
+    e.preventDefault()
+
+    firebase.database().ref('user').push({
+      name:name,
+      age:age
+    })
+    
+  } 
+  
+  <form onSubmit={(e)=>submit(e)}>
+      <input placeholder='Inter Your name' value={name} onChange={(e)=>{setname(e.target.value)
+      console.log(e.target.value)}} />
+      <input placeholder='Inter Your Age' value={age} onChange={(e)=>setage(e.target.value)} /> 
+      <input type='submit'/>
+      </form>
+
+
+ Note:=> map and foreach this is only for array ||||||/\/\/\\\\\//\/\/\//\/\\/\/\\/
+
+
+
+        useEffect(()=>{  //useEffect ki error hoga bcoz kai bar print hoga pr useEffect se ek hi bar hota hai
+     
+      firebase.database().ref('user').once('value').then((s)=>{
+       
+       s.forEach(item=>{
+             setarray(array.push(item.val()))
+       })
+            
+       // console.log(s.val())
+   
+     })
+
+    },[])
+
+
+    fetching key and something>?>?>?>?>?>??>??
+
+    useEffect(()=>{  
+      firebase.database().ref('user').once('value').then((s)=>{
+        let temp = []
+       s.forEach(item=>{
+            //  temp.push([item.val(),item.key])
+            temp.push({id:item.key,...item.val()})
+       })            
+        setarray(temp)
+       // console.log(s.val())
+     })
+    },[])
+
+
+
+update firebase with set >?>?????????????????????????????????????
+firebase.database().ref().set({
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+  firebase.database().ref('name').set({
+    name:'fucking boy',
+    
+  })
+   
+   firebase.database().ref().set({
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+  firebase.database().ref('name').set({
+    name:'fucking boy',
+    
+  })
+
+  firebase.database().ref('location/city').set('fucking pussy')
+
+
+Promises ====>>>>>>>>>>>>>++>++++>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ const promise = new Promise((resolve,reject)=>{
+    //  resolve('this is resolve data'); //resolve or reject ek hi bar run hota hai 
+    //  resolve({
+    //    name:'fucking boy',
+    //    age:25
+    //  })
+    reject('some wrong')
+
+  })
+  
+  console.log('before')
+                   
+  promise.then((data)=>{  ///yaha pr than wait krega promise ka (resolve) tb tk jb tk aa nahi jata
+    console.log(data);      //agar resolve hua to execute hoga nhi to fail hoga                  
+  }).catch(e=> console.log(e,'some error'))              ///fail ko handle ki liye catch use krenge
+    
+                             Note:=>promise retun krega than agar resolve hua to nhi to catch me krega
+
+  console.log('after')
+
+
+  set =>?>?>??>?>? (ye promise retun krta hai)
+   const addref = firebase.database().ref('fuck')
+  // .then(()=>console.log('data save')).catch((e)=>{
+    // console.log('some error',e)
+  // })
+
+  addref.child('first').set('fuck') //es me then and catch kr sakte hai
+  addref.child('last').set('gay') //es me then and catch kr sakte hai
+
+remove=>>>>>>>>>>>>>>>>>>?????>?>>?????????????????????????????????????????
+    
+    firebase.database().ref().set({
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+ //  remove return promiss on complete
+
+  firebase.database().ref('isSingle').remove().then(()=>console.log('remove sucess'))
+
+
+// update  return promises and input object hota hai =>>>>>>>>>>>>>>/>?>?>>>>>>>>>>>>>>>>>>>
+
+    firebase.database().ref().update({
+      isSingle:false,
+      job:'fucking girl',
+      'location/country':'fucking girl country'   //agar perticular child pr update krna ho to 
+    }).then(()=>{
+      console.log('sucees update')
+    }).catch((e)=>{
+      console.log(e.massage, 'error')
+    })
