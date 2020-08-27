@@ -152,10 +152,22 @@ remove=>>>>>>>>>>>>>>>>>>?????>?>>?????????????????????????????????????????
 
 
 // update  return promises and input object hota hai =>>>>>>>>>>>>>>/>?>?>>>>>>>>>>>>>>>>>>>
+    
+     firebase.database().ref().set({   
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
 
     firebase.database().ref().update({
       isSingle:false,
       job:'fucking girl',
+      'fucking/isGirl':true,
       'location/country':'fucking girl country'   //agar perticular child pr update krna ho to 
     }).then(()=>{
       console.log('sucees update')
