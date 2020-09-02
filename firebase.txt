@@ -1,0 +1,287 @@
+import * as firebase from 'firebase'
+
+firebase.initializeApp(config)
+
+firebase.database().ref('user').set({
+  name:'krishna',
+  age:21
+})
+
+or 
+firebase.database().ref('user').child('01').set({ //user me 01 ek child hai 
+  name:'krishna',
+  age:21
+})
+
+
+with form ==-=-=-=---------------------------------------------===========
+ const submit =(e)=>{
+    e.preventDefault()
+
+    firebase.database().ref('user').push({
+      name:name,
+      age:age
+    })
+    
+  } 
+  
+  <form onSubmit={(e)=>submit(e)}>
+      <input placeholder='Inter Your name' value={name} onChange={(e)=>{setname(e.target.value)
+      console.log(e.target.value)}} />
+      <input placeholder='Inter Your Age' value={age} onChange={(e)=>setage(e.target.value)} /> 
+      <input type='submit'/>
+      </form>
+
+
+ Note:=> map and foreach this is only for array ||||||/\/\/\\\\\//\/\/\//\/\\/\/\\/
+
+
+
+        useEffect(()=>{  //useEffect ki bina error hoga bcoz kai bar print hoga pr useEffect se ek hi bar hota hai
+     
+      firebase.database().ref('user').once('value').then((s)=>{
+       
+       s.forEach(item=>{
+             setarray(array.push(item.val()))
+       })
+            
+       // console.log(s.val())
+   
+     })
+
+    },[])
+
+
+    fetching key and something>?>?>?>?>?>??>??
+
+    useEffect(()=>{  
+      firebase.database().ref('user').once('value').then((s)=>{
+        let temp = []
+       s.forEach(item=>{
+            //  temp.push([item.val(),item.key])
+            temp.push({id:item.key,...item.val()})
+       })            
+        setarray(temp)
+       // console.log(s.val())
+     })
+    },[])
+
+
+
+update firebase with set >?>?????????????????????????????????????
+firebase.database().ref().set({
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+  firebase.database().ref('name').set({
+    name:'fucking boy',
+    
+  })
+   
+   firebase.database().ref().set({
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+  firebase.database().ref('name').set({
+    name:'fucking boy',
+    
+  })
+
+  firebase.database().ref('location/city').set('fucking pussy')
+
+
+Promises ====>>>>>>>>>>>>>++>++++>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ const promise = new Promise((resolve,reject)=>{
+    //  resolve('this is resolve data'); //promises me resolve or reject ek hi bar run hota hai 
+    //  resolve({
+    //    name:'fucking boy',
+    //    age:25
+    //  })
+    reject('some wrong')
+
+  })
+  
+  console.log('before')
+                   
+  promise.then((data)=>{  ///yaha pr then wait krega promise ka (resolve) tb tk jb tk aa nahi jata
+    console.log(data);      //agar resolve hua to execute hoga nhi to fail hoga                  
+  }).catch(e=> console.log(e,'some error'))   ///reject  ko handle ki liye catch use krenge
+    
+                             Note:=>promise retun krega than agar resolve hua to nhi to catch me krega
+
+  console.log('after')
+
+
+  set =>?>?>??>?>? (ye promise retun krta hai)
+   const addref = firebase.database().ref('fuck')
+  
+
+  addref.child('first').set('fuck') //es me then and catch kr sakte hai
+  addref.child('last').set('gay') //es me then and catch kr sakte hai
+
+remove=>>>>>>>>>>>>>>>>>>?????>?>>?????????????????????????????????????????
+    
+    firebase.database().ref().set({    //set overwrite krta hai es liye remove me use kr sakte hai
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+ //  remove return promiss on complete
+
+  firebase.database().ref('isSingle').remove().then(()=>console.log('remove sucess')) //perticuler
+  child ko remove kr sakte hai
+
+
+// update  return promises and input object hota hai =>>>>>>>>>>>>>>/>?>?>>>>>>>>>>>>>>>>>>>
+    
+     firebase.database().ref().set({   
+    name:'krishna',
+    age:25,
+    isSingle:true,
+    location:{
+      city:'fucking land',
+      country:'fucking country'
+    }
+  })
+
+
+    firebase.database().ref().update({
+      isSingle:false,
+      job:'fucking girl',
+      'fucking/isGirl':true,
+      'location/country':'fucking girl country'   //agar perticular child pr update krna ho to 
+    }).then(()=>{
+      console.log('sucees update')
+    }).catch((e)=>{
+      console.log(e.massage, 'error')
+    })
+
+
+ // /////////////////// fetching data from firebase=>>>>>>>>>>>>>>>?>?>>>>>>>>>>
+    // firebase.database().ref('location/city').once('value') //fetching with location
+    //   .then((e)=>{
+    //     console.log(e.val())
+    //   }).catch((e)=>{
+    //      console.log(e.massage,'error')
+    //   })
+     
+     const onValuechange = firebase.database().ref().on('value',(shapshot)=>{  //koi value change hota to callback automatic render ho jayega
+         console.log(shapshot.val())
+      },(e)=>{
+          console.log(e,'error')
+      })
+    
+      setTimeout(() => {
+         firebase.database().ref('age').set(42)
+      }, 3500);
+      setTimeout(() => {
+         firebase.database().ref().off('value',onValuechange)   //es se firebase ka subscription khatam ho jayega jis se data add nhi hota
+      }, 5000);
+      setTimeout(() => {
+         firebase.database().ref('age').set(40)    //ye add nhi hoga
+      }, 5500);
+
+
+        Array in firebase ??>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+       firebase.database().ref('notes').push([    //array firebase me use hote hai firebase array ko object me convert krta hai
+        {
+          "des":'jdfkdfkdjs', 
+          "note":"jdfudfjdf dkfjdfdifjdkfj",
+          'amount':23,
+          "createAt":3434
+        },{
+          "des":'jdfkdfkdjs',
+          "note":"jdfudfjdf dkfjdfdifjdkfj",
+          'amount':26,
+          "createAt":3434
+        }
+      ])
+
+      //  useEffect(()=>{
+//   firebase.database().ref('notes').once('value').then((snapshot)=>{
+//     const array = []
+//     snapshot.forEach((item)=>{
+//         array.push({id:item.key,...item.val()})  
+//   })
+//   console.log(array)
+//   })
+//  },[])
+
+//  useEffect(()=>{
+//   firebase.database().ref().once('value').then((snapshot)=>{
+//     const array = []
+//     snapshot.forEach((item)=>{
+//        array.push({
+//          id:item.key,
+//          ...item.val()
+//        })
+       
+//   })
+//   console.log(array)
+//   }).catch((e)=>{
+//        console.log(e.massage)
+//   })
+
+//  },[])
+  
+
+  image uploading>>>>>>>>>>>>>?>?>?>?>>?>?>??>?>?>>?>?
+   const [file,setfile] = useState(null); 
+    
+     const  fileselect = (e)=>{  
+          setfile(e.target.files[0]) //event files me storage hota hai 
+     }
+     
+     const metadate ={
+       contentType:'image/jpg'
+     }
+
+    const uploadImage=()=>{
+     firebase.storage().ref(`images/${file.name}`).put(file,metadate).then((e)=>{   //put uploadtask return krta hai jis me se snapshot bhi hota hai
+        console.log(e)                                                              //put me do argument hota hai file(jo upload krni h) and second metadata jo object hota hai
+        console.log(e.bytesTransferred/e.totalBytes *100)//es se process check krte hai
+     })
+   }
+
+
+   const uploadImage=()=>{
+     firebase.storage().ref(`images/${file.name}`)  //ref ki bad child() bhi use kr sakte hai
+     .put(file,metadate)
+     .on('state_changed',(snapshot)=>{    ///on me three callback function hote hai 1) process 2)error 3) complete
+       var proccess = Math.round(snapshot.bytesTransferred/snapshot.totalBytes * 100 );
+        setprogress(proccess)
+     },(error)=>{
+        console.log(error.message)
+     },(ee)=>{
+       console.log(ee,'complete')
+     })
+   }
+ 
+ 
+ 
+  return (
+    <div >
+      <h1>hey firebase</h1>
+      <input type='file' onChange={(e)=>fileselect(e)} />  //event yaha se aata hai 
+      <button onClick={uploadImage}>upload image</button>
+    </div>
+  );
