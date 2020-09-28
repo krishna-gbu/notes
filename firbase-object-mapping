@@ -1,0 +1,44 @@
+  const CallRequest =  () => {
+    const [ datas, setData] = useState([]);
+    const [ key, setKeys] = useState([]);
+
+ 
+   useEffect(()=>{
+
+     try {
+         firebaseall.database().ref('request').once('value').then((snapshot)=>{  
+                setKeys(Object.keys(snapshot.val()))   //extract key from object and convert in array 
+                 setData(Object.values(snapshot.val()))  //extract value from object and convert in array 
+            })
+
+      } catch(e) {
+       alert(e)
+    }
+
+     },[])
+   
+    console.log(datas)
+    // console.log(key)
+      
+    return (
+       <div>
+       
+                             {
+                                  datas.map((d , i )=>{
+                                   
+                                    return  (  
+
+                                      <h1 key={key[i]}>  {d.collage} </h1>
+
+                              
+                                    )
+                                  })
+                       
+                              } 
+                 
+            
+        </div>
+    );
+  }
+
+export default CallRequest;
