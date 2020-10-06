@@ -903,3 +903,20 @@ remove=>>>>>>>>>>>>>>>>>>?????>?>>?????????????????????????????????????????
     ex- route path='/' render={()=><Home name='fucking props'/>} 
     render(props ki liye)-->agar component me kuch change hua hai to naya dekega nhi to wahi 
     component->har bar create and show again
+
+
+
+toggle (icon change )==;=;=;===;=;=;=...=./\//\/\/////\/\/////\/\/\/\
+ const [first , setFirst]  = useState(true)
+  
+ const toggle = ()=>{
+  
+    if(first){
+
+      setFirst(false)  
+    }else{
+      setFirst(true)
+    }
+  
+ }
+ icon={first ? 'minus' : 'plus'}
