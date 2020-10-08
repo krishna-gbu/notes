@@ -920,3 +920,9 @@ toggle (icon change )==;=;=;===;=;=;=...=./\//\/\/////\/\/////\/\/\/\
   
  }
  icon={first ? 'minus' : 'plus'}
+ 
+ 
+ 
+ 
+ ====>>>>>button use with id ======>>>>>>>>?????????????????????
+                <Button className="instibuddy-bg" as={Link} to='/student/signup' id='fuck' onClick={(e)=>alert(e.target.i)} >Student Sign Up</Button>
