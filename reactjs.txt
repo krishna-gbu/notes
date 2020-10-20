@@ -926,3 +926,22 @@ toggle (icon change )==;=;=;===;=;=;=...=./\//\/\/////\/\/////\/\/\/\
  
  ====>>>>>button use with id ======>>>>>>>>?????????????????????
                 <Button className="instibuddy-bg" as={Link} to='/student/signup' id='fuck' onClick={(e)=>alert(e.target.i)} >Student Sign Up</Button>
+
+
+
+adding path express and static node and reactjs========================================
+
+const express = require('express');
+const app = express()
+const path = require('path')
+
+
+app.use(express.static(path.join(__dirname,'../','/client')))
+console.log(path.join(__dirname,'../','/client/index.html'))
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html')
+})
+
+
+app.listen('5000')
