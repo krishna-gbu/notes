@@ -950,3 +950,7 @@ console.log(path.join(__dirname,'../','/client/build'))
 
 
 app.listen('5000')
+
+
+//////firestore timestamp to date javascript ////
+  { console.log(new Date(comment.timestamp.toDate()).toLocaleString())}
