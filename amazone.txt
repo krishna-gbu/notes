@@ -1,0 +1,96 @@
+  /* //default me row hota hai */
+display: flex; 
+flex: 1;
+Gradients =>>>>>+>+>+>+.>+>+>+>>+>+>+.=.=..=.=..=.==...=.=.=.+>>>>>>>>>>>>>>.>>>>>.
+CSS gradients let you display smooth transitions between two or more specified colors.
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+Direction - Top to Bottom (this is default)
+Direction - Left to Right
+The following example shows a 
+linear gradient that starts from the left. It starts red, transitioning to yellow:
+Using Transparency===========>  
+To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba() 
+function can be a value from 0 to 1, and it defines the transparency
+of the color: 0 indicates full transparency, 1 indicates full color (no transparency).   
+example:=>linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+
+Array.fill()==========================......................>>>>>>>>>>>
+    const array1 = [1, 2, 3, 4];
+    console.log(array1.fill(5, 1));
+ // expected output: [1, 5, 5, 5]
+ console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+ [1, 2, 3].fill(4)                // [4, 4, 4]
+[1, 2, 3].fill(4, 1)             // [1, 4, 4]
+[1, 2, 3].fill(4, 1, 2)          // [1, 4, 3]
+[1, 2, 3].fill(4, 1, 1)          // [1, 2, 3]
+
+let arr = Array(1).fill({hi:'love'}) 
+     arr[0].hi = "hi" 
+    console.log(arr)
+
+
+///map without argument=======>>>>>>>>>>>>>>>>>>
+ Array(rating).fill().map((_,i)=>(
+                     <p key={i}>:star</p>
+                   ))   
+
+
+
+ stateprovider ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   /// setup data layer 
+///we need this to track the basket
+import React,{createContext , useContext ,useReducer } from 'react'
+
+export const StateContext = createContext();
+
+//build a provider
+export const StateProvider = ({reducer , initialstate, children})=>(
+    <StateContext.Provider value = {useReducer(reducer,initialstate)}>
+        {children}
+   </StateContext.Provider>
+)
+
+
+export const useStatevalue = ()=> useContext(StateContext)
+                  
+
+  reducer ======================.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     export const initialstate = {
+    basket:[],
+    user:null
+};
+
+const reducer = (state,action) =>{
+    
+    switch (action.type) {
+        case 'ADD_TO_BASKET':
+            return {
+                ...state,
+                basket:[...state.basket,action.item]
+            };
+
+        case 'REMOVE_FROM_BASKET':
+            let newBasket = [...state.basket];
+            const index = state.basket.findIndex((basketItem)=> basketItem.id === action.id) 
+            if(index >=0){
+              newBasket.splice(index,1)
+            }else{
+                alert(`not found id ${action.id}`)
+            }
+            return {
+                ...state , basket:newBasket
+            };
+
+        default:
+           return state;
+    }
+
+}
+
+Note:====>     
+          const array1 = [5, 12, 8, 130, 44];
+        const isLargeNumber = (element) => element > 13;
+        console.log(array1.findIndex((element)=>element === 44));
+        array1.splice(array1.findIndex((element)=>element === 44),1)
+        console.log(array1)
