@@ -94,3 +94,19 @@ Note:====>
         console.log(array1.findIndex((element)=>element === 44));
         array1.splice(array1.findIndex((element)=>element === 44),1)
         console.log(array1)
+ 
+ ////////////////position and display flex justify-content////
+ .nav {
+  position: fixed;
+  top: 0;
+  display: flex;  (issue ) to 
+  //////
+  .nav {
+  position: fixed;
+  top: 0;
+  width:100%
+  display: flex;
+}
+}      
+        
+        
