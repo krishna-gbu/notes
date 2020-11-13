@@ -110,3 +110,11 @@ Note:====>
 }      
         
         
+
+//////////////url search///////
+const url= "https://developer.mozilla.org/en-US/docs/Web/API/URL/search?q=123&l=love"
+const total_params = new Url(url).search  ///url() returns object  //output="q=123&l=love"
+now we search one by one params
+const paramsSearch = new URLSerachParams(total_params)
+paramsSearch.get('l') //love
+
