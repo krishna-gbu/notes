@@ -1,0 +1,114 @@
+install mongodb community server
+Note:=>1)mongodb case senstive hota hai
+       2)agar hum fetch krte samye _id
+	   se kare to jyda fast hota hai bcox _id ki pahle se indexing hote hai 
+       3)a)if mongodb server not start  (file check tool missing files)
+	      cmd:=>sfc/scannow 
+	     b)HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+		4)_id ye ObjectId hota hai(_id=ObjectId(''))   
+1)show dbs :=>show databases 
+  create databases :=> use databases(name)
+  delete databases:=> db.dropDatabase()
+  note:use create and switch databases
+2)show collections:=> show collections
+    create collections : db.createCollection('name')
+    db.collection.drop()	:delete collection db.collection(name).drop()
+    show data from collection :db.collection(name).find()	
+3)document:=>
+  	  show data from collection :db.collection(name).find()
+	  insert: db.collection(name).insertOne({name:'keyboard',price:250})
+	  find :=>
+	  //find document
+   db.fuck.find()
+		{ "_id" : ObjectId("6082cdcd9884bc6b4db2130c"), "name" : "keyboard", "price" : 240 }
+		{ "_id" : ObjectId("6082ce179884bc6b4db2130d"), "name" : "keyboard", "price" : 240, "monitor" : 909 }
+    //find document with key-value pair
+   db.fuck.find({monitor:909})
+{ "_id" : ObjectId("6082ce179884bc6b4db2130d"), "name" : "keyboard", "price" : 240, "monitor" : 909 }
+////if single document fetch
+db.collection(name).findOne()
+ db.fuck.findOne({name:'keyboard'})
+{
+        "_id" : ObjectId("6082cdcd9884bc6b4db2130c"),
+        "name" : "keyboard",
+        "price" : 240
+}
+
+////insertMany/////
+db.fuck.insertMany([{name:'mouse':price:'333'},{name:'table',price:'445'},{name:'speaker',price:666}])
+
+Note:for beautifull object use pretty()
+ db.fuck.find().pretty()
+/////// update document
+   db.collection(name).update({_id:ObjectId("")},{$set:{name:'tv'})
+////delete document  
+   db.fuck.deleteOne({_id:ObjectId("6082ce179884bc6b4db2130d")})
+
+///deleteMany
+   db.collection(name).deleteMany({_id:{$in:[ObjectId(""),ObjectId(""),ObjectId(""),]}})
+
+//$or
+  db.users.find({$or:[{name:'kr'} , {age:26} ]}).pretty()
+////// indexing  (jb query ko fast krna ho) but write time increase ho jate hai
+db.indexUsers.find({name:'user4000'}).explain('executionStats') 
+/// check query time and document scans for one query 
+
+   db.indexUsers.createIndex({name:1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+
+///check indexing in collections
+db.collection(name).getIndexs()
+
+////drop indexing
+db.collection(name).getIndexs()
+db.collection(name).dropIndex('')
+
+
+/////enable access control=>
+  ///add super admin  
+1)use admin
+2)db.createUser(
+  {
+    user: "myUserAdmin",
+    pwd: passwordPrompt(), // or cleartext password
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+  }
+)
+
+3)mongodb server restart from task manager
+4)add line in security in  <install directory>\bin\mongod.cfg  
+ security:
+    authorization: enabled
+5)mongo --port 27017  --authenticationDatabase "admin" -u "myUserAdmin" -p
+///connection mongodb and express	
+const express = require("express");
+const app = express();
+const MongoClient = require("mongodb").MongoClient;
+
+let db;
+//if auth so "mongodb://ecomeUser(user):1234(pass)@localhost:27017/ipAddress:port"
+MongoClient.connect("mongodb://localhost:27017", function (err, client) {
+  if (err) throw err;
+  db = client.db("love");
+  // console.log(db);
+});
+
+app.get("/", (req, res) => {
+  db.collection("animal")
+    .find()
+    .toArray((err, result) => {
+      if (err) throw err;
+      res.send(result);
+    });
+  // console.log(db)
+});
+app.listen(3000, () => {
+  console.log("server running");
+});
+		  
+///mongoose data modelling (data validation)	
