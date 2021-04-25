@@ -1,0 +1,174 @@
+1)node -v
+2)npm -v
+note:
+	type ki liye head likhte hai
+	res.writeHead(200,{'Content-Type':'application\json'})
+    res.write('ye hamesa string leta hai') to res.write(JSON.stringify(data))	
+	node sare html code nhi samjhta hai to use ko batana padta hai
+	res.writeHead(200,{'Content-Type':'text/html'})
+///read html file 
+const http = require("http");
+const fs = require("fs");
+http
+  .createServer((req, res) => {
+    fs.readFile("demo.html", (err, data) => {
+      res.writeHead(200, { "Content-type": "text/html" });
+      res.write(data);
+      res.end();
+    });
+  })
+  .listen(3000);	
+  
+//events
+const events = require("events");
+const eventEmmiter = new events.EventEmitter();
+
+eventEmmiter.on("fuck", (a) => {
+  console.log(a);
+});
+
+eventEmmiter.emit("fuck", "girl is fucking now");
+
+///express  js 
+///express ///
+Note:=>1)api me res.json() api me json data send krte hai
+const express = require("express"); ///return the function 
+const app = express();//call the function
+app.listen(3000, () => {
+  console.log("server running");
+});
+Note:1) Cannot GET / (means hum ne / (home) page add nhi kiya hai)
+//sendfile
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname + "/index.html"));
+});
+///static middle ware
+app.use(express.static("public"));  //es me static foler ya file use krte hai
+  <a href="/"> home page </a>
+  <a href="/about.html"> about page </a>
+///ejs engine
+app.set('view engine','ejs') //ye key - pair me hota hai
+app.get('view engine') //ejs
+views folder ki under sare html file hota hai 
+ ///render 
+    res.render() //tb hota hai jb views folder ki file ko send krna hota hai
+	render me 3 argument hota hai
+	res.render('html.ejs',objec(jo data send krna ho object me send kr do),
+	callback)
+Note:> in html file <%= object(key) %>
+////repeat file (like header and footer)
+1)create folder and put in 
+2)aur file ja ki include kr lo (<%- include('path') %>	-(jo render krna aur skip nhi krna ot dash use krte hai) 
+3)add bootstrap in header.ejs
+
+/////////////router///////////
+1)create routes foler 
+2)route file.js (export)
+3)import (in server.js)
+app.use(router)
+///////middle ware ////
+ ye client request  and response ki beech me hota hai
+
+note:=>1)middleware route and response ki beech me hota hai 
+		  exp:=>route.get/post/etc('/',middleware,(req,res)=>{}) aise hi use hota hai middleware
+		  request and response ki beech me
+	  2)middleware me next() jarur call hona chahiye nhi to req crash ho jayege
+	  
+      3)localhost:3000/home/product?apikey=123    (apikey=123 ye query hote hai ? se)
+	     use query :=>(req.query)
+	  4) route.post/get/etc('/',(req,res,next)=>{}) //es route me bhi next milta hai hum ko 	 
+	  5) multiple middleware use krna hai to array me [middleware1,middleware2]
+          exp:=>	 router.get("/api/product", [apiKeyMiddleware,auth,...], (req, res) => {
+			  res.json([
+				{
+				  id: 1234,
+				  name: "chrome",
+				}
+			  ]);
+			});  
+     ////request level middleware /// 
+	 router.get("/api/product", apiKeyMiddleware, (req, res) => {
+			  res.json([
+				{
+				  id: 1234,
+				  name: "chrome",
+				},
+				{
+				  id: 12345,
+				  name: "firefox",
+				},
+			  ]);
+			});
+  ///// route level middleware ///
+	 const router = require("express").Router();
+	 route.use(middleware)
+	 router.get/post/etc("/", (req, res) => {
+	  res.render("index", {
+		title: "home page",
+	  });
+	});
+
+///// global level middleware ////
+app.use(middleware)	  /ye pure app ki liye hai
+
+Note :=>1)react use form cdn link
+        2)    fetch("/api/products").then((res) =>
+				  res.json().then((data) => {  //json ka bhi  promises hota hai
+					console.log(data);
+				  })
+		3)express do not support json data so
+           app.use(express.json())	
+        4)app.use(express.urlencoded({extended:false}))	 //normal data 
+       	  send and recive ki liye hota hai (bina json ki)	
+		5) req.params => /api/product/:id(req.params.id)
+
+///error handling///
+error handling
+app.use((req, res, next) => {
+  return res.json({ status: "page not found" });
+});	
+Note:=>jb response send kr dete hai to hum ko next() ki jarurat nhi hote hai
+
+Note:=> app.use(err,req,res,next){} //etna argument leta hai ye erro handling
+        middleware
+
+
+			
+		
+/////class///////////
+ek special category ko class kahte hai
+exp: mobile (category ) es me 1) samsung,2)nokia etc..
+ two way to class used
+1)class declaration
+2)class expression
+ 
+ 1)class declaration =>
+ class class_name {
+ 
+    constructor (){
+	  properties/method
+	}
+	
+	methods
+ }
+	
+exp:=>   class Mobile {
+               constructor(){ // sepecial method to objec initial krta hai pr ek class me ek contractor hota hai
+			       this.model = 'galaxy'
+			   }
+			    
+			    show(){
+				  return { this.model + "price 3000"}
+				}	
+			   
+			  }
+          var nokia  = new Mobile();			  
+2) class expression:=>
+     		exp:=> var mobile = function(model_no,sprices){
+                      this.model  = model_no;
+					  this.color = 'white'
+					  this.sellingprice = function(){
+					  return (this.price + this.sp)
+					  }
+					}			
+		         var samsung = new mobile()
