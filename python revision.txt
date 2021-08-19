@@ -1,0 +1,568 @@
+varible =>
+	student='bob'
+	student
+data type :=>	
+    int , flaot , boolean,string,complex
+	eg. 
+	  1) a =4
+		 a
+		type(a)
+	  2) a =434.343
+		a
+		type(a)	
+	 3)
+	   a ='love'
+		a
+		type(a)
+	 4) 
+	   a = 4+5j
+		a
+		type(a)
+	 5) 
+        a = True
+		a
+		type(a)	
+comment:=>	#
+operator=> 
+arithmatic operator =>>>>>>>>
+eg.
+a=23
+b=2
+a*b
+relational operator;=>
+a>b
+True
+==b
+a==b
+False
+​
+a<b
+False
+  
+logical opration:=>
+& ,|
+eg.
+a>b
+True
+==b
+a==b
+False
+​
+a<b
+False
+	Token:========>>>>>>
+	smallest meaningfull component in programm call token
+	1)keywords
+	2)identifiers
+	3)literals
+	4)operators
+keywords:=>	reserved words
+False , True,class,Finally,ls , Return,None,continue,For,Lambda,Try,True,def,From
+,Nonlocal,While,and,del,Global,Not,With,as elif,if
+Or,Yield
+identifiers:============>>>>>>>>>>>
+ name of varible ,functions and object
+1)no special character expect _(underscore)	
+2)identifiers are case sensitive
+3)first letter cannot be a digit
+eg.
+ 1)_love='fj'
+    _love (error)
+2)
+Studnet='lfu'
+student='df'
+Studnet
+student
+literals:=>
+         constant (no value change) value of varible
+eg.
+a='fuck'(literals)
+python String:=====>>>>>>>>>>
+eg.
+str1='this is string'
+str2="this is second string"		
+str3='''thu 
+love
+ot 
+oyto
+'''
+eg.
+str1 = 'my name is krishna'
+print(str1[8:18])(last index value exclude krta hai)
+ string functions:=>>>>>
+ 1) len() length of string(include spaces)
+ 2) lower() convert of lower string
+ 3) upper() convert of upper string
+ eg.
+ str1 = 'my name is krishna'
+print(str1.upper().lower())
+print(len(str1.upper().lower()))
+
+replace():++++>>>>
+str1 = 'my name is krishna'
+print(str1.replace('m', 'y'))
+count():====>
+str1 = 'my name name name name name is krishna krishna krishna krishna krishna krishna'
+print(str1.count('name'))
+
+find():===>
+  find string index
+eg. 
+ str1 = 'my name name name name name is krishna krishna krishna krishna krishna krishna'
+print(str1.find('name'))
+split():=>
+ split string and return array 
+eg.
+str1 = 'my name name name name name is krishna krishna krishna krishna krishna krishna'
+print(str1.split(' '))
+
+data structure ::::===========>>>>>>>>>>>>>
+1)tuple
+2)list
+3)dictionary
+4)set
+tuple:==========>>>>
+  1)hetrogenius value 
+  2)immutable 
+  3)orderd
+eg.
+tup1 = (1, True, 2, 3.34)
+print(type(tup1))  
+get data:=>>
+eg.
+tup1 = (1, True, 2, 3.34)
+print(tup1[2])
+tup1 = (1, True, 2, 3.34)
+print((tup1[1:4]))
+	len()=>length
+	concat:=>tuple1+tuple2
+eg.
+tup1 = (1, True, 2, 3.34)
+tup2 = (2, False, 2, 5.34)
+print(len(tup1))
+print(tup1+tup2)
+ repeat:=>>
+ tuple*no
+eg.
+print(tup1*3)
+
+min():===>>>
+max():====>>>>
+print(min(tup1))
+print(max(tup1))
+
+
+list:::=>>>>>>>>>>>>>
+1)mutable
+2)[]
+3)hetrogenius value
+eg
+l=[1,'fuck',True,3.444]
+print(l)
+get data:=>
+l=[1,'fuck',True,3.444]
+print(l[1:3])
+modifiying list:===>>
+eg.
+l=[1,'fuck',True,3.444]
+l[1]=True
+print(l)
+pop():====> remove last element
+l=[1,'fuck',True,3.444]
+l[1]=True
+print(l.pop())
+append():====>
+l=[1,'fuck',True,3.444]
+l.append('fuck')
+print(l)
+reverse():===>
+eg.
+l2 = ['c', 'a', 'f', 'd']
+l2.reverse()
+print(l2)
+sort():==> string
+eg.
+l2 = ['c', 'a', 'f', 'd']
+l2.sort()
+print(l2)
+insert():===>
+eg.
+l1=[1,5,2,3.444]
+l1.insert(2,'fuck')
+print(l1)
+concat:===>
+list1+list2
+repeat:==>
+list1*3
+eg.
+l1 = [1, 5, 2, 3.444]
+l2 = ['c', 'a', 'f', 'd']
+print(l2*3+l1)
+dictionary:===>
+1)unorderd and key-pair value
+2)mutable
+3){}
+eg.
+d1={'apple':50,'ban':12}
+print(d1)
+get value:=>
+eg.
+d1={'apple':50,'ban':12}
+print(d1.keys())
+d1={'apple':50,'ban':12}
+print(d1.values())
+add element:==>>
+d1={'apple':50,'ban':12}
+d1['mango']=230
+print(d1)
+change value:==>
+d1={'apple':50,'ban':12}
+d1['apple']=230
+print(d1)
+update():==>
+d1.update(d2)
+pop:==>
+d1.pop()
+d1={'apple':50,'ban':12}
+d1.pop('ban')
+print(d1)
+
+set:====>
+1)unorderd and unindexed collection
+2)duplicate not allowed
+3){}
+4)mutable
+eg.
+s1={1,2,3,True,3.3}
+print(s1)
+eg.
+s1 = {1, 2, 3, 3, 3.3}
+print(s1)
+
+s1 = {1, 2, 3, 3, 3.3}
+s1.add('fuck')
+print(s1)
+
+s1 = {1, 2, 3, 3, 3.3}
+s1.remove(2)
+print(s1)
+ multiple add element:==>>>
+s1 = {1, 2, 3, 3, 3.3}
+s1.update([2,6,9,0])
+print(s1)
+
+union()=>>>
+eg.
+s1 = {1, 2, 3, 3, 3.3}
+s2 = {1, 2, 3.3}
+
+print(s1.union(s2))
+
+intersection():===>>
+s1 = {1, 2, 3, 3, 3.3}
+s2 = {1, 2, 3.3}
+print(s1.intersection(s2))
+
+if statement:======>>
+
+a=10;
+b=20
+if a<b:
+    print(a,b,'false')
+	
+else:==>
+
+a=10;
+b=20
+if a>b:
+    print(a,b,'false')
+else:
+    print('true')
+
+elif:::=======>
+a=10
+b=20
+c=30
+
+if a>b & a>c:
+    print('a')
+elif b>a & b>c:
+     print('b')
+else:
+  print('c')	
+	
+eg.
+t1 = ('a','b','z')
+if 'a' in t1:
+    print('a available')
+else:
+    print('not present')
+	
+eg.
+li1 = ['a','b','z']
+if 'a' in li1:
+    li1[li1.index('a')]='fuck'
+    print('a available',li1)
+else:
+    print('not present')	
+eg.
+d1={'f':12,'fo':1}
+if d1['f']==12:
+    print('fuck')	
+
+looping:::=====>>>>>>>>>>>>>
+while:====>
+while condition:
+        excute
+eg.
+i=1
+while  i<=10:
+    print('fucking')
+    i=i+1		
+for::::===================>>>>>>>>
+looping on iterate over a sequence(tuple,list,dictionary)
+eg.
+l1=['mang','o','l']
+for i in l1:
+    print(i)
+some proble:==>>>>>>
+for i in range(0,5):
+      for j in range(0,1+i):
+          print('*' ,end=' ')
+      print('\r')
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+note:print('\r') new line	
+
+eg.
+a=1
+for i in range(0,5):
+      for j in range(0,1+i):
+          print(a ,end=' ')
+          a=a+1
+      print('\r')
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+functions:=======>>>>>
+   block of code which perform task
+   
+   def funtionName():
+eg.
+def hello():
+    print('fuck you')
+
+hello()
+
+argument:==>
+def add_fun(a):
+    return print(a+20);
+add_fun(12)
+
+lambda functions:==>
+g=lambda x:x*x
+
+print(g(4))
+
+ filter and lambda:=>
+   l1=[1,2,3,5]
+	even=list(filter(lambda x:(x%2==0),l1))
+	print(even)
+
+  lambda with map:==>
+  l1=[1,2,3,5]
+	squ=list(map(lambda x:x^2,l1))
+	print(squ)
+
+lambda with reduce()::=>
+from functools import reduce
+l1 = [1, 2, 3, 5]
+su = reduce(lambda x, y: x + y, l1)
+print(su)
+	
+	
+	oops:============>>>>
+every thing is object 
+class:=> user define data type:
+ eg. template/blue print
+     mobile:
+  1)properties:=>color,cost,weight
+  2)behavior:==> make call,with vidoe , task 
+ Note:properties + behavior => class
+ eg.attribut and method
+ 
+object:=> object is specific instanace of a class
+
+create class:=>
+1) class Phone :
+         def make_call(self):
+             print('calling')
+         def play_game(self):
+             print('game playing')
+2)p1=phone() // creating object
+3)p1.make_call()  //invoking methods throough object
+Note:1)class name capital
+     2)method in class first argument is self 		
+	 
+eg.
+class Phone:
+    def make_call(self):
+        print('calling ....')
+    def play_game(self):
+        print('game playing')
+p1=Phone()
+p1.make_call()
+p1.play_game()
+
+argument in class:=>
+eg.
+class Phone:
+    def set_color(self,color):
+        self.color = color
+    def set_cost(self,cost):
+        self.cost = cost
+    def show_color(self):
+       return self.color
+    def show_cost(self):
+       return self.cost
+    def make_call(self):
+        print('calling ....')
+    def play_game(self):
+        print('game playing')
+		
+p1=Phone()
+p1.set_color('red')
+p1.set_cost(10000)
+print(p1.show_color())
+print(p1.show_cost())
+
+eg.
+class FString:
+     def printName(self,name):
+         if(len(name)>5):
+             self.name = name
+             return  print(name)
+         else:
+            return  print('fuck u')
+     def printAge(self,age):
+         if age > 30:
+             self.age = age
+             return  print(age)
+         else:
+             return  print('u r less than 30 year')
+
+p3=FString()
+p3.printName('krish')
+p3.printAge(31)
+
+constructor:::=>>>>>>>>>>
+eg.
+class Employ:
+    def __init__(self,name,age,salary,gender):
+	      self.name = name
+	      self.age = age
+	      self.salary = salary
+	      self.gender = gender
+	def employ_detail(self):
+          print("name of emply",self.name)	
+          print("age of emply",self.age)	
+          print("salary of emply",self.salary)	
+          print("gender of emply",self.gender)	
+	     
+p5=Employ('krishna',24,60000,male)
+p5.employ_detail()
+
+inheritance :===>
+ parent to children properties
+   1)single inheritance
+   2)multiple inheritance
+   3) multi-level inheritance
+   
+  1)single inheritance:======>
+eg.
+class Vehical:
+     def __init__(self,milage,cost):
+         self.milage=milage
+         self.cost = cost
+     def show_details(self):
+         print('i am vehical')
+         print('millage',self.milage)
+         print('cost',self.cost)
+
+v1 = Vehical(50,50000)
+v1.show_details()
+
+class Car(Vehical):
+
+    def show_car(self):
+        print('i am car')
+c1=Car(500,50000)
+c1.show_car()		 
+
+parent and children contractor:==>>>>
+eg.
+
+class Vehical:
+     def __init__(self,milage,cost):
+         self.milage=milage
+         self.cost = cost
+     def show_details(self):
+         print('i am vehical')
+         print('millage',self.milage)
+         print('cost',self.cost)
+v1 = Vehical(50,50000)
+v1.show_details()
+class Car(Vehical):
+    def __init__(self,milage,price,cost):
+        super().__init__(milage,price)
+        self.cost=cost
+    def show_car(self):
+        print('i am car',self.cost)
+c1=Car(500,50000,3000000000)
+c1.show_details()
+c1.show_car()
+Note:agar parent dono me constractor hai to parent ko children ki constructor me pass krna hoga 'super().__init__(arguments)'
+
+2) multiple inheritance:===>
+  more than one parent
+ eg.
+ class Parent1:
+    def parent_string1(self,string):
+        return  print('parent one',string)
+class Parent2:
+    def parent_string2(self,string):
+        return  print('parent two',string)
+class Child(Parent1,Parent2):
+    def child_strint(self,string):
+        return  print('children',string)
+
+c=Child()
+c.parent_string1('parent')
+c.parent_string2('parent')
+c.child_strint('parent') 
+
+3)multi-level inheritance:==>>
+ parent to child to grand child
+eg.
+class Parent:
+     def show_details(self,cost):
+         self.cost = cost
+         print('i am parent',self.cost)
+class Child(Parent):
+    def show_car(self,cost):
+        self.cost=cost
+        print('i am child',self.cost)
+class Grandchild(Child):
+    def show(self,cost):
+        self.cost = cost
+        print('i am grandchild',self.cost)
+
+c=Grandchild()
+c.show_details(5000)
+c.show_car(5000)
+c.show(5000)
