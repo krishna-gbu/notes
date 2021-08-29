@@ -350,7 +350,7 @@ i)docker exec -it yourcontainer bash
 ii)apt update 
 iii) apt install iputils-ping
 iv)pint ipaddress
-10)  
+host network:===>>>>>>>> 
 
 	
  
