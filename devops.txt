@@ -1,0 +1,370 @@
+devops:===>>>>>>>>>>>>>
+step:
+1)continuous development
+2)continuous testing
+3)continuous integration
+4)continuous deployment
+5)continuous monitoring
+
+agile:===>>>>>> team working fast and efficiently
+devops tools:=>>
+1)continuous development:====>>>>>>>
+   git , mercurial , azure repository
+2)building tools:====>>>
+  ant ,maven ,gradle,msbuild
+3)database management tools:========>>>>>>>>>>>
+  mysql,mariadb,liquidbase
+4)continuous testing:=========>>>>>>>>>
+  sonarqube,selenium,pytest,katalon
+5)continuous integration:======>>>>>>>>>>>
+  jenkins,circleCi,gitlab,bamboo,teamcity
+6)continuous deployment:===>>> 
+  xL deploy juju,octopus deploy
+7)cofiguration management:========>>>>>>>>
+  puppet , ansible,chef,salt stack
+8)docker ,kubernet,nomad,apache meso ,eks,ecs
+9)arfact repositories:===>>>>>>>>
+ jfrog artifactor ,npm sontype nexus
+10)cloud services :======>>>>>
+   aws,azure,gcp ,openshif,cloud foundry ,digital opcean
+11)continuous monitoring:====>>>>>>>>>>>
+    elk ,prometheus ,grafana, splunk,nagios,google analytics
+12)scripting:==>>>>>>>>
+  python , powershell ,perl,java,.net
+
+devops engineer know:==>>>>>>>
+knowledge of linux,window os
+database 
+server tech
+orchestration
+cloud tech
+source control
+continuous integration & continuous deployment
+automation
+scripting
+networking
+excellent communication
+
+version control:=======>>>>>>>>>>
+i)control our code like old to new code(git)
+ii)security
+iii)fast delivery
+iv)availability
+eg. git , azure,mercurial
+git==========>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1) open source version control system,keep track of all the changes of source code
+2)code store on github and more other 
+3)log of commit code
+
+lifecycle of the code in git::::==>>>>>>>>>>
+working dir > initialization > staging(changing code) > local storage(commit) > push(github) 
+
+eg.
+f.html(E:) > git init> git add .(staging)> git commit -m "comment" (local storage)> git remote add origin https://github.com/Krishnao1/devops-testing.git >
+git push origin master > git status
+
+
+git command:=>>>>>> 
+1)git config --global user.name 'krishnao1'
+2)git config --global user.email 'krishnaqw4141@gmail.com'
+3)git config --list
+4)git ~/.gitconfig (vi editor)
+5)git clone :==>> jb hum clone krte hai to push krne li liye git remote origin ki jarurt nhi hote hai hum direct push kr dete hai(git push origin master)
+5) git pull origin master(branch name) // ye command clone ki bad use hoge
+6) git branch
+
+
+branchs:============>>>>>>>>
+     hum apne code ko alag-alag branches me likh skte hai and then join main branch
+check branch list:====>
+  1)git branch
+  2)git branch -a(all)
+creat branch :==>
+  git branch fuck(name)
+switch branch:=>  
+git checkout fuck
+ aur aap ka code new branch pr copy ho jata hai
+ 1)write some code 
+ 2)git add .
+ 3)git commit -m"some comment"
+ 4)check code(file) list , only show current branch codes if you show other branch code than switch branch and check
+
+delete branch:===>>>>>
+ git branch -d feature-2
+ 
+rename branch:===>>>>>
+go to branch than 
+git branch -m feture 
+
+create branch and switch:=>>>>>>
+git checkout -b fuck2
+
+merging:=========>>>>>>>>>>>>>>>>>>
+Note: pr es me commit merge nhi hota hai.
+ many branch to master branch(default)
+ Note:jb koi conflit hota hai tb merge commit hota  hai
+ 1)git branch
+ 2)git log (check commit history) exit:q
+ 3)git checkout master (jaha merge krna ho)
+ 4)git merge fuck(branch name)
+ 5)add a file in master branch
+    i)git add .
+   ii)git commit -m" add file"
+ 6)git log, now point to master branch only 
+
+merge conflit:===>>>>>>>>>>
+same file pr kam kiya hai tb aata hai
+branch fuck
+ 1)nano index.html // add some thing
+ 2)git add . 
+ 3)git commit -m 'fuck adding on index.html'
+ 4)go to master branch and merge //done 
+branch fuck2
+ 1)nano index.html // some adding on index.html
+ 2)git add . 
+ 3) git commit -m'fuck2 adding somthing on  index'
+ 4)go to master branch and merge // conflict error  
+ 
+solve:==>
+solve with manual
+git mergetool -t vimdiff
+vim:=>:q quit,w save ,:qw save and quit
+
+rebasing:===>>>>>>>>>
+  ye bhi merge ki tarah hi hai but es me merge ki 
+  sath commit bhi copy hota hai master branch me
+1)git branch
+2)git checkout fuck
+3)nano home.txt //some changing in file
+4)git checkout master 
+5)git rebase fuck  
+
+
+git workflow:===>>>>>>>>>>>
+1)mkdir gitworkflow
+2)nano fuc.py
+3)git init
+4)git add .
+5)git commit -m'py'
+6)git checkout -b develop 
+   i)git branch feature-1
+  ii)git branch feature-2
+7)git checkout feature-1 
+8) nano feature-1 /add some code
+9)go to feature-2 and some code 
+10)check all code if correct //otherwise check 
+11)git branch release
+12)git checkout master
+13)git merge release
+if error featuer-2
+14)git branch hotfix
+15)git checkout hotfix
+16)nano featuer-2  and fix this
+17)git checkout master
+18)git merge hotfix
+19)git log --graph --oneline --pretty (pretty good)
+ 
+
+microsystem & containerization:=========>>>>>>>>> 
+code + lib => container => sever
+vm vs container:==>>>>>>>>>
+docker:==>>>>
+1)simple
+2)fast
+3)easy collaboration
+4)build for developers , by developer 
+5)docker community
+installation:====>>>>>>>>>>>>
+awa :=> ec2 to lunch vm
+install putty : 
+1)genrate key from aws to convert ppk
+2)ip copy past from aws to putty 
+3)connect option > browse ppk key  
+4)apt update
+5)sudo apt install docker.io
+
+docker envierment:======>>>>>>>>>>>>>
+1)docker enigne:====>>>>>>
+  create and management of all docker processes
+   i) docker cli (ii) docker api (iii) docker daemon
+   
+2)docker object:===>>>
+  i)docker image (ii) docker container (iii) docker volumes (iv) docker networks
+i)docker image:==>>>
+   all imformation in images
+3)docker registry
+4)docker compose
+5)docker swarm
+docker command:==>>>>>>>>>>
+1)docker pull ubuntu(os name)
+2)docker images (check imges in docker)
+3)docker run -it -d ubuntu (-d background runing,-it intractive) (run docker image)
+4)docker ps (docker image process) 
+5)docker run -it -d --name fuck ubuntu
+6)docker run -it -d --name fuck -p 80:80 ubuntu  (80:80 hostpublicport:imagepublicport, image with port)
+7)docker exec -it image-name bash (inter image bash mod )
+8)exit (exit from imges)
+9)docker stop imageid
+10)docker start imageid
+11)docker kill imageid
+12)docker restart imageid
+13)docker rm -f imageid
+14)docker commit imageid custom-image (save docker image)
+
+docker volumes:=====>>>>>>>>>>>>>>>>>>
+ persistance storage
+ like pendrive storage to connect many container one by one 
+
+docker driver:===>>>>>>>>>>>>>>>>>>>>>>>>>>>
+allow to manage images and container and store data
+
+
+docker network:====>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+connection b/w containers
+docker registry:===>>>>>>>>>>>>>>>>>
+docker images storage
+eg. dockerhub,azure,ecr(aws)
+docker account create:=>
+Note: jis image ko tag krna hai usko commit kro pahle
+1)docker tag image  username/new-name
+2)docker images
+3)docker rmi image-name
+4)docker pull krish00/nginx-ubuntu
+5)docker run -it -d --name nginx -p 80:80 krish00/nginx-ubuntu
+6)docker exec -it nginx bash
+7)service nginx start
+
+docker compass:===>>>>>>>>>>>>>>>>>
+help in multiple container run
+docker swarm:====>>>>>>>>>>>>
+management of multiple container
+
+docker architecture:====>>>>>>>>>>>>
+docker cli se reqest jante hai docker daemon(docker host) ki pass phir docker registry se docker daemon ki pass phir docker cli ki pass
+
+docker file:===>>>>>>>>>>>>>>>>>>>>>>>>
+file is basically script that you can write aur build kr skte hai into image and image can run and create a container . like shell script
+SYNTAX: 
+1)FROM <base image> 
+2)ADD <source><destination> //url or local 
+3)COPY<source><destination> // local file
+4)RUN<command> //create container
+5)WORKDIR<directory>
+6)CMD<command>
+7)VOLUME<path>
+8)EXPOSE<port> //local system
+9)ENTRYPOINT<command> <parmetre1..3>
+10)LABEL<key>=<value>
+
+eg.
+1)mkdir project
+2)nano main.py 
+   print('fuck u')
+3)nano dockerfile //prefix docker  
+4)FROM ubuntu:latest
+5)WORKDIR /app
+6)ADD . /app
+7)RUN apt update && apt install python -y 
+8)CMD python/app/main.py
+9)LABEL color=red
+   save and exit form dockerfile
+10)docker build -t add-image-name .
+
+docker storage:===>>>>>>>>>>>>>>>>>>>>>
+1)persistance 
+2)transfer data easily
+3)increase container performance
+storage type:==>>>>>>>>>>>>
+1)volumes
+2)bind mount
+3)tmpfs mount
+volumes:=======>>>>>>>>>>>>>>>>>>>
+  ye humare host system ka storage use krta hai
+  pr es ko docker completly manage krta hai
+bind mount:====>>>>>>>>>>>
+es storage ko docker completly manage nhi krta hai hum us ko host system se bhi manage kr skte hai
+tmpfs:====>>>>>>>>>>>>>>>>>>>>>>>>
+es storage ki life container jetni hote hai , ye memory me storage hota hai
+
+command:=>>>>
+1)docker volume create name
+2)docker volume ls
+3)docker volume inspect batman
+4)docker volume rm name
+5)docker volume prune ///all volumes remove
+6) add volume to imgae
+  docker run -it -d --name justileauge --mount 
+  source=batman,target=/app ubuntu
+7) for check volume and image 
+    docker container inspect justileauge(image name) 
+8)other method
+docker run -it -d --name avenger --volume ironman:/app(source:destination) ubuntu	
+9) inspect volume and image
+  docker container inspect avenger
+10)read only volume 
+ docker run -it -d --name avenger2 --volume spider:/app,readonly ubuntu
+11) docker container inspect avenger2
+bind mount:========>>>>>>>>>>>>>>>>>>
+this storage use host machine storage 
+1)docker run -itd --name avenger3 --mount type=bind,source=/home/ubuntu/project,source=/app ubuntu
+2)docker container inspect avenger3
+3) read only
+	docker run -itd --name avenger4 --mount type=bind,source=/home/ubuntu,target=/app,readonly ubuntu
+Tmpfs Mount:====>>>>>>>>>>>>>>>>>>>>>>>>
+ye host ke memory(ram) use krta hai
+1)docker run -itd --name avenger5 --mount type=tmpfs,destination=/app ubuntu
+2)check 
+  docker container inspect avenger5
+ 
+docker network:====>>>>>>>>>>>>>>>>>>>  
+connection b/w containers  and also connect to software
+type of network:==>>>>>
+1)bridge network:=>default network
+2)host network:=> ye container ke host ki ip and name space use krta hai 
+3)overlay:=> connection b/w images . container to container connection 
+4)macvlan:=>container ko provide krta hai mac address  with name 
+ software se connection ki liye (for physical connection)
+5)None:=>network disable of containers
+
+bridge Network:==>>>>>>>>>>
+connection b/w containers and also create a layer of isolation b/w container jo ki connected hai bridge network se 
+1)create bridge 
+ docker create network --driver bridge barbie
+2)remove network
+ docker network rm imagaid/imagename
+3)container connect to network
+ i)docker network create --driver bridge batman
+ii)docker run -itd --network batman --name brige-buntu -p 80:80 ubuntu
+4)two container connect throught bridge network
+	i)docker run -itd nginx
+	ii)docker network connect batman hungry_borg
+5)disconnect network
+ 	docker network disconnect batman hungry_borg
+6)docker container inspect hungry_borg
+7) network inspect
+docker network inspect batman
+8)connect one more container
+docker run -itd --network batman --name yourcontainer ubuntu 
+9)go to container 
+i)docker exec -it yourcontainer bash
+ii)apt update 
+iii) apt install iputils-ping
+iv)pint ipaddress
+10)  
+
+	
+ 
+
+
+
+
+ 
+
+  
+
+
+
+
+
+
+  
