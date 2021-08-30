@@ -351,6 +351,60 @@ ii)apt update
 iii) apt install iputils-ping
 iv)pint ipaddress
 host network:===>>>>>>>> 
+container host machine ka ip use krta hai aur namespace bhi
+1)docker run -itd --newtwork host --name hostBuntu ubuntu
+2) check by  network
+   docker network inspect host 
+3) check by container
+docker container inspect hostBuntu 
+
+Overlay Network:====>>>>>>>>>>>>>>>>>>>>>>
+hum ko es ki jarurt tb hai jb container ko connect krna ho aur wo diffrent docker host pr hai aur dono host docker swarm ki under ho
+Note: create swarm network 
+1)docker swarm init
+2)docker network create --driver overlay flash-net
+3) hum log yaha pr yourservice me ubuntu ki do replicas use kr rahe hai jo ki overlay network se hai
+-docker service create --name yourservice --network flash-net --replicas 2 ubuntu
+4)docker service create --name yourservice --network flash-net --replicas 2 httpd
+5)docker network inspect flash-net
+
+None network:====>>>>>>>>>>>>>>>>>>
+ jb hum container run  krte hai to us ka network none kr dete hai / matlab netwrok disable
+1)docker run -itd --network none --name buntu-none httpd
+2)docker container inspect buntu-none
+docker compose:==>>>>>>>>>>
+ multiple container run at a time
+ Note: write a docker file jo hame chahiye wo sb likhte hai pr ye bahut bade server ki liye nhi hai 
+ like 100 server
+ -ye ek service hai jo ki downlaod krna padta hai
+ 1) compass install 
+   https://docs.docker.com/compose/install/
+ i) sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ii) sudo chmod +x /usr/local/bin/docker-compose
+iii)docker-compose --version
+2)mkdir compose && cd compass
+3)create network , service ,images,etc but intend must necessary
+version: "3.0"
+networks:
+    batman:
+      driver: bridge
+services:
+  web:
+    image: "nginx:latest"
+    ports:
+      - "5000:5000"
+    networks:
+      - batman
+  database:
+    image: "mysql"
+    networks:
+      - batman
+
+  
+ 
+
+
+
 
 	
  
