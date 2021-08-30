@@ -399,7 +399,12 @@ services:
     image: "mysql"
     networks:
       - batman
-
+4) compose down 
+ i)go to folder 
+ ii) docker-compose down
+hwo to host wordpress site:=>>>>>>>>>>>>>>>
+ 
+ 
   
  
 
