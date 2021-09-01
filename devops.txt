@@ -229,7 +229,7 @@ Note: jis image ko tag krna hai usko commit kro pahle
 1)docker tag image  username/new-name
 2)docker images
 3)docker rmi image-name
-4)docker pull krish00/nginx-ubuntu
+4)docker push krish00/nginx-ubuntu
 5)docker run -it -d --name nginx -p 80:80 krish00/nginx-ubuntu
 6)docker exec -it nginx bash
 7)service nginx start
@@ -464,8 +464,8 @@ docker swarm components:==>
 2)task:=>kon sa container kon sa  images
 3)node:=> server/client
 4)load balancing
-command:=>
-1)instance jo ko manager hai 
+command:=>>>>>>>>>>>>>>>>
+1)instance jo ki manager hai 
 i)apt update && apt install docker.io
 2) ji bhi instance ko manager node bana ho 
 docker swarm init --advertise-addr 18.117.232.143(publicIp)
@@ -484,7 +484,7 @@ i) docker node ls
 ki worker node ko add kr ske to
 i)docker swarm join-token worker
 ii)docker info
-7)swarm me manager add krne ki liye pr 7 tk hi
+7)swarm me manager 7 add kr skte hai pr mt  krna 
 docker swarm join-token manager
 8)docker swarm leave
 9)phir se add kr to wahi uper wali key
@@ -495,7 +495,7 @@ ii)docker swarm leave --force
 i)docker service create --name ourservices --replicas 
  3 -p 80:80 httpd
 Note:jo service hum run krte hai manger node pr wo sb ko divide kr deta hai worker me
-but hum chahe to sare service/task ko worker pr dal skte hai
+but hum chahe to sare service/task ko worker pr dal skte hai 
 12) check servie running ?
 docker service ls
 13) check service form manger
@@ -522,8 +522,8 @@ i)docker node rm nodeId
 4)drain ka use availability ki liye hota hai 
   agar hum chahte hai ki manage pr koi service na chale to us ko drain kr do 
   maintain ki liye bhi use krte hai
-  i)docker node update --availability drain nodeId
-5) add  network to service 
+ i)docker node update --availability drain nodeId
+5)add  network to service 
 docker service update --network-add batman ourstack_db
 6) add volume to service
 docker service update --mount-add type=volume,target=batman,destination=/app ourstack_db
