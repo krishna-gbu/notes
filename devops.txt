@@ -100,8 +100,8 @@ create branch and switch:=>>>>>>
 git checkout -b fuck2
 
 merging:=========>>>>>>>>>>>>>>>>>>
-Note: pr es me commit merge nhi hota hai.
- many branch to master branch(default)
+Note: es me commit merge nhi hota hai.
+  master branch(default)
  Note:jb koi conflit hota hai tb merge commit hota  hai
  1)git branch
  2)git log (check commit history) exit:q
@@ -118,12 +118,12 @@ branch fuck
  1)nano index.html // add some thing
  2)git add . 
  3)git commit -m 'fuck adding on index.html'
- 4)go to master branch and merge //done 
+ 4)go to master branch and merge it //done 
 branch fuck2
  1)nano index.html // some adding on index.html
  2)git add . 
  3) git commit -m'fuck2 adding somthing on  index'
- 4)go to master branch and merge // conflict error  
+ 4)go to master branch and merge it // conflict error  
  
 solve:==>
 solve with manual
@@ -191,39 +191,39 @@ docker envierment:======>>>>>>>>>>>>>
 2)docker object:===>>>
   i)docker image (ii) docker container (iii) docker volumes (iv) docker networks
 i)docker image:==>>>
-   all imformation in images
+   all information in images
 3)docker registry
 4)docker compose
 5)docker swarm
 docker command:==>>>>>>>>>>
 1)docker pull ubuntu(os name)
-2)docker images (check imges in docker)
+2)docker images (check imges in docker jo hum se pull kiya hai)
 3)docker run -it -d ubuntu (-d background runing,-it intractive) (run docker image)
 4)docker ps (docker image process) 
 5)docker run -it -d --name fuck ubuntu
 6)docker run -it -d --name fuck -p 80:80 ubuntu  (80:80 hostpublicport:imagepublicport, image with port)
-7)docker exec -it image-name bash (inter image bash mod )
-8)exit (exit from imges)
+7)docker exec -it image-name bash (inter image bash mod)
+8)exit(exit from imges)
 9)docker stop imageid
 10)docker start imageid
 11)docker kill imageid
 12)docker restart imageid
 13)docker rm -f imageid
-14)docker commit imageid custom-image (save docker image)
+14)docker commit imageid custom-image(save docker image)
 
 docker volumes:=====>>>>>>>>>>>>>>>>>>
  persistance storage
  like pendrive storage to connect many container one by one 
 
-docker driver:===>>>>>>>>>>>>>>>>>>>>>>>>>>>
-allow to manage images and container and store data
+docker driver:===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+allow to manage images and container and store data at cloud
 
 
 docker network:====>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 connection b/w containers
-docker registry:===>>>>>>>>>>>>>>>>>
-docker images storage
-eg. dockerhub,azure,ecr(aws)
+docker registry:===>>>>>>>>>>>>>>>>>>
+jaha pr docker images store hote hai
+eg.dockerhub,azure,ecr(aws)
 docker account create:=>
 Note: jis image ko tag krna hai usko commit kro pahle
 1)docker tag image  username/new-name
@@ -242,9 +242,9 @@ management of multiple container
 docker architecture:====>>>>>>>>>>>>
 docker cli se reqest jante hai docker daemon(docker host) ki pass phir docker registry se docker daemon ki pass phir docker cli ki pass
 
-docker file:===>>>>>>>>>>>>>>>>>>>>>>>>
-file is basically script that you can write aur build kr skte hai into image and image can run and create a container . like shell script
-SYNTAX: 
+docker file:===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+file is basically script that you can write and  build kr skte hai, into image and image can run and create a container . like shell script
+SYNTAX:
 1)FROM <base image> 
 2)ADD <source><destination> //url or local 
 3)COPY<source><destination> // local file
@@ -268,9 +268,9 @@ eg.
 8)CMD python/app/main.py
 9)LABEL color=red
    save and exit form dockerfile
-10)docker build -t add-image-name .
+10)docker build -t add-image-name/dockerfile .
 
-docker storage:===>>>>>>>>>>>>>>>>>>>>>
+docker st++++++++++++++++++++++++++++++++++++++orage:===>>>>>>>>>>>>>>>>>>>>>
 1)persistance 
 2)transfer data easily
 3)increase container performance
@@ -287,12 +287,12 @@ tmpfs:====>>>>>>>>>>>>>>>>>>>>>>>>
 es storage ki life container jetni hote hai , ye memory me storage hota hai
 
 command:=>>>>
-1)docker volume create name
+1)docker volume create name/batman
 2)docker volume ls
 3)docker volume inspect batman
 4)docker volume rm name
 5)docker volume prune ///all volumes remove
-6) add volume to imgae
+6)add volume to imgae
   docker run -it -d --name justileauge --mount 
   source=batman,target=/app ubuntu
 7) for check volume and image 
@@ -329,15 +329,15 @@ type of network:==>>>>>
 bridge Network:==>>>>>>>>>>
 connection b/w containers and also create a layer of isolation b/w container jo ki connected hai bridge network se 
 1)create bridge 
- docker create network --driver bridge barbie
+ docker  network create --driver bridge barbie
 2)remove network
- docker network rm imagaid/imagename
+ docker network rm imageid/imageName
 3)container connect to network
  i)docker network create --driver bridge batman
 ii)docker run -itd --network batman --name brige-buntu -p 80:80 ubuntu
 4)two container connect throught bridge network
 	i)docker run -itd nginx
-	ii)docker network connect batman hungry_borg
+	ii)docker network connect batman hungry_borg(image-name)
 5)disconnect network
  	docker network disconnect batman hungry_borg
 6)docker container inspect hungry_borg
@@ -349,8 +349,8 @@ docker run -itd --network batman --name yourcontainer ubuntu
 i)docker exec -it yourcontainer bash
 ii)apt update 
 iii) apt install iputils-ping
-iv)pint ipaddress
-host network:===>>>>>>>> 
+iv)ping ipaddress
+host network:===>>>>>>>>>>>>>
 container host machine ka ip use krta hai aur namespace bhi
 1)docker run -itd --newtwork host --name hostBuntu ubuntu
 2) check by  network
@@ -359,22 +359,24 @@ container host machine ka ip use krta hai aur namespace bhi
 docker container inspect hostBuntu 
 
 Overlay Network:====>>>>>>>>>>>>>>>>>>>>>>
-hum ko es ki jarurt tb hai jb container ko connect krna ho aur wo diffrent docker host pr hai aur dono host docker swarm ki under ho
+hum ko es ki jarurt tb hai jb container ko connect krna ho aur wo diffrent docker diffrent host pr hai aur dono host docker swarm ki under ho
 Note: create swarm network 
 1)docker swarm init
 2)docker network create --driver overlay flash-net
 3) hum log yaha pr yourservice me ubuntu ki do replicas use kr rahe hai jo ki overlay network se hai
--docker service create --name yourservice --network flash-net --replicas 2 ubuntu
-4)docker service create --name yourservice --network flash-net --replicas 2 httpd
-5)docker network inspect flash-net
+	i)docker service create --name yourservice --network flash-net --replicas 2 ubuntu
+	ii)docker service create --name yourservice --network flash-net --replicas 2 httpd
+4)docker network inspect flash-net
 
 None network:====>>>>>>>>>>>>>>>>>>
  jb hum container run  krte hai to us ka network none kr dete hai / matlab netwrok disable
 1)docker run -itd --network none --name buntu-none httpd
 2)docker container inspect buntu-none
-docker compose:==>>>>>>>>>>
- multiple container run at a time
- Note: write a docker file jo hame chahiye wo sb likhte hai pr ye bahut bade server ki liye nhi hai 
+
+
+docker compose:===>>>>>>>>>>>>>>>>>>>
+ multiple container run at a time in one host machine
+ Note: write a docker file jo hame chahiye wo sb likhte hai and run it ,pr ye bahut bade server ki liye nhi hai 
  like 100 server
  -ye ek service hai jo ki downlaod krna padta hai
  1) compass install 
@@ -456,7 +458,7 @@ orchestration:===>>>this allow manage and maintain
 8)create a layer of security
 
 i)manager node(server) ki under kai worker node(client) hote hai
-ii)docker engine -> manager node ->1)worker node 2)worker node 								   
+ii)docker engine -> manager node ->worker node_1,worker node_2 								   
 docker swarm components:==>
 1)service:=>kitne task hai
 2)task:=>kon sa container kon sa  images
@@ -528,7 +530,7 @@ docker service update --mount-add type=volume,target=batman,destination=/app our
 7) add image to service
 docker service update --image mysql:latest ourstack_db
 
- 6:03
+6:03
 
 
  
