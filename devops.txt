@@ -530,7 +530,49 @@ docker service update --mount-add type=volume,target=batman,destination=/app our
 7) add image to service
 docker service update --image mysql:latest ourstack_db
 
-6:03
+
+jenkins:===>>>>>>>>>>>>>>>>>>CI/CD
+ development me jitne part hai un sb ko join krte hai
+=>this is open source tool for continuous      intergration tool and automation of software     	development process etc . 
+1)very large community
+2)its free
+3)support many plugins
+4)it run of major platform
+
+installation:=>=>=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 1)installation
+i)create ubuntu instance
+ii)apt update && apt install openjdk-8-jdk
+iii)java -version
+iv)wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+v)sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+vi)	apt update && apt install jenkins
+vii) get password
+cat /var/lib/jenkins/secrets/initialAdminPassword
+viii)install suggested plugins
+ix)create id and password
+2)jenkins architecture:===>>>>>>>>
+Note:source code manager =>>jenkins master Node =>i)jenkins slave node 
+=>ii)jenkins slave node
+jenkins master node sare task ko slave node pr divide kr dega , pr wo pahle check krta hai ki wo free hai ki nhi and kya wo us task ko handle kr payenge
+3) add master slave
+i) go to manage jenkins > agent tcp >random/fixed
+ii) go to configure global security
+4) add node 
+i) new node 
+ii) give remote work dir and custom work dir and save
+iii)return lunch button  and command 
+iv)utne hi instance lunch kro jitne  jenkins agent  ho 
+v) jo jar file hai  agent ki us ko instanc pr transfer kr do 
+a)scp -i ./funkey.pem agent.jar ubuntu@ip:/home/ubuntu/
+vi)ab jo command jenkins agent ki de hai us ko respective instance pr run kro jaha agent.jar hai
+vii)check node all agent live
+
+5)CI/CD:===>>>>>>>>>>>>>>
+6:49
+
+
 
 
  
