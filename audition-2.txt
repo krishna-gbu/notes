@@ -1,0 +1,14 @@
+genral process in audio
+1)light noise reduction
+2normalize the audio
+3)light noise reduction
+4)compress the audio
+5)EQ
+4)normalize Again
+5)limit to control overall levels
+
+
+1)select audio track and effect > noise reduction>noise reduction (process)
+2)select audio track and effect > noise reduction>normalize
+3)effect >filter and eq >parameter>loudness mixer
+4)

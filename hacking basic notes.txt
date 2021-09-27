@@ -1,0 +1,162 @@
+network info
+      ip 
+	  domain
+	  tcp/udp
+	  vpn /ids/ips/firewal info
+      operating system info	  
+enternal /public network
+   network
+   phone
+   website
+   whois
+   source code
+   website mirroring
+   archive sites
+   web server content
+   dns
+   ip block
+   email header
+   google and search engine
+   socila network 
+   people sites
+   job sites   
+internal=>
+ip/private ip 
+private website
+internal dns
+dumpster diving
+shoulder surfing
+eavesdropping
+   external info 
+      any  site :gbu.ac.in/sitemap.xml or sitemap.html 
+	    if no avilable convert site into sitemap online tool
+	archived site =>to check website via year
+whois=>domain like etc	
+reverse whois
+  viewdns..
+  whoxy..
+  Dns information=>
+  dns =>the domain name system (dns) is name resolution service.
+        domain name to ip address
+		1)authoritative dns servers
+		   a)master(primary)
+		      A-address mapping records
+			    the record A specifies Ip address (IP4) for given host
+			  AAAA-	IP VERSION 6 address record(ipv6 address for given host)
+			  Cname-canonical name records=>ek domain to subdomain li liye 
+			   as: google.com =>console.google.com
+			  Ns- jaha pr sare dns store hote hai(master and slave ke dns)name server
+			  Ptr-  reverse-lookup pointer Records
+			        opposite to forward dns server (A and AAAA dns 
+					records)
+			  Mx-	mail exchanger record 
+                    the mx resource record specifies a mail exchange server
+                    for a dns name	
+			 Soa-	start of Authority records
+                    the record specifies core information about a dns zone(master dns)
+			 Txt-	text record 
+                     for verify record	
+		   
+		   b)slave (secondary)
+		2)caching/recursive dns server 
+	  
+ practical=>1) nslookup gbu.ac.in	(default type=A hota hai)
+                        Server:  UnKnown
+						Address:  192.168.106.95
+						
+						Non-authoritative answer:
+						Name:    gbu.ac.in
+						Address:  50.63.92.113 
+              		  2) nslookup -type=A gbu.ac.in
+                           same result above
+                      3) nslookup -type=AAAA gbu.ac.in						   
+												  Server:  UnKnown
+						Address:  192.168.106.95
+
+						*** No IPv6 address (AAAA) records available for gbu.ac.in
+		              4) nslookup -type=NS gbu.ac.in (es se hum ko pata chalega ki domain kis server se mange ho rahi hai)
+                          Server:  UnKnown
+						Address:  192.168.106.95
+
+						Non-authoritative answer:
+						gbu.ac.in       nameserver = ns26.domaincontrol.com
+						gbu.ac.in       nameserver = ns25.domaincontrol.com 	
+                     5) find ip address of -type=ns result=>
+                       a) nslookup -type=A   ns26.domaincontrol.com
+						Server:  UnKnown
+						Address:  192.168.106.95
+
+						Non-authoritative answer:
+						Name:    ns26.domaincontrol.com
+						Address:  173.201.70.13
+					   b) nslookup ns25.domaincontrol.com
+						Server:  UnKnown
+						Address:  192.168.106.95
+
+						Non-authoritative answer:
+						Name:    ns25.domaincontrol.com
+						Addresses:  2603:5:2161::d
+                                     97.74.102.13
+					6)again to main domain =>
+                        nslookup -type=Mx gbu.ac.in	
+                         Server:  UnKnown
+						Address:  192.168.106.95
+
+						Non-authoritative answer:
+						gbu.ac.in       MX preference = 5, mail exchanger = alt1.aspmx.l.google.com
+						gbu.ac.in       MX preference = 5, mail exchanger = alt2.aspmx.l.google.com
+						gbu.ac.in       MX preference = 1, mail exchanger = aspmx.l.google.com
+						gbu.ac.in       MX preference = 10, mail exchanger = aspmx2.googlemail.com
+						gbu.ac.in       MX preference = 10, mail exchanger = aspmx3.googlemail.com						
+		              7)ab tk hum google ka ns (name server ) kr rahe the ab hum 
+					    jo domain(target) ka ns hai us se use karenge
+					cmd: nslookup -type=mx gbu.ac.in ns25.domaincontrol.com
+					  Server:  UnKnown
+					  Address:  2603:5:2161::d
+
+					gbu.ac.in       MX preference = 5, mail exchanger = alt1.aspmx.l.google.com
+					gbu.ac.in       MX preference = 5, mail exchanger = alt2.aspmx.l.google.com
+					gbu.ac.in       MX preference = 1, mail exchanger = aspmx.l.google.com
+					gbu.ac.in       MX preference = 10, mail exchanger = aspmx2.googlemail.com
+					gbu.ac.in       MX preference = 10, mail exchanger = aspmx3.googlemail.com
+					gbu.ac.in       nameserver = ns26.domaincontrol.com
+					gbu.ac.in       nameserver = ns25.domaincontrol.com 
+
+now use second tools dig=>		
+ comm:dig gbu.ac.in ANY
+ COMM:dig gbu.ac.in soa/A/AAAA
+ convert ip name to domain 
+  commd:dig -x 192.168.102.2#53
+next tool=> 
+ comm: host gbu.ac.in  
+ 
+ online check by website
+  1)https://toolbox.googleapps.com/apps/dig/
+  2)https://dns.google.com/
+  3)https://viewdns.info/dnsreport/
+  4)https://centralops.net/
+  
+  check jo hame ip mile wo us hi website ki hai?
+  
+
+kali os notes=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+spiderfoot =>automation of osint 
+ghdb=>
+1)site:gbu.ac.in
+  site:gbu.ac.in -blog -fuck -etc
+2)site:gbu.ac.in inurl:php   or site:gbu.ac.in inurl:.php or site:gbu.ac.in inurl:index/login/admin.php    
+3)site:gbu.ac.in index of admin/fuck/love/page
+4)site:gbu.ac.in inurl:.php?d= (check sql vernablilty hai ki nhi)
+5)site:gbu.ac.in filetype:.txt index of
+6)intitle:index of "users.db"
+7)inurl:/iisstart.htm intitle:"IIS7"
+8)grabify ip logger(send link and get ip of target )
+9)genrate webpage to get ip address
+10)ya online site(getnotify) email tracing create account
+     to:gbu@fuck.com.getnotify
+11)
+
+14.139.238.6(gbu)
+50.63.92.113(local ip)
+
+Nmap:=>   

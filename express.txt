@@ -1,4 +1,5 @@
 ///express ///
+Note:=>app.all('/',(req,res)=>{}) //all like 404 page
 Note:=>1)api me res.json() api me json data send krte hai
 const express = require("express"); ///return the function 
 const app = express();//call the function
@@ -6,24 +7,32 @@ app.listen(3000, () => {
   console.log("server running");
 });
 Note:1) Cannot GET / (means hum ne / (home) page add nhi kiya hai)
-//sendfile
+
+//sendfile/////////////////////////////////////////====================>>>>>>>>>>>>>>>>>>>>>>>
+
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/index.html"));
 });
+
 ///static middle ware
+
 app.use(express.static("public"));  //es me static foler ya file use krte hai
   <a href="/"> home page </a>
   <a href="/about.html"> about page </a>
-///ejs engine
+  
+///ejs engine/////////////////=====================>>>>>>>>>>>>>>>>>
+
 app.set('view engine','ejs') //ye key - pair me hota hai
-app.get('view engine') //ejs
+app.get('view engine') =======>>>ejs
+
 views folder ki under sare html file hota hai 
- ///render 
-    res.render() //tb hota hai jb views folder ki file ko send krna hota hai
+ ============///render =============>
+    res.render() //tb hota hai jb views folder ki file ko send krna hota hai TO CLIENT 
 	render me 3 argument hota hai
 	res.render('html.ejs',objec(jo data send krna ho object me send kr do),
 	callback)
-Note:> in html file <%= object(key) %>
+	
+Note:=> in html file <%= object(key) %>
 ////repeat file (like header and footer)
 1)create folder and put in 
 2)aur file ja ki include kr lo (<%- include('path') %>	-(jo render krna aur skip nhi krna ot dash use krte hai) 
@@ -37,7 +46,7 @@ app.use(router)
 ///////middle ware ////
  ye client request  and response ki beech me hota hai
 
-note:=>1)middleware route and response ki beech me hota hai 
+note:=>1)middleware , route and response ki beech me hota hai 
 		  exp:=>route.get/post/etc('/',middleware,(req,res)=>{}) aise hi use hota hai middleware
 		  request and response ki beech me
 	  2)middleware me next() jarur call hona chahiye nhi to req crash ho jayege
@@ -79,18 +88,18 @@ note:=>1)middleware route and response ki beech me hota hai
 ///// global level middleware ////
 app.use(middleware)	  /ye pure app ki liye hai
 
-Note :=>1)react use form cdn link
-        2)    fetch("/api/products").then((res) =>
-				  res.json().then((data) => {  //json ka bhi  promises hota hai
-					console.log(data);
-				  })
+Note:=>1)react use form cdn link
+        2)fetch("/api/products").then((res) =>
+			  res.json().then((data) => {  //json ka bhi  promises hota hai
+				console.log(data);
+			  })
 		3)express do not support json data so
            app.use(express.json())	
         4)app.use(express.urlencoded({extended:false}))	 //normal data 
        	  send and recive ki liye hota hai (bina json ki)	
-		5) req.params => /api/product/:id(req.params.id)
+		5)req.params => /api/product/:id(req.params.id)
 
-///error handling///
+///error handling/////========>
 error handling
 app.use((req, res, next) => {
   return res.json({ status: "page not found" });
@@ -103,7 +112,7 @@ Note:=> app.use(err,req,res,next){} //etna argument leta hai ye erro handling
 
 			
 		
-/////class///////////
+/////class///////////\\\\\\\\\\============>>>>>
 ek special category ko class kahte hai
 exp: mobile (category ) es me 1) samsung,2)nokia etc..
  two way to class used

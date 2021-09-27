@@ -1,0 +1,216 @@
+   design hamesa dusro ki liye hota hai
+file>new >choose size
+rectangle> for square (shift+rectangle)
+undo=>ctrl+z 
+v=select tool
+copy=>alt+drag
+same step copy=ctrl +d
+all select= ctrl+a
+
+shift + select = to jis pr select hoga wahi hoga select baki nhi
+ 
+direct selection=> es se kai point ko ek sath select kr sakte hai
+               1)anchor point : koi bhi shape de sakte hai es point ki waja se
+               2)create group=>select all shape and make group (mouse right click)
+               3)handle or tangent if select anchor point
+anchor point tool under pen tool=> remove shapes
+
+pen tool:=>crete anchor point 
+
+arange =>1)bring to front (sabse aage)
+         2)bring to forward(one step)
+         
+
+ctrl+r =>dimenstion layer 
+
+class 4===========================================================
+            pen and shape builder tool
+ import file >1) drag and drop
+             2) file> place
+
+Rotation tools:=> 
+       anchor point change kr do 
+
+agar hum pop up se copy kr te hain to alt daba ki rakho 
+layer >3line >template (background ko blurer ki liye)
+
+shape builder => kisi ko select kr ki us ko remove ya add kr sakte  
+  direct selection se hum anchor ko adject kr sakte hai and path ko bhi 
+ pen ki jo handle hote us ko remove ki liye anchor pr click kr do jb pen se draw kr rahi ho tb
+
+
+class 5==============================================================
+stock  =>arrow (end and start) 
+  agar fill nhi hai to select karoge to kuch nhi hoga to stock ko pakde
+
+brush bhi type of stock hi hai bcos stock and brush same color use krte hai
+but blob brush is use fill color 
+pencil also stock ,smooth tool in pencel tool,shaper tool=>rough draw se clean shape
+
+eraser:=> earse to krta hai pr path close kr deta hai  but path earser open path hota hai
+knife under erase := path cut krta pr sath me hota hai aur path close hota hai
+ 
+Note:=>jo bad me banta hai wo uper hota hai , agar kuch bhi draw ki bad show nhi hota to stock size 
+         check karo
+
+direct select + arrow key  =>patla ,mota hoga
+
+class 7 ============================================================
+gradients =>
+
+cmyk=>k=black,y=yellow,c=cyan,magenta
+khud ka color bhi bana skte(color panel me) hai and drag and drop kr do swatches me
+
+swatches se gradient me color ko drag and drop kr do 
+
+gradient tool use  kr lo for gradient and dragn and drop kr lo
+ gradient :=>1)linger
+             2)radial
+
+scale tools:=> es me select kr ki scale use krte and shape bhi dete hai 
+
+free trasform  tools :=> 
+
+pathfinder=>advance version of shaper builder like set (maths) agar alt ki bin kare to border cut jayega 
+trim: jitan dekhta hai utna hi rahta baki delete ho jata hai
+
+Note:stock ko variable banan hai to eit>prefirences>scale stock & effect use karo but not recommend
+ to stock ko fill me convert kr do phir pathfinder se merge kr do 
+
+agar hum chahte hai ki kuch area taransparent ho to object>expend>stock>pale us area me difrent color use krna ko na ho>use magic tool jis area ko trasnparent krna ho and delete
+
+
+=======================type tool==============================
+agar click kr ki drag karo to paragraph dega
+click is word dega 
+Note : select tool se drag mt krna wran text strech ho jayega but 
+         shift ki sath kr skte hai
+
+font ki style sb ki nhi hote hai
+system ki  kitane fonst hait to :window + r >fonts
+window >type>chatracture (ctrl+t) panel open hota hai
+  panel>1)va (same b/w charcture )
+        2)v/a (same b/w charcture)
+		3)Aa/arrow (charcture ko up down ki liye)
+		4)TT (charcture ko capital krta hai)
+		5)aa (sharp and smooth krta hai )
+     text me last tool  use kr lo sb ek sath hota hai
+area type tool> ye shape me likhta hai pr area tool ko
+ path pr click karo
+ type on path=> tool ko select karo and path pr click 
+ kare  aur agar path ko select(direct tool) kare to text ko path pr move kr sakte hai jo center 
+ me line hote hai use se
+ Note: jb hum effect use krte hai to wo embed nhi hota hai to hum ko embed krna 
+ hota hai object>expend appreanse or expend
+ 
+ typography:=>1)serif:classic hai es me edge band hota
+              2)sans-serif :edge stright hote hai
+			  3)script:live handwritten(female)
+			  4)comic sans (kids) 
+Note:page of paragraph me hamesa ek type ki 
+ justification rakhe hamesa 
+			  
+ Note:jb hum text ko outline krte hai to sb path me convert ho jata hai
+      and group bn jata hai aur hum koi bhi operation kr skte hai
+	  direct select to text and type>create outlines
+Masking:=> hide somthing(white color lena)
+          1)draw inside (pahle hum ko area select krna hota hai) es se
+		     hate ki liye draw normal pr click krna hai jo tool bar ki 
+			 neeche hota hai
+		  2)clipping mask :=> sb ko select karo and option le(mouse) clip 
+            mask to upper wala area jo hai us me neeche wala area fill ho jayega jo sabse upper hoga
+           			
+		  3)opacity mask:=>jo back laye hai and jo upper hai  and gradient (jo gradient black hoga wo gayab and jo white wo rahega)
+		        layer bana lena aur jis layer ki masking krni hai us pr rakh dena and
+				and transparent(layer ki bagal me hai)>mask click karo
+				Note:=>ye blur ki liye use karo(first apply blur from 
+				effect panel)
+				
+			es me transparent me mask (me image add krte hai)
+ Pattern =>>>>>>>>>>>>>
+  window>swatches library>pattern >use with our choice
+ custom Brushes:=> 5 type brush
+                   1)caligraphic brush 
+				   2)scatter brush (pahle koi object select karo 
+				     phir enble hoga) colariztion me tinl use karo
+				   3)art brush :=> draw figure and add figure in brush
+				    and use it,agar text ka brush banan hai to
+					use first text outline
+				   4)bristle brush:=>
+				    5)pattern:=> es me corn add krna to us ko 
+					swatches me add kr do phir brush me ja ki 
+					edit kr do
+                window>brush library >choose any
+               select area and select brush 
+			   
+			
+Mesh tool=>	select area pr click karo x-axis and y-axis bana 
+   deta hai	 and ye object koi reshape bhi deta hai	,
+   and mesh tool se move karo shift daba ki points ko jo mesh tool se 
+    aata hai
+	
+Note:select layer and ctrl to sirf stock bachega(layout lines)	
+Note:=>agar mash tool chahte hai to es me automatic mash point add 
+         ho jata hai object>create gradient mash 
+     us kr skte hai 
+			
+Layer:=>stack order hai; select object and locate in 
+         layer panel 
+
+Note:ctrl+y => sirf outline dekhte hai to and change 
+  ki liye ctrl +y (phir se)	 
+
+appearnse=>(sun like image right side panel)	
+ jo select hai yaha dekhta hai	like stock and fill	
+  and fill and stock ko bhi layer ki tarh upper neche 
+   kr skte hai and multiple fill and stock use kr skte hai
+   and us ko bana kr graphic style me rakh do
+    
+	and effect stock and fill dono me laga sakte hai
+blend tool:=> conversion of object(start point to end point)
+	
+prespective grid tool=>dekhe ka tarika(for remove ctrl + shipt +i)	
+            ya select karo prespective grid ko and cross(x) pr click karo
+        => prespective tool se side choose karo and draw object
+      => 	move karni ki liye choose prespective selction tool
+	=>	agar object ko use ki direct me aage peche krna 
+	     hai to select and press 5 and for copy press alt		 
+3D=>1)select object and effect>3d>3d extrude & level options(rotation hota hai)
+     2)select object and effect>3d>revolve options
+	 3)window>symbols > now add symbols tools in tools panel
+	  es se hum spray kr ke apne artboard me kuch bhi bhar skte hai
+	  Note:=>symbols me hum object bana kr rakh dete hai and
+	         revolve 3d me us krte hai map art section me ja kr
+image tracing and live paint:=>1)	select image and above bar 
+              give image trace option but only hd image
+			  2)select image and go to window>image trace>
+			  thresold se adject karo
+			  3)color ki liye live paint use karo 
+			     select live paint and click on shape line and change 
+				 color
+envelope distort:=>	object>envelope>1)many option hai	
+                        2) mesh us kr ki apni according
+                         shape de skte hai						 
+						 3)make the top shape 
+						    jo uper wala shape hoga us 
+							 me embed kr dega object ko
+Transform panel:=>window>trasform and use panel
+							 
+tansform each:=>select object and take option(mouse)
+        
+Artbard:=>move and copy ,center mark upper bar ,object 
+   ko select karo artboard pr double click kao 
+    object ki size ka ho jata like object   
+path menu:=>object>path
+          2)offset path ye jo phale se path hota
+           hai us se chota bada bana skte hai		  
+		   3)simplfy me anchor point ko km krte hai
+		   4)path se divde bhi krte hai
+		   5)clean up
+action :=>window>actions		   
+
+vector      vs      raster
+no pixel             pixel
+line&outline  
+
+graphic design:=>        

@@ -1,0 +1,65 @@
+=========================jquery ===>
+1)js library
+  has two version 1)production
+                  2)development
+syntax: 
+  $(selector).action()
+  $ sign to define /jquery
+  
+  $(this).hide() - hides the current element.
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+
+$("#test").hide() - hides the element with id="test".
+
+The Document Ready Event
+You might have noticed that all jQuery methods in our examples, are inside a document ready event:
+
+$(document).ready(function(){
+
+  // jQuery methods go here...
+
+});
+
+It is good practice to wait for the document to be fully loaded 
+and ready before working with it. This also allows you to have
+ your JavaScript code before the body of your
+ document, in the head section.
+ 
+ 
+ =====jQuery Selectors======>>>>>>>>>>>>>>>>
+jQuery selectors allow you to select and manipulate HTML element(s).
+
+*	$("*")	All elements
+#id	$("#lastname")	The element with id="lastname"
+.class	$(".intro")	All elements with class="intro"
+.class,.class	$(".intro,.demo")	All elements with the class "intro" or "demo"
+element	$("p")	All <p> elements
+el1,el2,el3	$("h1,div,p")	All <h1>, <div> and <p> elements
+ 	 	 
+:first	$("p:first")	The first <p> element
+:last	$("p:last")	The last <p> element
+:even	$("tr:even")	All even <tr> elements
+:odd	$("tr:odd")	All odd <tr> elements
+
+:eq(index)	$("ul li:eq(3)")	The fourth element in a list (index starts at 0)
+:gt(no)	$("ul li:gt(3)")	List elements with an index greater than 3
+:lt(no)	$("ul li:lt(3)")	List elements with an index less than 3
+:not(selector)	$("input:not(:empty)")	All input elements that are not empty
+
+==========traversing==================>>>>>>>>>>>>>>....
+jQuery traversing, which means "move through", are used to "find" (or select) HTML elements based on their relation to other elements. Start with one selection and move through that selection until you reach the elements you desire.
+
+https://www.w3schools.com/jquery/jquery_traversing.asp
+
+The <div> element is the parent of <ul>, and an ancestor of everything inside of it
+The <ul> element is the parent of both <li> elements, and a child of <div>
+The left <li> element is the parent of <span>, child of <ul> and a descendant of <div>
+The <span> element is a child of the left <li> and a descendant of <ul> and <div>
+The two <li> elements are siblings (they share the same parent)
+The right <li> element is the parent of <b>, child of <ul> and a descendant of <div>
+The <b> element is a child of the right <li> and a descendant of <ul> and <div>
+
+

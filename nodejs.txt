@@ -1,6 +1,7 @@
 1)node -v
 2)npm -v
 note:
+	es
 	type ki liye head likhte hai
 	res.writeHead(200,{'Content-Type':'application\json'})
     res.write('ye hamesa string leta hai') to res.write(JSON.stringify(data))	
@@ -172,3 +173,101 @@ exp:=>   class Mobile {
 					  }
 					}			
 		         var samsung = new mobile()
+
+
+core module//////////////===>>>>>>
+const fs = require("fs");
+//create file
+fs.writeFileSync("file.txt", "fuck you");
+
+/// apppend
+fs.appendFileSync("file.txt", " you fuck you");
+
+///
+console.log(fs.readFileSync("file.txt"));
+//show buffer data  <Buffer 66 75 63 6b 20 79 6f 75 20 79 6f 75 20 66 75 63 6b 20 79 6f 75>
+
+/// normal string=============>>>>>>
+console.log(fs.readFileSync("file.txt").toString());
+
+///async///file
+const fs = require('fs')
+fs.writeFile()
+ callback function required hai
+ ///os module//////////////
+const os = require('os')
+ 
+///json////===================>>>>>>>>>>>
+
+object to json //////
+   =JSON.stringify(objectData)
+
+json to object ///
+   =JSON.parse(jsonData)
+ 
+ ////events ///
+ 
+ const EventEmitter = require('events')
+ const event = new eventEmmiter();
+ 
+ event.on('sayname',()=>{
+ console.log('your name')
+ })
+ 
+ ///create event emit(fekna)//
+ event.emit('sayname')
+ //use parameter
+  event.emit('sayname',200,'ok')
+  
+  
+  //////exp:=
+  //creating class
+const EventEmitters = require("events");
+
+//create instance//
+const events = new EventEmitters();
+
+events.on("email Very", (sc, msg) => {
+  console.log(`email ${sc} verify ho gaya hai ${msg}`);
+});
+
+events.emit("email Very", 200, "ok");
+ 
+ 
+ ////streaming ///
+ readable,writeable,duplex,transform,
+ Readable Stream Properties and Methods
+Method	Description
+isPaused()	Returns true if the state of  the readable stream is paused, otherwise false
+pause()	Pauses the readable stream
+pipe()	Turns the readable stream into the specified writable stream
+read()	Returns a specified part of the readable stream
+resume()	Resumes a paused stream
+setEncoding()	Sets the character encoding of the readable stream
+unpipe()	Stops turning a readable stream into a writable stream, caused by the pipe() method
+unshift()	Pushes some specified data back into the internal buffer
+wrap()	Helps reading streams made by older Node.js versions
+Writable Stream Properties and Methods
+Method	Description
+cork()	Stops the writable stream and all written data will be buffered in memory
+end()	Ends the writable stream
+setDefaultEncoding()	Sets the encoding for the writable stream
+uncork()	Flushes all data that has been buffered since the cork() method was called
+write()	Writes data to the stream
+
+
+ event 
+ commanly use events 
+ data,end,error,finish
+ 
+ ///stream pipe///
+ const fs = require("fs");
+const http = require("http");
+const sever = http.createServer();
+ sever.on("request", (req, res) => {
+  const rsStream = fs.createReadStream("file.txt");
+  rsStream.pipe(res);
+});
+
+sever.listen(5000, "127.0.0.1");
+ 

@@ -1,0 +1,64 @@
+Note:=>charactor ko after effect me le jane se pahle hum vector image ko 
+        group ko layer me convert karo and aur sb ungroup ko bcoz after effect sirf layer samjhta hai
+
+
+project=>panel=> import file etc
+composetion panel => preview panel
+time line=>under panel time line
+
+all panel reset=>window >workspace>reset
+
+1)project se >new composition
+
+alt + [ =>timeline ki jo line hote hai us ke right wala part hat jata hai
+alt +  ] => timeline ki jo line hote hai us ke left  wala part hat jata hai
+
+chota bada premier ki tarah hi hota hai (select tool se)
+
+
+SHAPE TOOL=> koi layer select na ho (es bat ka dhayan rakho) time line me initialy
+     fill =for color choose option
+     click on color=>choose color
+     stock (border)=>
+     
+shap ko induvial use kr sakte hai ya univeral use kr sakte hai
+  shap ki under indivisual add kr sakte hai ya delete kr sakte hai
+agar line => agar line draw kreni hai to fill me line lo aur stock me bhi line lo
+    than proceed (drag  krete hai to do handle milta hai agar hum chate ho ek 
+     handle ka estmal kr sakte hai alt press kr ke
+masking=>background ko change krna in good way
+        backgound agar green ya blue hai to asan hota hai 
+        pr masking se krte hai kisi bhi background ko change kr sakte hai
+     masking ki liye hum pahle layer ko select krna hoga phir pen(g)use krna hoga
+       1)mask path=>es se hum frame by frame background change krte hai
+       2)mask feather=>es se hum mask and object ko merge kr sakte hai
+       3)mask expension=>mask size badga hai
+  mask ka movement mask ki point ko select kr ki move kr sakte hai
+  ctrl+ u => key ko check krte hai jis layer me use hua hai
+parent & link=>es  me hum kis ek layer me key apply kr ki baki layer se follow krwa skte hai 
+
+Null object=>ye empty hota pr sare layer ko es se link(@) kr ke sirf null me change krte hai aur sb me change ho jata hai
+track Matte=>agar hum chahte hai ki koi chez kisi perticuler chez ki ander hi dekhe to hum es ko use krte hai
+         koi layer select nhi hoge chahiye and use reactangle tool and draw karo jaha se content ko dekhna chahte ho bcoz 
+         jo es ki under hoga wahi dekhta hai ,trkmat use krni ki bad
+
+copy & paste=> time line ki y axis wali line jaha hoge wahi paste hoga
+time remapping=>slow ,fast , reverse ,freeze =>time streach : value increase video speed slow,freeze frame:freez the frame etc 
+      time remapping =>es me ek sath time ki  sare  effect use kr sakte hai key add kr ki
+render & export =>jo background hum compositon me dete hai wo transparent hota hai and work area check karo 
+kitna render krna hai   
+adobe media encoder =>es me agar composition background hai to wo transparent hota hai default , agar backgound rakhna chahte ho to 
+laga do 
+repeater =>1) chose safe option in compostion panel
+            kuch hum se draw kiya hai to us ka repeater bana sakte hai
+            and jo main shape hai us pr jo bhi operation apply hoga 
+            wo sb pr hoga     
+           2)aur hum chahte hai ki kisi shape ko alag se treat kr na
+            to us ko group me dal do
+
+trim path=>ye shape layer ki uper kam krta hai 
+  1)  start=>move karo aur check karo 
+   2) end =>move karo aur check karo 
+
+  null obeject ki ander expression control me slide controler se
+  kisi property ko use kr sakte hai(km ,jyda) 

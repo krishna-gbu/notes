@@ -100,8 +100,8 @@ create branch and switch:=>>>>>>
 git checkout -b fuck2
 
 merging:=========>>>>>>>>>>>>>>>>>>
-Note: es me commit merge nhi hota hai.
-  master branch(default)
+Note: pr es me commit merge nhi hota hai.
+ many branch to master branch(default)
  Note:jb koi conflit hota hai tb merge commit hota  hai
  1)git branch
  2)git log (check commit history) exit:q
@@ -118,12 +118,12 @@ branch fuck
  1)nano index.html // add some thing
  2)git add . 
  3)git commit -m 'fuck adding on index.html'
- 4)go to master branch and merge it //done 
+ 4)go to master branch and merge //done 
 branch fuck2
  1)nano index.html // some adding on index.html
  2)git add . 
  3) git commit -m'fuck2 adding somthing on  index'
- 4)go to master branch and merge it // conflict error  
+ 4)go to master branch and merge // conflict error  
  
 solve:==>
 solve with manual
@@ -191,45 +191,45 @@ docker envierment:======>>>>>>>>>>>>>
 2)docker object:===>>>
   i)docker image (ii) docker container (iii) docker volumes (iv) docker networks
 i)docker image:==>>>
-   all information in images
+   all imformation in images
 3)docker registry
 4)docker compose
 5)docker swarm
 docker command:==>>>>>>>>>>
 1)docker pull ubuntu(os name)
-2)docker images (check imges in docker jo hum se pull kiya hai)
+2)docker images (check imges in docker)
 3)docker run -it -d ubuntu (-d background runing,-it intractive) (run docker image)
 4)docker ps (docker image process) 
 5)docker run -it -d --name fuck ubuntu
 6)docker run -it -d --name fuck -p 80:80 ubuntu  (80:80 hostpublicport:imagepublicport, image with port)
-7)docker exec -it image-name bash (inter image bash mod)
-8)exit(exit from imges)
+7)docker exec -it image-name bash (inter image bash mod )
+8)exit (exit from imges)
 9)docker stop imageid
 10)docker start imageid
 11)docker kill imageid
 12)docker restart imageid
 13)docker rm -f imageid
-14)docker commit imageid custom-image(save docker image)
+14)docker commit imageid custom-image (save docker image)
 
 docker volumes:=====>>>>>>>>>>>>>>>>>>
  persistance storage
  like pendrive storage to connect many container one by one 
 
-docker driver:===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-allow to manage images and container and store data at cloud
+docker driver:===>>>>>>>>>>>>>>>>>>>>>>>>>>>
+allow to manage images and container and store data
 
 
 docker network:====>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 connection b/w containers
-docker registry:===>>>>>>>>>>>>>>>>>>
-jaha pr docker images store hote hai
-eg.dockerhub,azure,ecr(aws)
+docker registry:===>>>>>>>>>>>>>>>>>
+docker images storage
+eg. dockerhub,azure,ecr(aws)
 docker account create:=>
 Note: jis image ko tag krna hai usko commit kro pahle
 1)docker tag image  username/new-name
 2)docker images
 3)docker rmi image-name
-4)docker push krish00/nginx-ubuntu
+4)docker pull krish00/nginx-ubuntu
 5)docker run -it -d --name nginx -p 80:80 krish00/nginx-ubuntu
 6)docker exec -it nginx bash
 7)service nginx start
@@ -242,9 +242,9 @@ management of multiple container
 docker architecture:====>>>>>>>>>>>>
 docker cli se reqest jante hai docker daemon(docker host) ki pass phir docker registry se docker daemon ki pass phir docker cli ki pass
 
-docker file:===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-file is basically script that you can write and  build kr skte hai, into image and image can run and create a container . like shell script
-SYNTAX:
+docker file:===>>>>>>>>>>>>>>>>>>>>>>>>
+file is basically script that you can write aur build kr skte hai into image and image can run and create a container . like shell script
+SYNTAX: 
 1)FROM <base image> 
 2)ADD <source><destination> //url or local 
 3)COPY<source><destination> // local file
@@ -268,9 +268,9 @@ eg.
 8)CMD python/app/main.py
 9)LABEL color=red
    save and exit form dockerfile
-10)docker build -t add-image-name/dockerfile .
+10)docker build -t add-image-name .
 
-docker st++++++++++++++++++++++++++++++++++++++orage:===>>>>>>>>>>>>>>>>>>>>>
+docker storage:===>>>>>>>>>>>>>>>>>>>>>
 1)persistance 
 2)transfer data easily
 3)increase container performance
@@ -287,12 +287,12 @@ tmpfs:====>>>>>>>>>>>>>>>>>>>>>>>>
 es storage ki life container jetni hote hai , ye memory me storage hota hai
 
 command:=>>>>
-1)docker volume create name/batman
+1)docker volume create name
 2)docker volume ls
 3)docker volume inspect batman
 4)docker volume rm name
 5)docker volume prune ///all volumes remove
-6)add volume to imgae
+6) add volume to imgae
   docker run -it -d --name justileauge --mount 
   source=batman,target=/app ubuntu
 7) for check volume and image 
@@ -329,15 +329,15 @@ type of network:==>>>>>
 bridge Network:==>>>>>>>>>>
 connection b/w containers and also create a layer of isolation b/w container jo ki connected hai bridge network se 
 1)create bridge 
- docker  network create --driver bridge barbie
+ docker create network --driver bridge barbie
 2)remove network
- docker network rm imageid/imageName
+ docker network rm imagaid/imagename
 3)container connect to network
  i)docker network create --driver bridge batman
 ii)docker run -itd --network batman --name brige-buntu -p 80:80 ubuntu
 4)two container connect throught bridge network
 	i)docker run -itd nginx
-	ii)docker network connect batman hungry_borg(image-name)
+	ii)docker network connect batman hungry_borg
 5)disconnect network
  	docker network disconnect batman hungry_borg
 6)docker container inspect hungry_borg
@@ -349,238 +349,8 @@ docker run -itd --network batman --name yourcontainer ubuntu
 i)docker exec -it yourcontainer bash
 ii)apt update 
 iii) apt install iputils-ping
-iv)ping ipaddress
-host network:===>>>>>>>>>>>>>
-container host machine ka ip use krta hai aur namespace bhi
-1)docker run -itd --newtwork host --name hostBuntu ubuntu
-2) check by  network
-   docker network inspect host 
-3) check by container
-docker container inspect hostBuntu 
-
-Overlay Network:====>>>>>>>>>>>>>>>>>>>>>>
-hum ko es ki jarurt tb hai jb container ko connect krna ho aur wo diffrent docker diffrent host pr hai aur dono host docker swarm ki under ho
-Note: create swarm network 
-1)docker swarm init
-2)docker network create --driver overlay flash-net
-3) hum log yaha pr yourservice me ubuntu ki do replicas use kr rahe hai jo ki overlay network se hai
-	i)docker service create --name yourservice --network flash-net --replicas 2 ubuntu
-	ii)docker service create --name yourservice --network flash-net --replicas 2 httpd
-4)docker network inspect flash-net
-
-None network:====>>>>>>>>>>>>>>>>>>
- jb hum container run  krte hai to us ka network none kr dete hai / matlab netwrok disable
-1)docker run -itd --network none --name buntu-none httpd
-2)docker container inspect buntu-none
-
-
-docker compose:===>>>>>>>>>>>>>>>>>>>
- multiple container run at a time in one host machine
- Note: write a docker file jo hame chahiye wo sb likhte hai and run it ,pr ye bahut bade server ki liye nhi hai 
- like 100 server
- -ye ek service hai jo ki downlaod krna padta hai
- 1) compass install 
-   https://docs.docker.com/compose/install/
- i) sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-ii) sudo chmod +x /usr/local/bin/docker-compose
-iii)docker-compose --version
-2)mkdir compose && cd compass
-3)create network , service ,images,etc but intend must necessary
-version: "3.0"
-networks:
-    batman:
-      driver: bridge
-services:
-  web:
-    image: "nginx:latest"
-    ports:
-      - "5000:5000"
-    networks:
-      - batman
-  database:
-    image: "mysql"
-    networks:
-      - batman
-4) compose down 
- i)go to folder 
- ii) docker-compose down
-hwo to host wordpress site:=>>>>>>>>>>>>>>>
-1) docker compose file 
-version: "3.9" 
-services:
-  db:
-    image: mysql:5.7
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-    
-  wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
-    volumes:
-      - wordpress_data:/var/www/html
-    ports:
-      - "8000:80"
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
-volumes:
-  db_data: {}
-  wordpress_data: {}
-2) create docker-compose file
- i)nano docker-compose.yml   
-3) run file 
-docker-compose up
-4) check everthing
-i)docker ps
-ii)docker  network ls
-iii)docker volume ls
-
-docker swarm:===>>>>>>>>>>>>>>>>>>>>>>>
-orchestration:===>>>this allow manage and maintain 
- multiple containers.
-1)easy developyment
-2)easy management
-3)easy resource management
-4)allow for health monitoring of the containers
-5)load balancing among diffrent container 
-6)easy updating
-7)easy scalling up and rolling background
-8)create a layer of security
-
-i)manager node(server) ki under kai worker node(client) hote hai
-ii)docker engine -> manager node ->worker node_1,worker node_2 								   
-docker swarm components:==>
-1)service:=>kitne task hai
-2)task:=>kon sa container kon sa  images
-3)node:=> server/client
-4)load balancing
-command:=>>>>>>>>>>>>>>>>
-1)instance jo ki manager hai 
-i)apt update && apt install docker.io
-2) ji bhi instance ko manager node bana ho 
-docker swarm init --advertise-addr 18.117.232.143(publicIp)
-ye hum ko manage ka id return karega us me hum worker ko add kr skte hai 
-like:docker swarm join --token SWMTKN-1-1v2sxbm81j6y0pzeun0fignt0f14a65prnls7vxjwo5yf5w32x-cp2a7zrj58mxj33b216jexqnh 18.117.232.143:2377
-3)above swarm manager node code add to worker
-i)apt update & apt install docker.io 
-ii)docker swarm join --token SWMTKN-1-1v2sxbm81j6y0pzeun0fignt0f14a65prnls7vxjwo5yf5w32x-cp2a7zrj58mxj33b216jexqnh 18.117.232.143:2377
-
-4)add another worker node
-i)apt update && apt install docker.io
-ii)docker swarm join --token SWMTKN-1-1v2sxbm81j6y0pzeun0fignt0f14a65prnls7vxjwo5yf5w32x-cp2a7zrj58mxj33b216jexqnh 18.117.232.143:2377
-5)check all nodes
-i) docker node ls
-6)agar hum ko node manage ki key wapis chahiye jis se 
-ki worker node ko add kr ske to
-i)docker swarm join-token worker
-ii)docker info
-7)swarm me manager 7 add kr skte hai pr mt  krna 
-docker swarm join-token manager
-8)docker swarm leave
-9)phir se add kr to wahi uper wali key
-10)agar manage ko leave kr hai to
-i)go to manage instance
-ii)docker swarm leave --force
-11)run service 
-i)docker service create --name ourservices --replicas 
- 3 -p 80:80 httpd
-Note:jo service hum run krte hai manger node pr wo sb ko divide kr deta hai worker me
-but hum chahe to sare service/task ko worker pr dal skte hai 
-12) check servie running ?
-docker service ls
-13) check service form manger
-docker service ps ourservice(service-name)
-Note:agar koi worker shutdown ho jata hai to manager 
-us task ko kisi aur worker pr dal deta hai ya phir khud pr run krta hai (laod balancing)
-14)docker service inspect ourservice(serviceName) --pretty
-15)docker serviec remove
-docker service rm ourservice(servieName)
-
-hosting website on docker swarm:==>>>>>>>>>>>
- docker compose ko jb swarm me us krte hai to docker stack ka use krte hai
- Note:docker compose kam krta hai multiple service at one node(container) pr lakin docker swarm me multiple node hai ek swarm tb services ko lunch krne ki liye docker stack use krte hai 
-1) go to jaha .yml file hai 
-docker stack deploy -c docker-compose.yml ourstack
-Note:==>>>> agar nhi ho raha to docker swarm leave kro and create swarm and connect all worker 
-and proceed
-2)create replicas for runing service: scale
-i)docker service scale ourstack_workpress=3(replicas)
-ii)docker service scale ourstack_db=3
-3)check node:
-i)docker node ls
-i)docker node rm nodeId
-4)drain ka use availability ki liye hota hai 
-  agar hum chahte hai ki manage pr koi service na chale to us ko drain kr do 
-  maintain ki liye bhi use krte hai
- i)docker node update --availability drain nodeId
-5)add  network to service 
-docker service update --network-add batman ourstack_db
-6) add volume to service
-docker service update --mount-add type=volume,target=batman,destination=/app ourstack_db
-7) add image to service
-docker service update --image mysql:latest ourstack_db
-
-
-jenkins:===>>>>>>>>>>>>>>>>>>CI/CD
- development me jitne part hai un sb ko join krte hai
-=>this is open source tool for continuous      intergration tool and automation of software     	development process etc . 
-1)very large community
-2)its free
-3)support many plugins
-4)it run of major platform
-
-installation:=>=>=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- 1)installation
-i)create ubuntu instance
-ii)apt update && apt install openjdk-8-jdk
-iii)java -version
-iv)wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-v)sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \
-    /etc/apt/sources.list.d/jenkins.list'
-vi)	apt update && apt install jenkins
-vii) get password
-cat /var/lib/jenkins/secrets/initialAdminPassword
-viii)install suggested plugins
-ix)create id and password
-2)jenkins architecture:===>>>>>>>>
-Note:source code manager =>>jenkins master Node =>i)jenkins slave node 
-=>ii)jenkins slave node
-jenkins master node sare task ko slave node pr divide kr dega , pr wo pahle check krta hai ki wo free hai ki nhi and kya wo us task ko handle kr payenge
-3) add master slave
-i) go to manage jenkins > agent tcp >random/fixed
-ii) go to configure global security
-4) add node 
-i) new node 
-ii) give remote work dir and custom work dir and save
-iii)return lunch button  and command 
-iv)utne hi instance lunch kro jitne  jenkins agent  ho 
-v) jo jar file hai  agent ki us ko instanc pr transfer kr do 
-a)scp -i ./funkey.pem agent.jar ubuntu@ip:/home/ubuntu/
-vi)ab jo command jenkins agent ki de hai us ko respective instance pr run kro jaha agent.jar hai
-vii)check node all agent live
-
-5)CI/CD:===>>>>>>>>>>>>>>
-6:49
-
-
-
-
- 
-  
- 
-
-
-
+iv)pint ipaddress
+host network:===>>>>>>>> 
 
 	
  

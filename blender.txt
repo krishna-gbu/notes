@@ -1,0 +1,72 @@
+scene  in under jo hota hai wo object hota hai
+delete :=>select and press x >delete 
+undo :=>ctlr +z
+animation play panel neche hai
+tool panel:=>left side
+
+object ko camer se dekhna hai to view>camer>active
+      if edit to scene ki bagal me mouse se drag karo
+	  but select scene collection
+  out side camer view use mouse middle key and drag
+go to reverse:file >reverse  
+	  
+	  object ko sb view dekhni ki liye use mouse middle key
+	  
+object add ki liye:=>shift+a	 
+
+by default object center pr add hota hai
+change ki liye curser tool ko jaha select karo ge waha add hoga
+ 
+ curser to center:=>shift+s(apper many option hai use se origin
+ use karo)
+ 
+ knife project:>select jis ko project krwana hai and jis pr and go edit mode and mash>knife project>
+ c-4
+ work space ko move ki liye (shift and mouse(middle) and move )
+ 
+ for scale:=>scale tool and drag(according to axies)
+               agar circle pr click se drag karo to sb me scale hotahai
+			shorcutkey:s and mouse   etc for double(s+2)add
+			 axies to according to scale
+rotation:=>select tool and move to accroding to axies
+           shorcut key:r+x+2 and enter (for x axies) 	
+prospective view:=> human view(depend to distance)
+orthographic view:=>not on depend on distance		   
+	  
+z for diffrent diffrent view
+
+object mode me hum modify nhi krte hai
+ use ki liye edit mode use krte hai 
+    phir uper mode ki pass vertex ,edge,face
+	note:change mode (TAB)
+	
+do ya jyda bana ki lye extrude tool (like same copy)
+loop cut tool:=>objec to cut krte hai and drag ki liye use extrude tool
+edge slide tool use in cut tool
+inset face:=>es se hum  face me ek naya face add krte hai 
+  and perform operation
+  
+  material means colors;=>
+  Note:=>ek work space ko camer view me rakhte hai and second ko sub kuch krte hai
+ color effect tb dekhega jb aap render view me dekhega
+
+key frame object select and add key(i) and process 
+
+
+blender :=>select and delete 
+          fiel>factory :reset
+		 
+shift and clik:curser jaha chaho
+
+kaha bhi objec ko movie ki liye:g + move+ add axies	
+rotation bhi aise hi hoga
+
+measuer tool:=>select tool check measurment
+orientation:global and local ... change axies
+view port(overlay) :>es se hum dimesnion hata laga skte hai 
+extrude(e)
+	
+	right panel>setting>add modifier >bavel(smoth edge)
+	knife tool(k):> knife ko leave (e) and enter
+	   1)occlude geometry (es phase cut krte)
+	   2)only select(cut only cut)

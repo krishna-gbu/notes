@@ -1,0 +1,31 @@
+   read fcm documentation
+step:1 
+           t turns out that new versions of Firebase SDKs depend on a new internal infrastructure service, called FIS (the Firebase Installations Service) for targeting identifiers ("FIDs" or "Instance-IDs").
+			If you are using API key restrictions for the API keys you use in your application, you will have to extend those restrictions to allow usage with the new Firebase Installations Service at firebaseinstallations.googleapis.com.
+
+			To allow your API key in question to be used with the new Firebase Installations API:
+
+			go to the Google Cloud Console
+			choose the relevant project (i.e. the project you use for your application)
+			open the menu and go to APIs & Services -> Credentials
+			click Edit API key for the API key in question
+			scroll down to API restrictions
+			from the dropdown, choose Firebase Installations API
+			click Save
+			wait a couple of minutes for Google servers to update and retry...
+step 2: 	
+          it turns out that new versions of Firebase SDKs depend on a new internal infrastructure service, called FIS (the Firebase Installations Service) for targeting identifiers ("FIDs" or "Instance-IDs"). If you are using API key restrictions for the API keys you use in your application, you will have to extend those restrictions to allow usage with the new Firebase Installations Service at firebaseinstallations.googleapis.com.
+
+		To allow your API key in question to be used with the new Firebase Installations API:
+
+		go to the Google Cloud Console
+		choose the relevant project (i.e. the project you use for your application)
+		open the menu and go to APIs & Services -> Credentials
+		click Edit API key for the API key in question
+		scroll down to API restrictions
+		from the dropdown, choose FCM Registration API
+		click Save
+		wait a couple of minutes for Google servers to update and retry...		
+mobile authintication =>
+	https://stackoverflow.com/questions/52970822/firebase-auth-internal-error-signup-are-blocked-on-web
+		

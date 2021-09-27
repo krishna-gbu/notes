@@ -1,0 +1,28 @@
+premier se > audition clip option choose karo 
+             phir audition open ho jayega
+1) normalization -0.1db karo 
+   Note:-agar voice normal na ho to (cltl+z) kr do
+2)effect>amplitude and compression >dynamics >compression option
+    -22db and 4 ration apply (es se audio ek level me aa jayega)
+3) and now normalization -0.1db apply karo , ab noise and volume ek level pr aa gaya hai
+
+    i) nosise ko select karo and effect >noise reduction> nosise print (something)
+    2)effect >noise reduction> adaptive noise reduction and es ko default rakho
+
+and save (ctrl+s) auto premier me update ho jayega
+
+
+equalizer => first enable (winodw >effect rack)
+  1) 1,2,3.. es me se koi > arrow pr click karo>filter and eQ >equalizer (10band)
+             frequency high (patle awaj) frequency low(mote awaj)
+   2)1,2,3.. es me se koi > arrow pr click karo>filter and eQ > parameter >low high karo
+   3)winodw >effect rack>amplitude and compression >hard limiter
+sb karo and apply in effect rack
+
+and effect >noise >addaptive chose karo
+
+marker => on time line ctrl+m
+
+
+trick=> silence => select noise and silence
+              

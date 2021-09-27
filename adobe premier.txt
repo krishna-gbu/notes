@@ -1,0 +1,28 @@
+j=backword
+k=stop
+L=forword
+
+timeline=>
+ v1=vidoe
+A1=audio
+and 
+tool
+lock option 
+razor=>cut audio and video
+chroma=>effect=>key=>ultra key=>color pic
+color=>window=>lumentic color and set color
+slow/fast=>click on video and cut according to slow /fast =>under duration
+audio=>
+  L and R ki b/w me jo line hote hai .us ki uper neche krne se audio km jyda hote hai
+  aur awaj ko hum 
+audio channel=> 
+     audio sync=> 
+  1)     media source (left and right)
+        select audio + video and  merge clip
+    
+  2) select audio + video =>create multie-camera source...
+
+animation key=> effect control me jo parameter h sb use kr sakte hai
+               aur parameter ko select krne ki bad just samne boll
+               button pr click karo and jaha jo value dene hai wo change kr sakte hai
+               aur ko bhi animation use kr sakte hai

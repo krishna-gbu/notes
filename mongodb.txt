@@ -1,8 +1,8 @@
 install mongodb community server
 Note:=>1)mongodb case senstive hota hai
        2)agar hum fetch krte samye _id
-	   se kare to jyda fast hota hai bcox _id ki pahle se indexing hote hai 
-       3)a)if mongodb server not start  (file check tool missing files)
+	      se kare to jyda fast hota hai bcoz _id ki pahle se indexing hote hai 
+       3)a)if mongodb server not start  (check missing file with cmd)
 	      cmd:=>sfc/scannow 
 	     b)HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
 		4)_id ye ObjectId hota hai(_id=ObjectId(''))   
@@ -12,7 +12,7 @@ Note:=>1)mongodb case senstive hota hai
   note:use create and switch databases
 2)show collections:=> show collections
     create collections : db.createCollection('name')
-    db.collection.drop()	:delete collection db.collection(name).drop()
+    db.collection.drop() : delete collection db.collection(name).drop()
     show data from collection :db.collection(name).find()	
 3)document:=>
   	  show data from collection :db.collection(name).find()
@@ -112,3 +112,68 @@ app.listen(3000, () => {
 });
 		  
 ///mongoose data modelling (data validation)	
+
+///connection to db
+mongoose.connect(
+  db_url,
+  {
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  },
+  (error, link) => {
+    //check error
+    assert.equal(error, null, "db connection fail ...");
+    //ok///
+    console.log("db connection success ...");
+    // console.log(link);
+  }
+);
+
+
+//////model//// es model ka use tb use hota hai,jb us hi format me data ko mongodb me
+insert krna hota hai
+const mongoose = require("mongoose");
+const schema = mongoose.Schema;
+
+const userSchema = new schema({
+  username: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  isActive: {
+    type: Boolean,
+    default: true,
+  },
+  createOn: {
+    type: Date,
+    default: Date.now(),
+  },
+});
+
+//exprot model user
+module.exports = mongoose.model("users", userSchema);
+/// 'users ' es name se collection bnta hai database me 
+
+ User.find({ email: req.params.email },{ye projection hai field ko hide ki liye(password:0)}, (error, result) => {
+    if (error) {
+      res.status(500).json({
+        status: "fetching error",
+        message: "something wrong",
+      });
+    }
+
+    res.json({
+      status: "good ",
+      result: result,
+    });
+  });
+  

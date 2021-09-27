@@ -1,0 +1,21 @@
+option =>alt
+comman =>ctrl
+Note:=> koi layer gayab ho jaye to window>reset essential
+shift daba ki draw karoge to jo uper single ,add ,substract auto change ho 
+jata hai
+
+layer=>jo bhi kuch karo hamesa new layer lo nhi to background ko effect 
+kr dega
+
+selection=>es se hum canvas pr hum area ko active krte hai bcoz sirf utna ki kam krna hai
+     shift =>select add 
+     alt=>selection substrack
+     alt+shift =>intersection
+
+fill=>gradient =>fill color
+ctrl+z = undo
+atrl+crlt+z =undo respective
+
+foreground=>aage ka (cltl+backspace)
+background=>peeche ka(background color fill alt+backspace)
+

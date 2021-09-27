@@ -1,0 +1,62 @@
+====myths======
+1)Risky(may in short term  and but not in long term)
+2)finence strong 
+3)lot of money
+4)renowned company not storng return
+
+
+1-in fd we got intrest (pay tax)
+2-in share we got divedent (no tax)=>return jo hum ko share ki badle milta hai
+   and this is company decide divedent give  or not
+3-Note:-ltcg (long term captiliziation gain)
+     if person hold share more than one year then earn profit this is ltcg
+4-ltcg and divedent are tax free subject to limit
+   promoter=>who start company (jo company start krta hai)
+   =====Face value======
+   face value(inital share value) =>share value  (decide by promoter inital value)
+Note:-9.15 to 3.30 ki bad share analysis kare  
+  stock broker 
+            1)motilal oswal
+            2)angle 
+            3)share khan 
+            4)zerodha
+            5)parag parikh security
+            etc
+under value:=>            
+
+turnover(aprial to march) (top line)=>total share amount(678)
+profit before tax  =>  530
+profit after tax (bottom line) =>480
+share price as on march :=>share price 5 times from begging
+
+=======stock split======================
+agar fv (face value ) half kr de to market value bhi holf hoga 
+and share holder ki share double ho jayega
+
+fv = face value 
+and reived face value(jo split ki bad hota hai)
+
+======2=====================
+LTP=>last traded price(LTP)jis pr stock band hua hai (3.30)
+bse and nse price diffrent demand on supply
+
+9.0 to 9.15(pre opening market session)
+   9.0 to 9.7(only buy the user)
+   9.8 to 9.11(order matching) and last 4 minute stablility
+9.15 to 9.30 (market up down more)
+
+======================================
+9.0 to 9.15(pre mkt session)
+9.15 to 3.30 (market times)
+3.30 to 4.0(for broker)
+4.0 to 9.0(pm to am for user)(after market order but execute next mornig)(AMO)
+gap up opening(guo)=>/\(if share price open set price higher than previous day closing price)
+gap down opening(gdo)=>\/(if share price open set price less than previous day closing price)
+unch=>unchange(if share price open set price same previous day closing price)
+bid price=>no of buy order
+offer price=>nof of sell
+volume=>travel shares
+52wk low/high=one year 
+bonus=>1:2 (one free share if  buy every 2 share)
+
+
