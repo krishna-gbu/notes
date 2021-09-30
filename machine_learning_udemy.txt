@@ -1,2 +1,18 @@
 jupyter change directory:==>
 jupyter notebook --notebook-dir=/Users/yourname/folder1
+usefull website:==>>>>
+1)teachable machine
+2)machine learning playground
+machine learning==>>>>
+1)supervised(label tag with data)
+  i)classification
+  ii)regression
+2)unsupervised(no label tag with data):
+ i)clustering
+ ii)assiciation rule learning
+3)reinforcement
+ i)skill acquisition real time learning 
+
+machine learning algorithm :=> ko model kah skte hai 
+1)data =>machine learning algorithm=> pattern
+2)newData => same algorithm(model) =>more patterns
