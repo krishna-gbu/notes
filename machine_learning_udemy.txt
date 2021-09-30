@@ -1,0 +1,2 @@
+jupyter change directory:==>
+jupyter notebook --notebook-dir=/Users/yourname/folder1

@@ -159,7 +159,7 @@ for => for loop is used to ilerate over	a sequense (tuple ,list ,dic ...)
     print(i+'f')
 	
 function (def) =>
-  function is block of code which perform 
+  function is block of code which perform
   as specfic task
   exp:
     1)def hello():
@@ -190,4 +190,52 @@ matplotlib => graphs
 numpy=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 import numpy as np
 n1 = np.array([])
-2.4ś
+2.4s
+
+machine learning:===================================>
+
+DATA:=> everthing is data
+data life cycle :=>
+data acquisition => data pre processing => machine learning algo=> pattern evaluation => knowledge representation
+data acquisition:=>
+data from mutliple source > data storage > target data
+data pre-preprocessing:=>
+1)data manipulation 
+2) data visulation
+machine learning :=>
+a application of intelligent algorithm to find meaningful information the data 
+1)classification 
+2)regression 
+3)clusterning
+pattern evaluation:=>
+ek bar data mining technique have been applied , then
+result to be evaluated
+knowledge representation:=>
+present pattern in graph(simple,aethetic)
+introduction to machine learning:=>
+suppose:
+  bird(image)=> machine=> bird
+
+type of machine learning:=>
+  1)supervised learning
+  2)unsupervised learning
+supervised Learning(data ki sath tag bhi hoga):=>
+y=f(x)  
+y is dependent variable and x is independent variable
+type of supervised learning:=>
+1)regression
+2)classification
+classification:=>
+ this method is used estimate the relationship b/w diffrent entites(diffrent category)
+regression(wapse):=>
+ guess the result based on previous data 
+ 
+unsupervised learning(clusterning)(group):=>
+ es me jo data associate(use) hoga use me tag(label) nhi hoga
+ 1)inter clusterning disSimilarity increse 
+ 2)intra clusterning similarity increse
+to hum diffrent diffrent object ko identifi kr skte hai 
+
+Note: ye kam krne ki liye regression analysis use krte hai
+case study:=> 
+residual value(error) :=>this is b/w actual value and predict value

@@ -1,4 +1,3 @@
-yum whatprovides nslookup(kon sa software provide krega nslookup)
 docker=>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 docker ce (community edition) not support in rhel 8 (but some trick)
 curl -sSl https://get.docker.com |sh (to downlaod docker with docker shell script )
