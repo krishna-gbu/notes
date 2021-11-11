@@ -26,3 +26,23 @@ marker => on time line ctrl+m
 
 trick=> silence => select noise and silence
               
+			  
+============>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>======
+new technical(29oct21)
+preset in effectRack choose podcast voice
+1)effect> noise reduction=>noise reduction (process) => apply
+2)effectRack>filter and eQ>parameter equalizer > enhance vocal
+3)effectRack>dynamics processing > smooth vocal
+4)always use hard limiter 
+
+
+=======best noise remover=============================
+1) select audio >amplitude and compression > amplify>set at 7.42db
+2)select audio > effect > special > mastering>
+make room for vocals
+3)jo noise hai us ko select kro and select capture noise paint>select all audio (ctrl+a)>effect >noise reduction/restoration >noise reduction process > set 
+1) scale logarithmic 
+2)noise reduction 100%
+3)reduction by 30-35db
+4)spectral decay rate 8%
+5)other default

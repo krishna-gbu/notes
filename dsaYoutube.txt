@@ -1,0 +1,16 @@
+alogrithm:=>
+any language,any os,h/w
+programm:=>
+depends on h/w and os , and language also
+
+
+==============
+jaise problem vaise data structure
+exp:
+stock of apple=[298,340,34,23]
+date =march 3,march 5,march 6,march 7
+we use
+d={'march 2':298,...}
+https://www.youtube.com/watch?v=_t2GVaQasRY&list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12 
+
+2c

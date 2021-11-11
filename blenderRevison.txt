@@ -1,0 +1,202 @@
+Note:1)modeling
+     2)ragging
+	 3)texturing
+	 4)animation 
+	 5)rendering
+shorcut:
+1)axes rotation:=> mouse scroll button press and drag
+2)zoom:scroll, mouse scroll button 
+3)numpad 0 :-> in  camera view and out camer view
+4)t => tool hide and show
+5)shift + space => agar tools hide hai to use kro 
+5.1) agar object origin pr lana hai to select and press 'n' , x,y,z =0,0,0 
+6)selection tools:=> 
+       1)tweek :=> ek bar me ek select hoga
+	   2)select box :=> square selection 
+	   3)select circle:=> press kr ke jaha bhi mouse move krogo sb select ho jayega
+	   4)lesso : press and drag and select
+7)jitne tool hai sb ki liye properties de hui hai
+   1)select box:=> 1)box one:>new selection
+                   2)box second :>extend existing selection
+				  Note: hint on properties boxes  jo tool ki liye hai
+8)delete:=>select + delete
+9)home:=>for origin
+10).(numpad):=>for zoom of selected object
+11)cursor:=>>>
+      1)jaha pr cursor hoga waha pr kuch add krni ki liye 
+	   (shift+a) to option aayega
+	  2)shift+s :=>agar cursor origin pr chahiye to 
+	     and select "cursor to world origin"
+12)move(g):=>
+           1)first select object and press 'g' and move  mouse  and drop anywhere to click mouse
+           2)select object and press (g+x) to x direction me movie hoga , similar to (g+z,g+y)
+13)rotation(r):=> 
+                1)select object and press r 
+				2) r+x rotation in x direction
+				3)r+z rotation in z direction
+				4)r+y rotation in z direction
+				
+14)scale(s):=> 
+              1)select object and press s 		   
+              2) s+x scale in x direction 
+			    similar to s+z,s+y
+15)transform:=>comibination of (scale +rotation+ move)	
+	ye animation and lighting and camera me jyda use hota hai
+16)pencil:=>select and draw
+17)measure:=>mearuse length etc	
+18)add cube:=>mouse left click and drag after release click and click and move up
+
+19)modes(z):=>1)wireframe=>only line
+        2)solid=>working in mode
+		3)material:=>color use
+		4)0 :=>camer mode
+20)object duplicate:=>shift +d	
+21)repeatation last action:=>shift + r	
+22)select object > modifier properties > subdivison surface > for smooth face(1-6) es ko jb render krna hoga tb use krna 
+Note:=>modifier shape ko change krta hai
+23)views(`):=>numpad use kro
+          1)1 font view
+		  2)3 side view
+          3)7 top view
+          4)9 bottom view
+		  5)8 top to bottom rotation
+		  6)2 bottm to top rotation
+		  7)6 left to righ rotation
+		  8)4 righ to left rotation
+		  9)5 grid view ko aage peche krna ki liye
+24)screen merge:=>do screen ko ek me marge nhi kr skte hai ,pahle us ko ek me convert kro than preceed	
+25) outline :=> like layer , 'choose from 'editor window'
+26) properties window :=> all object properties'choose from 'editor windon'
+
+editing:=> tab (object to editing, editing to object)
+   1)vertex
+   2)edge
+   3)face
+1)select multiple use ctrl ya shift 
+2) alt key se sb select kr row ya column me
+3) select one face aur chahte hai ke us ki charo tarf ho jaye to clrl+ "+"
+4)ye selected object ko pure select krega ko to  use 'l'(L)
+5)select all  object use 'a'(L)
+6)deselect :=> alt +a
+7)invet selection:ctrl+i
+8)all shorcut in select in edit mode
+9)cirle select :=>mouse left to select and deselect to shift + mouse left
+10) shift +z (wireframe to solid ,solid to wireframe)
+Note:=>wireframe tb use kro jb sare side select krna hai
+nhi to solid use kro
+11)move tool se move krte hai to selected ki sath sath sb effected ho jata hai 
+,to es ki liye selected + y aur phir move kro to sb nhi effect hoga
+12) es ko fill krne ki liye vertex ya edge ko select kro and 'f' press kr do
+13)extrude region(e):=>>> es se hum object me se specific area ko extend kr skte hai,e+x , e+z,e+y
+14)inset faces:=>jo hamare object hai use me alag se face add kr skte hai(diffrent diffrent faces) double press i ,then press 'e' for extend
+15)edit mode me jtni object hum add krte hai wo sb ek group me hote hai , agar ek delete hua to sb delete hoga , pure delete ki liye object mode me jana hota hai
+16)for color shading tab > shift + a > color chose
+17)bavel (ctrl+b):=>object ko gol krni ki liye hota hai kisi bhi location pr to use kro , select object(edge,vertex,face) + bavel and drag mouse after release mouse open bavel panel , change jo chahiye kr location
+Note:=> agar bina mouse kr krna chahte ho to , select and press ctrl+b+enter to open bavel panel
+  edeg:=>
+      1)width type(offset,width,depth,percent,absolute) 
+	  2)width
+	  3)sagment (for smoothnesss)
+	  4)shape (inside or outside)
+	  5)material index (for color)
+	      offset:=>agar hum ne edge select kiya hai to xus ke sath ki jo faces hai us ki puri length ko jaise chahe gol kr skte hai
+          depth:=>kitna under bahr le jana hai shape ,width,segment ki according
+      	  width:=>
+          percent & absolute:=> ye perpendiculer shape me hi kam krta hai
+18)loopcut(ctrl+r):=>1)remove cut ,first select cut with alt  and take option(mouse rigth button) dessolve edge 
+    2)number to cuts:=> kinte cut chahiye
+    3)smoothnesss:=> patla ya muta krega
+    4)falloff:=>alag alag shape hai es me
+    5) factor:=>cut ko aage peche ki liye	
+Note:=>agar mouse se krna ho to , ctrl+r select object and scroll many cut appera ho jayega	
+
+Note:=> agar hum cut ki bad cut ko move krna chahte hai to cut ko alt daba ki select kro and move tool ka use kro
+19)offset loopcut(ctrl+shift+r) :=>ye loopcut ki upper kam krta hai 
+, loopcut ko select kro phir offset loopcut ko aur mouse drag kro to ye equal divide cut dega
+20)knife:=> ye object ko cut kr skte hai bina select kiye bhi , agar knife ka point agar pura hatana ho to 'esc' nhi to 'e' dabao
+ knife ki do properties hai:=>
+             1) occlude geometry :=> agar ye active hai to jaha se select hai wahi cut hoga , nhi to pura shape cut kr dega
+			 2) only selected:=> es me cut tabi kam karega jb area selected hoga nhi to nhi hoga
+note:=>agar chahte ho ki sida cut lage to c press rakhna
+21)biset:=>object selected  hona chahiye 
+  and drag mouse and open a panel es me 3 properties hai 
+    1)fill :=> jo cut hoga us ko fill kr dega
+	2)clear inner:=> jo cut hoga us ki neche wale hissa ko remove krega 
+	3)clear outer:=>jo cut hoga us ki upper wale hisse ko remove krega
+    4)axis threshold:=> cut ko move krne ki liye
+22)poly build:=>skin animation ki liye retopology use krte hai , retopology jo ki skin ki upper ek new layer hote hai , jo ki es tool se banay jata hai, es 
+se hum color bhi spicifi location pr kr skte hai
+
+working:=>1) es se hum vertex bana skte hai, ctrl + mouse left button  ko click krte jao  	
+          2)agar ctrl + drag to phir se ek vertex banadega
+		  3) delete :=> shift + mouse left button
+Note:=> object ki uper layer ek aur layer lene hai to snap use krenge global tool ki aas pass hai us 
+me (vertex,edeg , face ) apni according select kro and next closet bhi kro and affect me thino ko select kro , aur project and align rotation to target bhi rakho
+23)spin(shift+0) :=> select spin tool , to upper x,y,z thik dekhga to choose kr lo,aur ye cursor ko center man ki cirle banta hai 
+Note:=>spin tool cursor ki pass appear hota hai
+es me hum shape ko circle ke jaise shape deta hai x,y,z thino me, hum 2d se 3d bhi kr skte hai , line se cylinder bhi bana skte hai
+24)spin duplicate(shift+1):=> ye object ko duplicate krta hai cursor ki according
+24)smooth:=>1)surface smooth
+i)select object in object mode ,righ click > choose shade smooth 			
+ii)select object > modifier > subdivison > change here according to u
+           2)weight smooth:=>
+24.1)smooth:=> es tool se hum jitna area selected ya phir cut hai us ko smooth kr skte hai bina kis ki area ki effet  kiye,click smooth tool drag and release >apera a line so click and release apera a window now change jo aap chahte ho
+Note:ye perpendiculer axis pr kam nhi krta hai
+25)randomize:=>ye object ko random tarike se smooth krta hai
+26)edge slide(ctrl+4):=> ye tool edeg ko move krta hai ,pr edge ki under hi ,mouse se dragan drog kr skte hai
+26.1)vertex slide :=> same as egdeg tool	   
+Note:=>agar vertex/edge ki bahr le jana hai to clamp ko hata do 
+27)shrink/fattern:=>select and drag , es se hum kisi object ko khech skte hai aur compress kr skte hai
+28)shear:=>corner banane ki aur twist liye hota hai , select object and take a handle , handle ko drag and drop kro
+29)to sphare:=>ye wah kam krega jaha bahut vertex and egdes hai
+30)rig region:=>(fadna/todana)
+ 1) for vertex :=>select vertex to ek cirle milega aur drag and drop, inner side of cirle to face alag hone lagega aur agar egde ko pakde ke drag and drop kroge to us ki sath wali faces ko alag krega
+ 2)edge:=> select edge and edge drag and drop to face alag ho jayega
+31)rig edge:=> egde ko rig/ badata hai   , egde ko bahar nikalne ke liye use hota hai
+
+modifier:=> en ki 4 category hote hai
+1)modify(rupantaran krna):=>
+2)generate(banana ya create krna):=>
+3)deform (aakar ko change krana):=>
+4)physics(all jo hum ne padhi hai):=>
+
+Note:=>1) hr modifier me kai(3 or 4a) properties hai
+2)ek object pr kai modifier use kr skte hai  
+3)modifier ka order bahut priority rakhta hai
+jo sbse neche hoga us ki priority jyda hote hai
+
+1)edit:=> ye hum ko edit mode me hi dekhega, es se hum jo modifier apply hua hai us ko dekh skte hai, ya enable or disable kr skte hai
+2)realtime:=> view port me dekhta hai , ya object mode me enable ya disable ki liye hota hai
+3)render :=> render me enable disable ke liye hota hai
+4)on cage:=> es se hum jo new shape aaye hai , modifier ki bad us me edit krne ki liye hai
+
+many modifier:=>>>>
+1)array modifier:=> es se  hum same object ko kai bar bana skte hai aur agar no cage enable hua to kisi bhi object ko change krenge to sb me hoga nhi to sirf main object me change krenge to sb me hoga 
+
+copy & paste modifier:=>
+select all object but ji object ki modifier copy krna hai us ko last me select krna  shift daba ke and press ctrl+l(L) > copy modifier
+
+sculpting:=>
+1)x,y,z symetric system 
+2)brush size:f+mouse drag and press left button to apply and ingoure press right button ya f + numpad(2/no)
+3)press n > tool > tool properties
+4)+/-:=> + outward banega , - inward hoga 
+5)dyntopo:=>shape dete hai pr jitna jyda zoom hoga utna accha hoga , otherwise smooth nhi hoga
+6)blue wale se object me under ya bahr krni ki liye hota hai (+/-),
+Note:=>agar ctrl press krenge to +=>- ki tarah hoga and  - => + ki tarh hoga , shift daba ki smooth krega 
+7)red :=> contrast ki liye hota hai 
+8)yellow:=> us me se kuch extend ki liye hai
+
+
+
+
+
+
+
+
+
+
+=============download 3d model==============
+cgtraders
+sketchfab
+maximo
