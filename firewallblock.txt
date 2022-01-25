@@ -1,0 +1,2 @@
+search firewall > open advance setting>inbound rules>new rule>programm>find exe file>block the connection>next>give the name>finish
+similer like outbound rules

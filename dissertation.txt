@@ -1,0 +1,49 @@
+svm(support vector machine):=>
+1)this lies in supervised learning
+2)used for classification and regression
+analysis
+3)data in labels
+4)ye test data ko check krta hai ki quadiletral class
+ka hai ya circle class ka hai
+5)jo hamare hyperplan ki classess ka jo data nearest hota hai us ko sv kahte hai
+
+
+linear regression:=>
+1)dependent variable is continous in nature
+i)simple linear regression:=>(y=a +a1x)
+ii)multiple linear regression:=>(y=a+a1x1+ax2...)
+
+
+logistic regression:=>
+1)catagorial(yes,no,true,false) dataset ki liye use hota hai
+2)sigmoid function:=>
+y=1/1+e^-x
+3)convert catagorial data to probabilite(0-1)
+for relation b/w dependent and independent variable
+4)independent variable convert to probabilite
+
+knn:=>
+find out k nearest value by eculidean distance
+eculidean distance :->
+d=(x0-xa)^2 + (x0-xa)^2 ^1/2
+
+decision tree:=>
+1)use in classification and regression
+data=>algo(decision tree)=>model/classifier
+
+genetic algorithm:=>
+solution optimize genration to genration
+
+naive bayes:=>>>
+1)clasifier algo
+p(a/b)=P(b/a).p(a)/p(b)
+take highest probabilite classification
+
+neural network:=>
+human brain neural network
+ensemble(pahnawa) learning:=>
+many train model use for single output
+random forest:=>
+es me dataset se botstrap dataset me dalte hai 
+(randomly) use ki bad random(root node) choose and random child choose kro
+

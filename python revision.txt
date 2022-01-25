@@ -416,7 +416,7 @@ create class:=>
          def play_game(self):
              print('game playing')
 2)p1=phone() // creating object
-3)p1.make_call()  //invoking methods throough object
+3)p1.make_call()  //invoking methods through object
 Note:1)class name capital
      2)method of class, first argument is self 		
 	 

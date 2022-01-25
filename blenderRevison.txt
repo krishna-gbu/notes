@@ -189,14 +189,34 @@ Note:=>agar ctrl press krenge to +=>- ki tarah hoga and  - => + ki tarh hoga , s
 
 
 
+ragging:===>>>>>>>>>>>>> 
+1) first select body than shift+bone  after that 
+  ctrl +p => with automate weight
 
 
 
 
+===camera(teld key)==>>>>>>>>>>>>
+move tool(g) + axies (x,y,z) if press duble x,x to moving tool local me ho jayega
 
+Note:agar object ko camera view me hi alag alag angle dena ho to (t>view>view lock > camera to view)
 
+focus :=> focus ko change krni ki liye camera ki border ko drag and drop kro
+
+Note:agar camera ko path pr move krna hai to select camera > object constrain properties >add object > follow path 
+
+Note:agar kisi object ko track krna hai to select object and object constrain properties > add object > track object > pick object 
+
+Note:select camera > view port display> limit
+composite guide:=> guide ki liye hota  hai
+
+scene properties(interior design):=>
+
+shrink wrap:=>
+agar object ko dusre object ki sath merge krna ho to
 
 =============download 3d model==============
 cgtraders
 sketchfab
 maximo
+on
