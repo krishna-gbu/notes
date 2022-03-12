@@ -1,0 +1,18 @@
+.background-image{
+   background-image: url('../image/body.png');
+   max-width: 100%;
+   height: 50vh;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+  }
+
+ .parentdiv{
+ position:relative
+ }
+ .button{(child div)
+    align-self: baseline;
+    position: absolute;;
+    top: 68%;
+    left: 68%;
+  }
